@@ -1,0 +1,18 @@
+.icones{
+    display: flex;
+    align-items: center;
+  }
+  .icone{
+    margin-right: 40px;
+    width: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+    min-width: 120px;
+  
+  }
