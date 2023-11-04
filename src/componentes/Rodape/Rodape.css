@@ -1,0 +1,14 @@
+.desenvolvido{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0%;
+    gap: 16px;
+    padding: 5px;
+    color: hsl(0, 0%, 0%);
+    background-color: #22778b;
+    text-align: center;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: 0,625rem;
+    font-weight: 400;
+}

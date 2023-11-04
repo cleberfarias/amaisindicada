@@ -1,5 +1,13 @@
-import Header from './componentes/Header/Header';
+
 import styled from 'styled-components';
+import Pesquisa from './componentes/Pesquisa/Pesquisa';
+import Header from './componentes/Header/Header';
+import Footer from './componentes/Footer/Footer';
+import Rodape from './componentes/Rodape/Rodape';
+import UltimosLancamentos from './componentes/UltimosLancamentos/UltimosLancamento';
+
+
+
 
 const AppContainer = styled.div`
     width: 100vw;
@@ -11,9 +19,18 @@ const AppContainer = styled.div`
 function App() {
   return (
     <AppContainer>
-      <Header />
-    </AppContainer>
-  );
+      <Header/>
+      <UltimosLancamentos/>
+      <Pesquisa/>
+      <Footer/>   
+      <Rodape/>
+     </AppContainer>
+    
+    
+
+    );
+    
+
 }
 
 export default App;

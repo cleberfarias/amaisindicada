@@ -6,9 +6,9 @@ const Opcoes = styled.ul`
 const Opcao = styled.li`
 font-size: 16px;
 display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+justify-content: auto;
+align-items: auto;
+text-align: auto;
 height: 100%;
 padding: 0 5px;
 cursor: pointer;
