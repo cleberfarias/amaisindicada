@@ -43,7 +43,7 @@ const Subtitulo = styled.h4`
     margin: 15px 0;
 `
 
-const ImgLivro = styled.img`
+const ImgSabor = styled.img`
     width: 150px;
 `
 
@@ -56,7 +56,7 @@ function CardRecomenda({titulo, subtitulo, descricao, img}) {
                 <Descricao>{descricao}</Descricao>
             </div>
             <div>
-                <ImgLivro src={img}/>
+                <ImgSabor src={img}/>
                 <Botao>Saiba mais</Botao>
             </div>
         </Card>  
