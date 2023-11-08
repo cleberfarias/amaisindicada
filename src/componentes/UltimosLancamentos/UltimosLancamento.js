@@ -1,32 +1,32 @@
 
 import { sabores } from "./DadosUltimosLancamentos";
 import styled from 'styled-components'
+import CarRecomenda from "../CarRecomenda/CarRecomenda";
+import { Titulo } from "../Titulo/Titulo";
+import imgColecao from '../../imagens/colecao.png'
 
 const UltimosLancamentosContainer = styled.section`
-background-color: #EBECEE;
+background-image: linear-gradient(90deg, #d4e6f4 50%, #328955);
     padding-bottom: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 `
 
-const Titulo = styled.h2`
-    width: 100%;
-    padding: 30px 0;
-    background-color: #FFF;
-    color: #EB9B00;
-    font-size: 36px;
-    text-align: center;
-    margin: 0;
-`
 
-const NovosLivrosContainer = styled.div`
-    margin-top: 1px;
+const NovosSaboresContainer = styled.div`
+    margin-top: 30px;
+    margin: 10px;
     display: flex;
+    padding: 1em 0 0.5em 0;
+    width: 100%;
     justify-content: center;
     cursor: pointer;
-    max-height: 5%;
-    max-width: 5%;
+    
+        
 `
+
+
+
 
 
 
@@ -34,13 +34,28 @@ function UltimosLancamentos() {
 
     return (
         <UltimosLancamentosContainer>
-            <Titulo>Ultimos Lançamento</Titulo>
-            <NovosLivrosContainer>
+            <Titulo
+                cor={"#EB9B00"}
+                tamanhoFonte={"36px"}
+            >
+                Últimos Lançamento
+            </Titulo>
+            <NovosSaboresContainer>
                 {sabores.map(sabor => (
-                <img src={sabor.src} />
-            ))}
-            </NovosLivrosContainer>
+                    <img src={sabor.src} />
+                ))}
+            </NovosSaboresContainer>
+            <CarRecomenda
+                titulo="Talvez você se interesse por..."
+                subtitulo="Todos os Sabores"
+                descricao="Nossa coleção"
+                img={imgColecao}
+
+
+            />
+
             
+
 
         </UltimosLancamentosContainer>
 
