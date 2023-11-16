@@ -3,15 +3,20 @@ import sacola from '../../imagens/sacola.svg'
 import styled from 'styled-components'
 
 const Icone = styled.li`
-    margin-right: 40px;
-    width: 25px;
-    cursor: pointer;
+margin-right: 40px;
+width: 25px;
+cursor: pointer;
+
+img {
+  max-width: auto;
+  height: auto;
+}
 `
 
 const Icones = styled.ul`
-    display: flex;
-    align-items: auto;
-    cursor: pointer;
+display: flex;
+align-items: flex-start; /* Alterado para flex-start */
+cursor: pointer;
 `
 
 const icones = [perfil, sacola]

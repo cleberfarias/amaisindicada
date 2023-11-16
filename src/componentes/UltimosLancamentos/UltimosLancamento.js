@@ -3,43 +3,44 @@ import { sabores } from "./DadosUltimosLancamentos";
 import styled from 'styled-components'
 import CarRecomenda from "../CarRecomenda/CarRecomenda";
 import { Titulo } from "../Titulo/Titulo";
-import imgColecao from '../../imagens/colecao.png'
+import imgSabores from '../../imagens/colecao.png'
 
 const UltimosLancamentosContainer = styled.section`
-background-image: linear-gradient(90deg, #d4e6f4 50%, #328955);
+    background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
     padding-bottom: 20px;
     display: flex;
     flex-direction: column; 
-`
+`;
 
+const ConteudoContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding: 0 20px; /* Adjust the padding as needed */
+`;
 
 const NovosSaboresContainer = styled.div`
-    margin-top: 30px;
-    margin: 10px;
     display: flex;
-    padding: 1em 0 0.5em 0;
-    width: 100%;
     justify-content: center;
     cursor: pointer;
-    
-        
-`
+    padding-bottom: 10px;
+`;
 
-
-
-
-
-
+const SaboresCard = styled.div`
+    margin: 10px; /* Adjust the margin as needed */
+    max-width: 300px; /* Adjust the max-width as needed */
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Add border-radius for rounded corners */
+    }
+`;
 function UltimosLancamentos() {
 
     return (
         <UltimosLancamentosContainer>
-            <Titulo
-                cor={"#EB9B00"}
-                tamanhoFonte={"36px"}
-            >
-                Últimos Lançamento
-            </Titulo>
+            <Titulo> Mais Vendidos</Titulo>
             <NovosSaboresContainer>
                 {sabores.map(sabor => (
                     <img src={sabor.src} />
@@ -49,14 +50,7 @@ function UltimosLancamentos() {
                 titulo="Talvez você se interesse por..."
                 subtitulo="Todos os Sabores"
                 descricao="Nossa coleção"
-                img={imgColecao}
-
-
-            />
-
-            
-
-
+                img={imgSabores}/>     
         </UltimosLancamentosContainer>
 
 

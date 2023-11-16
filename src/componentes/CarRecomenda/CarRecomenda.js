@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Titulo } from "../Titulo/Titulo"
+import Coleaco from "../../imagens/colecao 1.svg"
 
 const Card = styled.div`
     align-items: center;
@@ -19,11 +20,12 @@ const Botao = styled.button`
     color: #FFF;
     padding: 10px 0px;
     font-size: 16px;
-    border: none;
+    border-radius: 20px;
     font-weight: 900;
     display: block;
     text-align: center;
     width: 150px;
+    text-decoration: none
     &:hover {
         cursor: pointer;
     }
@@ -44,7 +46,8 @@ const Subtitulo = styled.h4`
 `
 
 const ImgSabor = styled.img`
-    width: 150px;
+    
+    max-height: 250px;
 `
 
 function CardRecomenda({titulo, subtitulo, descricao, img}) {
@@ -56,7 +59,7 @@ function CardRecomenda({titulo, subtitulo, descricao, img}) {
                 <Descricao>{descricao}</Descricao>
             </div>
             <div>
-                <ImgSabor src={img}/>
+                <ImgSabor src={Coleaco}/>
                 <Botao>Saiba mais</Botao>
             </div>
         </Card>  

@@ -2,7 +2,7 @@ hr{
     margin: 0em;
 }
 .rodapé{
-    background-image: linear-gradient(90deg, #d4e6f4 50%, #328955);
+    background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
     padding: 1em;
 }
 .lista-rodapé{
@@ -27,19 +27,19 @@ hr{
     }
 
     .lista-rodapé__link {
-        color: #008080;
+        color:  #FFF;
         text-decoration: none;
         margin-left: 0.6em;
     }
 
     .lista-rodapé__titulo {
         font-size: 14px;
-        color: #008080;
+        color: #FFF;
     }
 
     .rodapé__titulo {
         font-size: 24px;
-        color: #008080;
+        color:   #FFF;
     }
 }
 @media screen and (min-width: 1728px) {
