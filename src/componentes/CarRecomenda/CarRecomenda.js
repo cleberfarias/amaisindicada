@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { Titulo } from "../Titulo/Titulo"
-import Coleaco from "../../imagens/colecao 1.svg"
+import styled from 'styled-components';
+import { Titulo } from '../Titulo/Titulo';
+import Coleaco from '../../imagens/colecao 1.svg';
 
 const Card = styled.div`
     align-items: center;
@@ -13,7 +13,7 @@ const Card = styled.div`
     padding: 25px 20px;
     justify-content: space-around;
     width: 100%;  
-`
+`;
 
 const Botao = styled.button`
     background-color: #EB9B00;
@@ -25,45 +25,45 @@ const Botao = styled.button`
     display: block;
     text-align: center;
     width: 150px;
+    cursor: pointer;
     text-decoration: none
-    &:hover {
-        cursor: pointer;
-    }
-`
+    &:hover;
+    
+`;
 
 const Descricao = styled.p`
     max-width: 300px;
     color: #002F52;
     font-size: 18px;
     font-weight: bold;
-`
+`;
 
 const Subtitulo = styled.h4`
     color: #002F52;
     font-size: 18px;
     font-weight: bold;
     margin: 15px 0;
-`
+`;
 
 const ImgSabor = styled.img`
     
     max-height: 250px;
-`
+`;
 
 function CardRecomenda({titulo, subtitulo, descricao, img}) {
-    return (
-        <Card>
-            <div>
-                <Titulo tamanhoFonte="16px" cor="#EB9B00" alinhamento="center">{titulo}</Titulo>
-                <Subtitulo>{subtitulo}</Subtitulo>
-                <Descricao>{descricao}</Descricao>
-            </div>
-            <div>
-                <ImgSabor src={Coleaco}/>
-                <Botao>Saiba mais</Botao>
-            </div>
-        </Card>  
-    )
+  return (
+    <Card>
+      <div>
+        <Titulo tamanhoFonte="16px" cor="#EB9B00" alinhamento="center">{titulo}</Titulo>
+        <Subtitulo>{subtitulo}</Subtitulo>
+        <Descricao>{descricao}</Descricao>
+      </div>
+      <div>
+        <ImgSabor src={Coleaco}/>
+        <Botao href="#">Saiba mais</Botao>
+      </div>
+    </Card>  
+  );
 }
 
-export default CardRecomenda
+export default CardRecomenda;

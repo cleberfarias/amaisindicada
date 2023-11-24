@@ -1,22 +1,34 @@
 import perfil from '../../imagens/perfil.svg'
 import sacola from '../../imagens/sacola.svg'
 import styled from 'styled-components'
+import './IconesHeader.css'
 
 const Icone = styled.li`
-margin-right: 40px;
-width: 25px;
-cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center; /* Corrigido o typo aqui */
+  justify-content: center;
+  padding: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative; /* Corrigido o typo aqui */
+  margin-left: 20px;
 
-img {
-  max-width: auto;
-  height: auto;
-}
+  img {
+    max-width: auto;
+    height: auto;
+  }
 `
 
 const Icones = styled.ul`
-display: flex;
-align-items: flex-start; /* Alterado para flex-start */
-cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+`
+
+const Span = styled.span`
+  /* Adicione estilos conforme necessário para o seu caso */
 `
 
 const icones = [perfil, sacola]
@@ -24,8 +36,11 @@ const icones = [perfil, sacola]
 function IconesHeader() {
   return (
     <Icones>
-      {icones.map((icone) => (
-        <Icone><img src={icone} alt='Imagem Icone'></img></Icone>
+      {icones.map((icone, index) => (
+        <Icone key={index}>
+          {index === 1 ? <Span className='cart-status'>1</Span> : null}
+          <img src={icone} alt='Imagem Icone' />
+        </Icone>
       ))}
     </Icones>
   )

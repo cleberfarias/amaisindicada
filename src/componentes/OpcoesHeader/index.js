@@ -19,7 +19,7 @@ cursor: pointer;
 min-width: 120px;
 `
 
-const textoOpecoes = ['Catálogo', 'Estante', 'Favoritos']
+const textoOpecoes = ['Catálogo', 'Institucional', 'Favoritos']
 
 function OpcoesHeader() {
     return (

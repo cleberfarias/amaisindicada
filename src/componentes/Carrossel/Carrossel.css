@@ -1,8 +1,11 @@
+
 .carrossel__container {
     background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 2100px;
 
 }
 
@@ -13,27 +16,43 @@
     color: #EB9B00;
     font-size: 16px;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .swiper-slide img {
     width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
 }
+
 
 .swiper-button-prev,
 .swiper-button-next {
     display: none;
+    position: absolute;
+    top: 150%; /* Posiciona os botões no meio verticalmente */
+    transform: translateY(-150%); /* Corrige o posicionamento vertical */
 }
 
+.swiper-button-prev {
+    left: 10px; /* Ajuste a posição lateral conforme necessário */
+}
+
+.swiper-button-next {
+    right: 10px; /* Ajuste a posição lateral conforme necessário */
+}  
+    
 .swiper-pagination {
     position: initial;
     margin: 0.5em 0;
+    width: 100%;
 }
 
 .card__descrição {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5em;
+    margin: 0 auto;
 }
 
 .card__botões {
@@ -41,10 +60,14 @@
     justify-content: space-between;
     text-align: center;
     align-items: center;
+    margin: 0 auto;
+    padding: 5px;
 }
 
 .botões {
     display: flex;
+    margin: 0 auto;
+    padding: 1px;
 }
 
 .card {
@@ -53,8 +76,9 @@
     border-radius: 10px;
     margin: 1em;
     padding: 1em;
-    width: 100%;
-    max-height: 300px;
+    margin: 0 auto;
+    max-width: 1100px;
+
 
 }
 
@@ -62,6 +86,7 @@
     color: #EB9B00;
     font-weight: 700;
     font-size: 26px;
+    margin: 0 auto;
 }
 
 .descrição__titulo-livro {
@@ -77,6 +102,7 @@
     color: #002F52;
     font-size: 18px;
     font-weight: bold;
+    margin: 0 auto;
 }
 
 .botões__item {
@@ -85,6 +111,7 @@
 
 .dercrição__imagem {
     max-height: 200px;
+    margin: 0 auto;
 }
 
 .botões__ancora {
