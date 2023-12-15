@@ -15,14 +15,14 @@ const AppContainer = styled.div`
 function Home() {
   return (
     <AppContainer>
-      <Carrossel/>
-      <UltimosLancamentos/>
-      <Pesquisa/>
-      <Footer/>   
-      <Rodape/>
-     </AppContainer>
-        );
-    
+      <Carrossel />
+      <UltimosLancamentos />
+      <Pesquisa />
+      <Footer />
+      <Rodape />
+    </AppContainer>
+  );
+
 
 }
 

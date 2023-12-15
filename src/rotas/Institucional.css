@@ -1,0 +1,33 @@
+.insitucional__titulo {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #FFF;
+    color: #EB9B00;
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto;
+    background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+}
+
+.texto__institucional {
+    width: 100%;
+    padding: 30px 0;
+    font-weight: 200;
+    background-color: #FFF;
+    color: white;
+    font-size: 16px;
+    text-align: justify;
+    margin: 0 auto;
+    flex: 1;
+    background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+}
+
+.texto__agradecimento{
+    width: 100%;
+    padding: 30px 0;
+    color: #EB9B00;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+    
+}

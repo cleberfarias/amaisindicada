@@ -50,7 +50,7 @@ const ImgSabor = styled.img`
     max-height: 250px;
 `;
 
-function CardRecomenda({titulo, subtitulo, descricao, img}) {
+function CardRecomenda({titulo, subtitulo, descricao,}) {
   return (
     <Card>
       <div>
@@ -58,7 +58,7 @@ function CardRecomenda({titulo, subtitulo, descricao, img}) {
         <Subtitulo>{subtitulo}</Subtitulo>
         <Descricao>{descricao}</Descricao>
       </div>
-      <div>
+      <div> 
         <ImgSabor src={Coleaco}/>
         <Botao href="#">Saiba mais</Botao>
       </div>

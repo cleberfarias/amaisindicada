@@ -19,6 +19,8 @@
     font-weight: 500px;
     border-right: 1px solid #ddd;
     border-radius: 20px;
+    display: flex;
+
 }
 .pesquisa__button{
     background: none;
@@ -28,4 +30,7 @@
     align-items: center;
     justify-content: center;
     color: #333;
+}
+.imagem__producao{
+    display: flex;
 }

@@ -51,8 +51,7 @@ function UltimosLancamentos() {
                 subtitulo="Todos os Sabores"
                 descricao="Nossa coleção"
                 img={imgSabores}/>     
-                
-        </UltimosLancamentosContainer>
+            </UltimosLancamentosContainer>
 
 
 

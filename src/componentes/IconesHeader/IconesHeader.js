@@ -2,6 +2,7 @@ import perfil from '../../imagens/perfil.svg'
 import sacola from '../../imagens/sacola.svg'
 import styled from 'styled-components'
 import './IconesHeader.css'
+import { Link } from 'react-router-dom'
 
 const Icone = styled.li`
   font-size: 1.5rem;
@@ -39,11 +40,16 @@ function IconesHeader() {
       {icones.map((icone, index) => (
         <Icone key={index}>
           {index === 1 ? <Span className='cart-status'>1</Span> : null}
-          <img src={icone} alt='Imagem Icone' />
+          {index === 1 ? (
+            <Link to="/sacola">
+              <img src={icone} alt='Imagem Icone' />
+            </Link>
+          ) : (
+            <img src={icone} alt='Imagem Icone' />
+          )}
         </Icone>
       ))}
     </Icones>
-  )
+  );
 }
-
 export default IconesHeader

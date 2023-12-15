@@ -7,6 +7,8 @@ import Header from './componentes/Header/Header';
 import Home from './rotas/Home';
 import Favoritos from './rotas/Favoritos';
 import Catalogo from './rotas/Catalogo';
+import Institucional from './rotas/Institucional';
+import Sacola from './rotas/sacola';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -41,10 +43,14 @@ root.render(
       <Routes>
         <Route path='/favoritos' element={<Favoritos/>}/>
         <Route path='/' element={ <Home/>}/>
-        <Route path='/Institucional' element={<p>Estante</p>}/>
+        <Route path='/Institucional' element={<Institucional/>}/>
         <Route path='/' element={ <Home />}/>
         <Route path='/Catálogo' element={<Catalogo/>}/>
         <Route path='/' element={ <Home />}/>
+        <Route path='/sacola' element={<Sacola/>}/>
+        <Route path='/' element={ <Home />}/>
+
+        
       </Routes>
     </BrowserRouter>
    
