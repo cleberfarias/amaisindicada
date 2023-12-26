@@ -84,8 +84,7 @@ function Institucional() {
             <TextoInstitucional>
               <p>Nossa cachaça é produzida de maneira artesanal na encantadora cidade
                 de Celso Ramos, situada em Santa Catarina. Aqui, a tradição e a paixão pela
-                produção de
-                cachaça estão enraizadas<br /> em nossa família, os Pelozato, há gerações.
+                produção de cachaça estão enraizadas<br /> em nossa família, os Pelozato.
 
                 Fundada por Roberson Pelozato e Iziario Pelozato, membros da família
                 Pelozato, a Cachaça A Mais Indicada representa o compromisso de criar<br />
@@ -93,7 +92,7 @@ function Institucional() {
                 artesanais que garantem seu sabor único.</p>
 
               <p>Nossos fundadores são verdadeiros conhecedores da arte da destilação,
-                utilizando técnicas tradicionais transmitidas de geração em geração.
+                utilizando técnicas tradicionais.
                 Cada etapa do processo de<br /> produção é cuidadosamente supervisionada para
                 garantir que nossa cachaça atinja os mais altos padrões de excelência.
 
@@ -116,6 +115,11 @@ function Institucional() {
                 apreciá-la da melhor maneira<br /> possível. Também compartilharemos receitas
                 exclusivas de coquetéis que destacam as nuances e sabores de nossa
                 cachaça.</p>
+
+              <p>Além disso, temos o prazer de oferecer uma variedade de licores finos que
+                adicionam um sabor excepcional para qualquer ocasião. Elaborados com a mesma
+                paixão e qualidade que caracterizam nossa cachaça, nossos licores são a escolha
+                perfeita para aqueles que buscam uma experiência única.</p>
             </TextoInstitucional>
             <ImageContainer>
               <Image className="imagem__producao" src={Producao1} alt="foto do alambique" />
