@@ -40,7 +40,7 @@ function UltimosLancamentos() {
 
     return (
         <UltimosLancamentosContainer>
-            <Titulo> Mais Vendidos</Titulo>
+            <Titulo> Ultimos Lançamento</Titulo>
             <NovosSaboresContainer>
                 {sabores.map(sabor => (
                     <img src={sabor.src} />

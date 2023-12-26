@@ -39,8 +39,8 @@ function IconesHeader() {
     <Icones>
       {icones.map((icone, index) => (
         <Icone key={index}>
-          {index === 1 ? <Span className='cart-status'>1</Span> : null}
-          {index === 1 ? (
+          {index === 0 ? <Span className='cart-status'>0</Span> : null}
+          {index === 0 ? (
             <Link to="/sacola">
               <img src={icone} alt='Imagem Icone' />
             </Link>

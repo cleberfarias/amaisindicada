@@ -45,7 +45,15 @@
 .swiper-pagination {
     position: initial;
     margin: 0.5em 0;
-    width: 100%;
+    width: 50%;
+}
+@media (max-width: 768px) {
+  .imagem__producao {
+    flex-direction: column;
+    width: 50%;
+    max-width: maxWidth;
+    margin: 0 auto;
+  }
 }
 
 .card__descrição {

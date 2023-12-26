@@ -4,6 +4,11 @@ import IconesHeader from '../IconesHeader/IconesHeader';
 import Prata from '../../imagens/prata.svg';
 import Ouro from '../../imagens/ouro.svg';
 import Maracuja from '../../imagens/maracuja.svg';
+import banana from '../../imagens/banana.png'
+import groselha from '../../imagens/groselha.png'
+import coco from '../../imagens/coco.png'
+import canela from '../../imagens/canela.png'
+import figo from '../../imagens/figo.png'
 
 const CarContainer = styled.div`
   display: flex;
@@ -38,9 +43,10 @@ const Botao = styled.button`
 `;
 
 const ImgSabor = styled.img`
-  max-height: 300px;
+  max-height: 200px; /* Defina o tamanho máximo desejado */
+  width: auto; /* Mantém a proporção da imagem */
   margin-bottom: 0;
-  padding: auto 0 10px ;
+  padding: auto 0 10px;
 `;
 
 const Valor = styled.p`
@@ -50,7 +56,7 @@ const Valor = styled.p`
   margin-top: 1px;
 `;
 
-const InconesCatalago = styled.div`
+const IconesCatalago = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,9 +73,9 @@ const TextoCatalogo = styled.div`
   text-align: center;
 `;
 
-function ProductCard({ title, image, price, onBuyNowClick }) {
+function CarCatalogo({ title, image, price, onBuyNowClick }) {
   const handleBuyNowClick = () => {
-    onBuyNowClick({ title, image, price });
+    onBuyNowClick({ id: new Date().getTime(), title, image, price });
   };
 
   return (
@@ -78,7 +84,7 @@ function ProductCard({ title, image, price, onBuyNowClick }) {
         <TextoCatalogo>{title}</TextoCatalogo>
         <ImgSabor src={image} alt={title} />
         <Valor>R$ {price.toFixed(2)}</Valor>
-        <InconesCatalago><IconesHeader /></InconesCatalago>
+        <IconesCatalago><IconesHeader /></IconesCatalago>
         <Botao onClick={handleBuyNowClick}>Comprar agora</Botao>
       </div>
     </Card>
@@ -111,13 +117,39 @@ function CardCatalogo() {
       image: Maracuja,
       price: 25.00,
     },
+    {
+      id: 4,
+      title: 'Licor Banana',
+      image: banana,
+      price: 25.00,
+    },{
+      id: 5,
+      title: 'Licor Groselha',
+      image: groselha,
+      price: 25.00,
+    },{
+      id: 6,
+      title: 'Licor Coco',
+      image: coco,
+      price: 25.00,
+    },{
+      id: 7,
+      title: 'Licor Canela',
+      image: canela,
+      price: 25.00,
+    },{
+      id: 8,
+      title: 'Licor Figo',
+      image: figo,
+      price: 25.00,
+    },
     // Adicione mais produtos conforme necessário
   ];
 
   return (
     <CarContainer>
       {products.map(product => (
-        <ProductCard
+        <CarCatalogo
           key={product.id}
           title={product.title}
           image={product.image}

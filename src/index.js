@@ -27,11 +27,15 @@ code {
 }
 
 li {
-  list-style: none;    
+  list-style: none;
 }
 
-
-`;
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+}`
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

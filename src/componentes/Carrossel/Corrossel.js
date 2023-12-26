@@ -12,16 +12,15 @@ import figo from '../../imagens/figo.svg';
 import groselha from '../../imagens/groselha.svg';
 import Canela from '../../imagens/Canela.svg';
 import Morango from '../../imagens/morango.svg';
-import estrela  from'../../imagens/Estrelinhas.svg';
-import MorangoECacau from'../../imagens/MorangoCacau.svg';
-import Favorito from '../../imagens/Favoritos-1.svg';
-import Sacola from '../../imagens/sacola.svg';
+import estrela from '../../imagens/Estrelinhas.svg';
+import MorangoECacau from '../../imagens/MorangoCacau.svg';
+
 
 
 function Carrossel() {
   return (
     <section className="carrossel">
-      <h2 className="carrossel__titulo">Ultimos Lançamento</h2>
+      <h2 className="carrossel__titulo">Nossa coleção</h2>
 
       <div className="carrossel__container">
         <Swiper
@@ -54,30 +53,24 @@ function Carrossel() {
           <SwiperSlide>
             <img src={Morango} alt="Licor Morango" />
           </SwiperSlide>
-                    
+
         </Swiper>
         <div className="card">
-                    
+
           <div className="card__descrição">
-                        
+
             <div className="descrição">
-              <img src={estrela} alt="Avaliação 5 Estrelas"/>
+              <img src={estrela} alt="Avaliação 5 Estrelas" />
               <h3 className="descrição__titulo">A Mais escolhida</h3>
               <h2 className="descrição__titulo-livro">Licor Fino de chocolate e Morango</h2>
               <p className="descrição__texto">A Bebida mais escolhida pelas as mulheres...</p>
             </div>
-            <img src={MorangoECacau} className="dercrição__imagem"/>
+            <img src={MorangoECacau} className="dercrição__imagem" />
           </div>
 
-                    
-          <div className="card__botões">
-            <ul className="botões">
-              <li className="botões__item"><img src={Favorito} alt="Favoritar livro"/></li>
-              <li className="botões__item"><img src={Sacola} alt="Adicionar no carrinho"/></li>
 
-            </ul>
-                        
-            <a href="#" className="botões__ancora">Saiba mais</a>
+          <div className="card__botões">
+            <a href='/catálogo' className="botões__ancora">Saiba mais</a>
           </div>
         </div>
 

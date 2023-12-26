@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BarraDeBusca from "../componentes/BarraDeBusca/BarraDeBusca";
 import './CatalagoHeader.css'
-import Footer from "../componentes/Footer/Footer";
-import Rodape from "../componentes/Rodape/Rodape";
 import CardCatalogo from "../componentes/CarCatalogo/CarCatalogo";
 
 

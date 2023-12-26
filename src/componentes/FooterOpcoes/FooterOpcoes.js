@@ -4,6 +4,7 @@ import { ImWhatsapp } from "react-icons/im";
 
 
 
+
 function FooterOpcoes() {
     return (
         <footer class="rodapé">
@@ -11,10 +12,10 @@ function FooterOpcoes() {
             <ul class="lista-rodapé">
                 <li class="lista-rodapé__titulo">Produção</li>
                 <li class="lista-rodapé__item">
-                    <a href="#" class="lista-rodapé__link">Alambique</a>
+                    <a href='/institucional' class="lista-rodapé__link">Alambique</a>
                 </li>
                 <li class="lista-rodapé__item">
-                    <a href="#" class="lista-rodapé__link">Armazem</a>
+                    <a href='/institucional'class="lista-rodapé__link">Armazem</a>
                 </li>
             </ul>
 
