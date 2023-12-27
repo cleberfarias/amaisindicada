@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Titulo } from '../Titulo/Titulo';
 import Coleaco from '../../imagens/colecao 1.svg';
-import { Link } from 'react-router-dom'; // Importa o componente Link do react-router-dom
+import { Link } from 'react-router-dom';
 
 const Card = styled.div`
   align-items: center;
@@ -9,11 +9,17 @@ const Card = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 600px;
   padding: 25px 20px;
   justify-content: space-around;
-  width: 100%;  
+  width: 100%;
+  
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: stretch;
+  }
 `;
 
 const Botao = styled(Link)`
@@ -28,8 +34,14 @@ const Botao = styled(Link)`
   width: 150px;
   cursor: pointer;
   text-decoration: none;
+  margin-top: 10px;
+  
   &:hover {
     background-color: #FFA500;
+  }
+  
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
   }
 `;
 
@@ -38,6 +50,11 @@ const Descricao = styled.p`
   color: #002F52;
   font-size: 18px;
   font-weight: bold;
+  text-align: center;
+  
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const Subtitulo = styled.h4`
@@ -45,10 +62,22 @@ const Subtitulo = styled.h4`
   font-size: 18px;
   font-weight: bold;
   margin: 15px 0;
+  text-align: center;
+  
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const ImgSabor = styled.img`
   max-height: 250px;
+  width: 100%;
+  margin-top: 15px;
+  
+  @media screen and (min-width: 768px) {
+    max-height: none;
+    margin-top: 0;
+  }
 `;
 
 function CardRecomenda({ titulo, subtitulo, descricao }) {
@@ -58,11 +87,10 @@ function CardRecomenda({ titulo, subtitulo, descricao }) {
         <Titulo tamanhoFonte="16px" cor="#EB9B00" alinhamento="center">{titulo}</Titulo>
         <Subtitulo>{subtitulo}</Subtitulo>
         <Descricao>{descricao}</Descricao>
+        <Botao to='/catálogo'>Saiba mais</Botao>
       </div>
       <div> 
-        <ImgSabor src={Coleaco}/>
-        {/* Use o componente Link para navegação interna */}
-        <Botao to='/catálogo'>Saiba mais</Botao>
+        <ImgSabor src={Coleaco} alt={titulo}/>
       </div>
     </Card>  
   );

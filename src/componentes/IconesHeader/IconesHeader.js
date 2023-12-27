@@ -1,45 +1,62 @@
-import perfil from '../../imagens/perfil.svg'
-import sacola from '../../imagens/sacola.svg'
-import styled from 'styled-components'
-import './IconesHeader.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import perfil from '../../imagens/perfil.svg';
+import sacola from '../../imagens/sacola.svg';
 
 const Icone = styled.li`
   font-size: 1.5rem;
   display: flex;
-  align-items: center; /* Corrigido o typo aqui */
+  align-items: center;
   justify-content: center;
   padding: 5px;
   border: none;
   background: none;
   cursor: pointer;
-  position: relative; /* Corrigido o typo aqui */
+  position: relative;
   margin-left: 20px;
 
   img {
     max-width: auto;
     height: auto;
   }
-`
+`;
 
 const Icones = styled.ul`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
-`
 
-const Span = styled.span`
-  /* Adicione estilos conforme necessário para o seu caso */
-`
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
-const icones = [perfil, sacola]
+const CartStatus = styled.span`
+  background-color: red;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const icones = [perfil, sacola];
 
 function IconesHeader() {
   return (
     <Icones>
       {icones.map((icone, index) => (
         <Icone key={index}>
-          {index === 1 ? <Span className='cart-status'>0</Span> : null}
+          {index === 1 ? <CartStatus>0</CartStatus> : null}
           {index === 1 ? (
             <Link to="/sacola">
               <img src={icone} alt='Imagem Icone' />
@@ -52,4 +69,5 @@ function IconesHeader() {
     </Icones>
   );
 }
-export default IconesHeader
+
+export default IconesHeader;

@@ -4,11 +4,11 @@ import IconesHeader from '../IconesHeader/IconesHeader';
 import Prata from '../../imagens/prata.svg';
 import Ouro from '../../imagens/ouro.svg';
 import Maracuja from '../../imagens/maracuja.svg';
-import banana from '../../imagens/banana.png'
-import groselha from '../../imagens/groselha.png'
-import coco from '../../imagens/coco.png'
-import canela from '../../imagens/canela.png'
-import figo from '../../imagens/figo.png'
+import banana from '../../imagens/banana.png';
+import groselha from '../../imagens/groselha.png';
+import coco from '../../imagens/coco.png';
+import canela from '../../imagens/canela.png';
+import figo from '../../imagens/figo.png';
 
 const CarContainer = styled.div`
   display: flex;
@@ -26,7 +26,16 @@ const Card = styled.div`
   justify-content: space-between;
   margin: 20px;
   max-width: 300px;
-  padding: 5px 5px 5px;
+  padding: 5px;
+  width: calc(33.33% - 40px); /* Ajuste para 3 cartões por linha */
+  
+  @media screen and (max-width: 1024px) {
+    width: calc(50% - 40px); /* Ajuste para 2 cartões por linha em telas menores */
+  }
+  
+  @media screen and (max-width: 768px) {
+    width: 100%; /* Cartões de largura total em telas pequenas */
+  }
 `;
 
 const Botao = styled.button`
@@ -43,10 +52,9 @@ const Botao = styled.button`
 `;
 
 const ImgSabor = styled.img`
-  max-height: 200px; /* Defina o tamanho máximo desejado */
-  width: auto; /* Mantém a proporção da imagem */
-  margin-bottom: 0;
-  padding: auto 0 10px;
+  max-height: 200px;
+  width: auto;
+  margin-bottom: 10px;
 `;
 
 const Valor = styled.p`
@@ -84,7 +92,9 @@ function CarCatalogo({ title, image, price, onBuyNowClick }) {
         <TextoCatalogo>{title}</TextoCatalogo>
         <ImgSabor src={image} alt={title} />
         <Valor>R$ {price.toFixed(2)}</Valor>
-        <IconesCatalago><IconesHeader /></IconesCatalago>
+        <IconesCatalago>
+          <IconesHeader />
+        </IconesCatalago>
         <Botao onClick={handleBuyNowClick}>Comprar agora</Botao>
       </div>
     </Card>

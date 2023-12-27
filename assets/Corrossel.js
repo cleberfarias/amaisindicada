@@ -20,10 +20,7 @@ const CarrosselSection = styled.section`
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
-  height: auto;
   max-width: 2100px;
 `;
 
@@ -39,13 +36,6 @@ const CarrosselTitulo = styled.h2`
 
 const CarrosselContainer = styled.div`
   display: flex;
-  max-width: 800px;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-  }
 `;
 
 const Card = styled.div`
@@ -56,13 +46,6 @@ const Card = styled.div`
   padding: 1em;
   margin: 0 auto;
   max-width: 1100px;
-  text-align: center;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 `;
 
 const DescricaoTitulo = styled.h3`
@@ -70,10 +53,6 @@ const DescricaoTitulo = styled.h3`
   font-weight: 700;
   font-size: 26px;
   margin: 0 auto;
-
-  @media screen and (max-width: 767px) {
-    font-size: 20px;
-  }
 `;
 
 const DescricaoTituloLivro = styled.h2`
@@ -81,10 +60,6 @@ const DescricaoTituloLivro = styled.h2`
   font-size: 18px;
   font-weight: 700;
   margin: 0.5em 0;
-
-  @media screen and (max-width: 767px) {
-    font-size: 16px;
-  }
 `;
 
 const DescricaoTexto = styled.p`
@@ -94,16 +69,11 @@ const DescricaoTexto = styled.p`
   font-size: 18px;
   font-weight: bold;
   margin: 0 auto;
-
-  @media screen and (max-width: 767px) {
-    font-size: 16px;
-  }
 `;
 
 const DescricaoImagem = styled.img`
   max-height: 200px;
-  margin: 20px auto;
-  width: 100%;
+  margin: 0 auto;
 `;
 
 const BotoesAncora = styled.a`
@@ -117,7 +87,6 @@ const BotoesAncora = styled.a`
   text-align: center;
   width: 150px;
   text-decoration: none;
-  margin-top: 10px;
 
   &:hover {
     cursor: pointer;
@@ -131,9 +100,8 @@ function Carrossel() {
 
       <CarrosselContainer className="carrossel__container">
         <Swiper
-          spaceBetween={1}  // Ajuste a distância entre as imagens
-          slidesPerView={3}   // Exibir 3 slides por vez
-          centeredSlides 
+          spaceBetween={10}
+          slidesPerView={3}
           navigation
           pagination={{ clickable: true }}
         >
@@ -162,22 +130,22 @@ function Carrossel() {
             <img src={Morango} alt="Licor Morango" />
           </SwiperSlide>
         </Swiper>
-      </CarrosselContainer>
 
-      <Card className="card">
-        <div className="card__descrição">
-          <div className="descrição">
-            <img src={estrela} alt="Avaliação 5 Estrelas" />
-            <DescricaoTitulo className="descrição__titulo">A Mais escolhida</DescricaoTitulo>
-            <DescricaoTituloLivro className="descrição__titulo-livro">Licor Fino de chocolate e Morango</DescricaoTituloLivro>
-            <DescricaoTexto className="descrição__texto">A Bebida mais escolhida pelas as mulheres...</DescricaoTexto>
+        <Card className="card">
+          <div className="card__descrição">
+            <div className="descrição">
+              <img src={estrela} alt="Avaliação 5 Estrelas" />
+              <DescricaoTitulo className="descrição__titulo">A Mais escolhida</DescricaoTitulo>
+              <DescricaoTituloLivro className="descrição__titulo-livro">Licor Fino de chocolate e Morango</DescricaoTituloLivro>
+              <DescricaoTexto className="descrição__texto">A Bebida mais escolhida pelas as mulheres...</DescricaoTexto>
+            </div>
+            <DescricaoImagem src={MorangoECacau} className="dercrição__imagem" />
           </div>
-          <DescricaoImagem src={MorangoECacau} className="dercrição__imagem" />
-        </div>
-        <div className="card__botões">
-          <BotoesAncora href='/catálogo' className="botões__ancora">Saiba mais</BotoesAncora>
-        </div>
-      </Card>
+          <div className="card__botões">
+            <BotoesAncora href='/catálogo' className="botões__ancora">Saiba mais</BotoesAncora>
+          </div>
+        </Card>
+      </CarrosselContainer>
     </CarrosselSection>
   );
 }

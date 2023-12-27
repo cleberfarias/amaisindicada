@@ -4,49 +4,55 @@ import { useState, useEffect } from "react";
 import { getSabores } from "../../servicos/Sabores";
 import { postFavorito } from "../../servicos/favoritos";
 
-
-
 const PesquisaConteiner = styled.section`
   background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
   color: #FFF;
   text-align: center;
-  padding: 85px 0;
-    height: 470px;
-    width: 100%;
+  padding: 50px 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Titulo = styled.h2`
-  color: #FFF;
   font-size: 36px;
-  text-align: center;
-  width: 100%;
-  
+  margin-bottom: 10px; /* Adicionei margem inferior */
 `;
 
 const Subtitulo = styled.h3`
   font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 40px;
-  
+  font-weight: 300;
+  margin-bottom: 20px;
 `;
 
 const Resultado = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
   p {
-    width: 200px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
   }
   img {
-    width: 100px;
+    width: 80px;
+    margin-right: 10px;
   }
   &:hover {
     border: 1px solid white;
   }
 `;
 
+const StyledInput = styled(Input)`
+  /* Estilos específicos para o Input */
+  width: 100%; /* Ocupa a largura total do container pai */
+  max-width: 400px; /* Define uma largura máxima para o input */
+  margin-bottom: 20px; /* Adicionei margem inferior */
+`;
 
 function Pesquisa() {
   const [saboresPesquisados, setSaboresPesquisados] = useState([]);
@@ -77,7 +83,7 @@ function Pesquisa() {
   const handleInputChange = (evento) => {
     const textoDigitado = evento.target.value;
 
-    if (textoDigitado === '') {
+    if (textoDigitado === "") {
       // Recarrega a página quando o usuário apaga todo o conteúdo do input
       window.location.reload();
     }
@@ -87,7 +93,7 @@ function Pesquisa() {
     <PesquisaConteiner>
       <Titulo>Já sabe seu sabor?</Titulo>
       <Subtitulo>Encontre seu sabor em nossa estante.</Subtitulo>
-      <Input
+      <StyledInput
         placeholder="Escreva seu sabor"
         onBlur={handleInputBlur}
         onInput={handleInputChange}

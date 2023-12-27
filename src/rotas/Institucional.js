@@ -62,6 +62,7 @@ const TextoAgradecimento = styled.h4`
 
 const ImageContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -69,8 +70,9 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 320px;
-  height: 320px;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
   object-fit: cover;
 `;
 

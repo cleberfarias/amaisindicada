@@ -1,4 +1,3 @@
-
 import { sabores } from "./DadosUltimosLancamentos";
 import styled from 'styled-components'
 import CarRecomenda from "../CarRecomenda/CarRecomenda";
@@ -17,7 +16,7 @@ const ConteudoContainer = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 30px;
-    padding: 0 20px; /* Adjust the padding as needed */
+    padding: 0 20px; /* Ajuste o padding conforme necessário */
 `;
 
 const NovosSaboresContainer = styled.div`
@@ -28,33 +27,34 @@ const NovosSaboresContainer = styled.div`
 `;
 
 const SaboresCard = styled.div`
-    margin: 10px; /* Adjust the margin as needed */
-    max-width: 300px; /* Adjust the max-width as needed */
+    margin: 10px; /* Ajuste a margem conforme necessário */
+    max-width: 300px; /* Ajuste a largura máxima conforme necessário */
     img {
         width: 100%;
         height: auto;
-        border-radius: 8px; /* Add border-radius for rounded corners */
+        border-radius: 8px; /* Adicione border-radius para cantos arredondados */
     }
 `;
-function UltimosLancamentos() {
 
+function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo> Ultimos Lançamento</Titulo>
+            <Titulo> Últimos Lançamentos</Titulo>
             <NovosSaboresContainer>
-                {sabores.map(sabor => (
-                    <img src={sabor.src} />
+                {sabores.map((sabor, index) => (
+                    <SaboresCard key={index}>
+                        <img src={sabor.src} alt={`Sabor ${index + 1}`} />
+                    </SaboresCard>
                 ))}
             </NovosSaboresContainer>
             <CarRecomenda
                 titulo="Talvez você se interesse por..."
                 subtitulo="Todos os Sabores"
                 descricao="Nossa coleção"
-                img={imgSabores}/>     
-            </UltimosLancamentosContainer>
-
-
-
-    )
+                img={imgSabores}
+            />
+        </UltimosLancamentosContainer>
+    );
 }
+
 export default UltimosLancamentos;
