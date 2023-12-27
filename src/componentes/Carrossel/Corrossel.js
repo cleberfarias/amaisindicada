@@ -32,7 +32,8 @@ const CarrosselTitulo = styled.h2`
   padding: 30px 0;
   background-color: #FFF;
   color: #EB9B00;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 26px;
   text-align: center;
   margin: 0 auto;
 `;
@@ -49,6 +50,7 @@ const CarrosselContainer = styled.div`
 `;
 
 const Card = styled.div`
+  display: flex;
   background: #FFF;
   box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -58,10 +60,25 @@ const Card = styled.div`
   max-width: 1100px;
   text-align: center;
 
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
   @media screen and (min-width: 768px) {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+`;
+
+const DescricaoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
   }
 `;
 
@@ -101,9 +118,13 @@ const DescricaoTexto = styled.p`
 `;
 
 const DescricaoImagem = styled.img`
-  max-height: 200px;
-  margin: 20px auto;
-  width: 100%;
+  max-height: 250px;
+  width: 50%;
+
+  @media screen and (min-width: 768px) {
+    max-height: none;
+    width: auto;
+  }
 `;
 
 const BotoesAncora = styled.a`
@@ -131,9 +152,9 @@ function Carrossel() {
 
       <CarrosselContainer className="carrossel__container">
         <Swiper
-          spaceBetween={1}  // Ajuste a distância entre as imagens
-          slidesPerView={3}   // Exibir 3 slides por vez
-          centeredSlides 
+          spaceBetween={1}
+          slidesPerView={3}
+          centeredSlides
           navigation
           pagination={{ clickable: true }}
         >
@@ -161,22 +182,21 @@ function Carrossel() {
           <SwiperSlide>
             <img src={Morango} alt="Licor Morango" />
           </SwiperSlide>
+        
         </Swiper>
       </CarrosselContainer>
 
       <Card className="card">
-        <div className="card__descrição">
+        <DescricaoContainer>
           <div className="descrição">
             <img src={estrela} alt="Avaliação 5 Estrelas" />
             <DescricaoTitulo className="descrição__titulo">A Mais escolhida</DescricaoTitulo>
             <DescricaoTituloLivro className="descrição__titulo-livro">Licor Fino de chocolate e Morango</DescricaoTituloLivro>
-            <DescricaoTexto className="descrição__texto">A Bebida mais escolhida pelas as mulheres...</DescricaoTexto>
+            <DescricaoTexto className="descrição__texto">A Bebida mais escolhida pelas mulheres...</DescricaoTexto>
           </div>
-          <DescricaoImagem src={MorangoECacau} className="dercrição__imagem" />
-        </div>
-        <div className="card__botões">
           <BotoesAncora href='/catálogo' className="botões__ancora">Saiba mais</BotoesAncora>
-        </div>
+        </DescricaoContainer>
+        <DescricaoImagem src={MorangoECacau} className="dercrição__imagem" />
       </Card>
     </CarrosselSection>
   );

@@ -96,13 +96,12 @@ function Footer() {
           <FooterLink href="https://contate.me/amaisindicada" target="_blank">
             Contato: <ImWhatsapp /> +55(49)99926-9857
           </FooterLink>
+
         </FooterListItem>
+        <FooterLink href="https://www.instagram.com/maisindicada/" target="_blank"><InstagramIcon/>@maisindicada</FooterLink>
       </FooterList>
 
-      <FooterIcons>
-        <InstagramIcon />
-        <WhatsappIcon />
-      </FooterIcons>
+      
     </FooterContainer>
   );
 }

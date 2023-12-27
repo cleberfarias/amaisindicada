@@ -23,6 +23,7 @@ const HeaderContainer = styled.header`
 function Header() {
   return (
     <HeaderContainer>
+      
       <Link to="/">
         <Logo />
       </Link>

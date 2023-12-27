@@ -93,7 +93,6 @@ function CarCatalogo({ title, image, price, onBuyNowClick }) {
         <ImgSabor src={image} alt={title} />
         <Valor>R$ {price.toFixed(2)}</Valor>
         <IconesCatalago>
-          <IconesHeader />
         </IconesCatalago>
         <Botao onClick={handleBuyNowClick}>Comprar agora</Botao>
       </div>
@@ -132,22 +131,22 @@ function CardCatalogo() {
       title: 'Licor Banana',
       image: banana,
       price: 25.00,
-    },{
+    }, {
       id: 5,
       title: 'Licor Groselha',
       image: groselha,
       price: 25.00,
-    },{
+    }, {
       id: 6,
       title: 'Licor Coco',
       image: coco,
       price: 25.00,
-    },{
+    }, {
       id: 7,
       title: 'Licor Canela',
       image: canela,
       price: 25.00,
-    },{
+    }, {
       id: 8,
       title: 'Licor Figo',
       image: figo,

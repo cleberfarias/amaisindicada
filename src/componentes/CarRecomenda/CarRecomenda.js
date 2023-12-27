@@ -71,12 +71,11 @@ const Subtitulo = styled.h4`
 
 const ImgSabor = styled.img`
   max-height: 250px;
-  width: 100%;
-  margin-top: 15px;
-  
+  width: 250%;
+
   @media screen and (min-width: 768px) {
-    max-height: none;
-    margin-top: 0;
+    max-height: 120%; /* Use 100% da altura do contêiner pai */
+    width: 120%; /* Use 100% da largura do contêiner pai */
   }
 `;
 

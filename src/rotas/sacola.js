@@ -50,21 +50,28 @@ function Sacola() {
     setCart([...cart, product]);
   };
 
+  const removeFromCart = (productId) => {
+    const updatedCart = cart.filter((product) => product.id !== productId);
+    setCart(updatedCart);
+  };
+
   return (
     <AppContainer>
       <NumeroSacola>{cart.length}</NumeroSacola>
       {/* Renderiza a lista de produtos na sacola */}
-      {ExemploDados.map((product) => (
+      {cart.map((product) => (
         <CarCatalogo
           key={product.id}
           title={product.title}
           image={product.image}
           price={product.price}
           onBuyNowClick={() => addToCart(product)}
+          onRemoveClick={() => removeFromCart(product.id)}
         />
       ))}
     </AppContainer>
   );
 }
+
 
 export default Sacola;
