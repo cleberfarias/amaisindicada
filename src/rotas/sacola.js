@@ -27,27 +27,13 @@ const NumeroSacola = styled.div`
   z-index: 1;
 `;
 
-const ExemploDados = [
-  {
-    id: 1,
-    title: 'Produto 1',
-    image: 'url_da_imagem_1.jpg',
-    price: 20.99,
-  },
-  {
-    id: 2,
-    title: 'Produto 2',
-    image: 'url_da_imagem_2.jpg',
-    price: 15.49,
-  },
-  // Adicione mais produtos conforme necessário
-];
+
 
 function Sacola() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    setCart([...cart, { ...product }]); // Copiar o produto antes de adicionar ao carrinho
   };
 
   const removeFromCart = (productId) => {

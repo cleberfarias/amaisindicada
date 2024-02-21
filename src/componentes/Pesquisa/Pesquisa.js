@@ -5,7 +5,7 @@ import { getSabores } from "../../servicos/Sabores";
 import { postFavorito } from "../../servicos/favoritos";
 
 const PesquisaConteiner = styled.section`
-  background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+  background: linear-gradient(to right, #663300, #ffffff)
   color: #FFF;
   text-align: center;
   padding: 50px 20px;

@@ -5,20 +5,11 @@ import { Titulo } from "../Titulo/Titulo";
 import imgSabores from '../../imagens/colecao.png'
 
 const UltimosLancamentosContainer = styled.section`
-    background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+    background: linear-gradient(to right, #663300, #ffffff);
     padding-bottom: 20px;
     display: flex;
     flex-direction: column; 
 `;
-
-const ConteudoContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 30px;
-    padding: 0 20px; /* Ajuste o padding conforme necessário */
-`;
-
 const NovosSaboresContainer = styled.div`
     display: flex;
     justify-content: center;

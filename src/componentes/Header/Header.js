@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
-  background-color: #FFF;
+background: linear-gradient(to right,#ffffff, #663300);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
+  padding: 30px 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   height: 60px;
 

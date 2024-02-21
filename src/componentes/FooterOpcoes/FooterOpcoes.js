@@ -4,12 +4,12 @@ import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 
 const FooterContainer = styled.footer`
-  background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+  background: linear-gradient(to right,#ffffff, #663300);
   padding: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #FFF;
+  color: #000000;
 
   @media screen and (min-width: 1024px) {
     flex-direction: row;
@@ -53,29 +53,17 @@ const FooterLink = styled.a`
   margin-left: 0.6em;
 `;
 
-const FooterIcons = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 1em 0;
-
-  @media screen and (min-width: 1024px) {
-    margin-left: auto; /* Move os ícones para a direita no layout grande */
-  }
-`;
-
 const InstagramIcon = styled(FaInstagram)`
   font-size: 24px;
   margin-right: 16px;
 `;
 
-const WhatsappIcon = styled(ImWhatsapp)`
-  font-size: 24px;
-`;
+
 
 function Footer() {
   return (
     <FooterContainer>
-      <FooterTitle>A Mais Indicada</FooterTitle>
+      <FooterTitle>A Mais Indicada &copy; 2023</FooterTitle>
 
       <FooterList>
         <FooterListItem>
@@ -96,13 +84,27 @@ function Footer() {
           <FooterLink href="https://contate.me/amaisindicada" target="_blank">
             Contato: <ImWhatsapp /> +55(49)99926-9857
           </FooterLink>
+          
+          
 
         </FooterListItem>
         <FooterLink href="https://www.instagram.com/maisindicada/" target="_blank"><InstagramIcon/>@maisindicada</FooterLink>
       </FooterList>
 
       
+      <FooterLink href="/privacidade.html" target="_blank">
+          Política de Privacidade
+          </FooterLink>
+
+          <FooterLink href="/termos.html" target="_blank">
+          Termos de Uso
+          </FooterLink>
+          <FooterLink href="/quemsomos.html" target="_blank">
+          Quem Somos
+          </FooterLink>
     </FooterContainer>
+    
+    
   );
 }
 

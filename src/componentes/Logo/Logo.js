@@ -9,7 +9,7 @@ const LogoContainer = styled.div`
 `;
 
 const LogoImage = styled.img`
-    width: 100%;  /* Ajuste conforme necessário */
+    width: 90%;  /* Ajuste conforme necessário */
     max-width: 250px;  /* Largura máxima para evitar distorções */
     height: auto;
 `;

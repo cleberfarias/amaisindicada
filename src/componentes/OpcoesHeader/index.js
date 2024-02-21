@@ -26,6 +26,13 @@ const Opcao = styled.li`
 
 const TextoOpcao = styled.p`
   margin: 0;
+  text-decoration: none; /* Removendo a decoração do texto */
+  color: #22778b; /* Definindo a cor verde para o texto */
+`;
+
+// Removendo a decoração do texto para o componente p
+const LinkSemDecoracao = styled(Link)`
+  text-decoration: none;
 `;
 
 const textoOpcoes = ['Catálogo', 'Institucional', 'Favoritos'];
@@ -34,11 +41,11 @@ function OpcoesHeader() {
   return (
     <Opcoes>
       {textoOpcoes.map((texto) => (
-        <Link to={`/${texto.toLowerCase()}`} key={texto}>
+        <LinkSemDecoracao to={`/${texto.toLowerCase()}`} key={texto}>
           <Opcao>
             <TextoOpcao>{texto}</TextoOpcao>
           </Opcao>
-        </Link>
+        </LinkSemDecoracao>
       ))}
     </Opcoes>
   );

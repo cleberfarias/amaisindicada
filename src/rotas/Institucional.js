@@ -9,7 +9,7 @@ import Producao3 from "../imagens/carvalho.jpg";
 const AppContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
+  background: linear-gradient(to right, #663300, #ffffff);
 `;
 
 const ContentContainer = styled.div`
@@ -30,25 +30,23 @@ const TextContainer = styled.div`
 const Titulo = styled.h2`
   width: 100%;
   padding: 30px 0;
-  background-color: #FFF;
-  color: #EB9B00;
+  color: #000000;
   font-size: 36px;
   text-align: center;
   margin: 0 auto;
-  background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
+  
 `;
 
 const TextoInstitucional = styled.h3`
   width: 100%;
   padding: 30px 0;
   font-weight: 200;
-  background-color: #FFF;
   color: white;
   font-size: 16px;
   text-align: justify;
   margin: 0 auto;
   flex: 1;
-  background-image: linear-gradient(90deg, #002f52 35%, #326589 165%);
+  ;
 `;
 
 const TextoAgradecimento = styled.h4`

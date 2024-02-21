@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import IconesHeader from '../IconesHeader/IconesHeader';
 import Prata from '../../imagens/prata.svg';
 import Ouro from '../../imagens/ouro.svg';
 import Maracuja from '../../imagens/maracuja.svg';

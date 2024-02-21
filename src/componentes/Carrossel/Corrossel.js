@@ -16,20 +16,20 @@ import estrela from '../../imagens/Estrelinhas.svg';
 import MorangoECacau from '../../imagens/MorangoCacau.svg';
 
 const CarrosselSection = styled.section`
-  background-image: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
-  padding-bottom: 20px;
+background: linear-gradient(to right, #663300, #ffffff);
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   height: auto;
-  max-width: 2100px;
+  max-width: 100%;
 `;
 
 const CarrosselTitulo = styled.h2`
   width: 100%;
-  padding: 30px 0;
+  padding: 10px 0;
   background-color: #FFF;
   color: #EB9B00;
   font-weight: 700;
