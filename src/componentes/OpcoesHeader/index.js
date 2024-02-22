@@ -35,7 +35,7 @@ const LinkSemDecoracao = styled(Link)`
   text-decoration: none;
 `;
 
-const textoOpcoes = ['Catálogo', 'Institucional', 'Favoritos'];
+const textoOpcoes = ['Catálogo', 'Institucional', 'Contato'];
 
 function OpcoesHeader() {
   return (

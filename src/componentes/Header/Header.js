@@ -5,13 +5,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
-background: linear-gradient(to right,#ffffff, #663300);
+  background: linear-gradient(to right, #ffffff, #663300);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  height: 60px;
+  height: 100px;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;

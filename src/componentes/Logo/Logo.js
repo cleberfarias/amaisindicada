@@ -5,12 +5,12 @@ const LogoContainer = styled.div`
     margin-right: auto; 
     display: flex;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 30px;
 `;
 
 const LogoImage = styled.img`
-    width: 90%;  /* Ajuste conforme necessário */
-    max-width: 250px;  /* Largura máxima para evitar distorções */
+    width: 100%;  /* Ajuste conforme necessário */
+    max-width: 180px;  /* Largura máxima para evitar distorções */
     height: auto;
 `;
 

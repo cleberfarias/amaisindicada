@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import Rodape from "../componentes/Rodape/Rodape";
-import Footer from "../componentes/Footer/Footer";
 import Producao1 from "../imagens/produca4.png.jpg";
 import Producao2 from "../imagens/producao3.jpg";
 import Producao3 from "../imagens/carvalho.jpg";
+import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Header from "../componentes/Header/Header";
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -76,7 +76,9 @@ const Image = styled.img`
 
 function Institucional() {
   return (
-    <AppContainer>
+    <div>
+      <Header/>
+      <AppContainer>
       <header>
         <ContentContainer>
           <TextContainer>
@@ -133,9 +135,10 @@ function Institucional() {
           </TextContainer>
         </ContentContainer>
       </header>
-      <Footer />
-      <Rodape />
-    </AppContainer>
+      </AppContainer>
+      <Footer/>
+    </div>
+    
   );
 }
 

@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Header from './componentes/Header/Header';
+
 import Home from './rotas/Home';
-import Favoritos from './rotas/Favoritos';
-import Catalogo from './rotas/Catalogo';
 import Institucional from './rotas/Institucional';
 import Sacola from './rotas/sacola';
+import FaleConosco from './rotas/FaleConosco';
+
+import Catalogo from './rotas/Catalogo';
+
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -43,19 +46,24 @@ root.render(
   <React.StrictMode>
     <GlobalStyle/>
     <BrowserRouter>
-      <Header/>
+      
       <Routes>
-        <Route path='/favoritos' element={<Favoritos/>}/>
-        <Route path='/' element={ <Home/>}/>
+        
         <Route path='/Institucional' element={<Institucional/>}/>
         <Route path='/' element={ <Home />}/>
         <Route path='/Catálogo' element={<Catalogo/>}/>
         <Route path='/' element={ <Home />}/>
         <Route path='/sacola' element={<Sacola/>}/>
         <Route path='/' element={ <Home />}/>
+        <Route path='/contato' element={<FaleConosco/>}/>
+        <Route path='/' element={ <Home />}/>
+        
+
+        
 
         
       </Routes>
+      
     </BrowserRouter>
    
   </React.StrictMode>

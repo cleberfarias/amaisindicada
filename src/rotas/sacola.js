@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CarCatalogo from '../componentes/CarCatalogo/CarCatalogo';
+import CarCatalogo from '../componentes/CarCatalogo/CardCatalogo';
 
 const AppContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background-image: linear-gradient(90deg, #002f52 35%, #326589 165.37%);
-  position: relative;
+  background: linear-gradient(to right, #663300, #ffffff);
   padding: 20px; /* Adicione algum preenchimento geral */
 `;
 

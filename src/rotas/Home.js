@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import Pesquisa from '../componentes/Pesquisa/Pesquisa';
-import Footer from '../componentes/Footer/Footer';
-import Rodape from '../componentes/Rodape/Rodape';
 import UltimosLancamentos from '../componentes/UltimosLancamentos/UltimosLancamento';
 import Carrossel from '../componentes/Carrossel/Corrossel';
+import Header from '../componentes/Header/Header';
+import Footer from '../componentes/FooterOpcoes/FooterOpcoes';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -18,13 +17,16 @@ const AppContainer = styled.div`
 
 function Home() {
   return (
+    <div>
+    <Header/>
     <AppContainer>
+      
       <Carrossel />
       <UltimosLancamentos />
-      <Pesquisa />
-      <Footer />
-      <Rodape />
     </AppContainer>
+    <Footer/>
+    </div>
+  
   );
 }
 

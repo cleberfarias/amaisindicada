@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import CardCatalogo from "../componentes/CarCatalogo/CarCatalogo";
+import CardCatalogo from "../componentes/CarCatalogo/CardCatalogo.js";
 
 const CatalogoHeader = styled.div`
   position: fixed;
@@ -28,17 +28,10 @@ const AppContainer = styled.div`
 
 function Catalogo() {
   return (
-    <AppContainer>
-      <CatalogoHeader>
-        <CatalogoContainer>
-          {/* Conteúdo do cabeçalho aqui, se necessário */}
-        </CatalogoContainer>
-      </CatalogoHeader>
-
-      <div>
-        <CardCatalogo />
-      </div>
-    </AppContainer>
+         
+        <CardCatalogo/>
+      
+    
   );
 }
 
