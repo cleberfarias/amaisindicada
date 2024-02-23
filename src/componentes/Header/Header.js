@@ -9,9 +9,10 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 30px;
+  padding: 20px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  height: 100px;
+  height: 80px;
+  width: 100%; /* Define a largura como 100% para preencher toda a largura da página */
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -19,11 +20,9 @@ const HeaderContainer = styled.header`
     height: auto;
   }
 `;
-
 function Header() {
   return (
     <HeaderContainer>
-      
       <Link to="/">
         <Logo />
       </Link>

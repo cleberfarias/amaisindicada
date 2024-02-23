@@ -2,16 +2,17 @@ import logo from '../../imagens/Logo.png';
 import styled from 'styled-components';
 
 const LogoContainer = styled.div`
-    margin-right: auto; 
     display: flex;
     align-items: center;
-    padding-right: 30px;
+    justify-content: center; /* Adicionando alinhamento no eixo principal */
+    padding: 10px; /* Adicionei padding para espaçamento */
+    max-width: 180px; /* Definindo largura máxima para evitar distorções */
+    width: 100%; /* Utilize a largura máxima disponível */
 `;
 
 const LogoImage = styled.img`
-    width: 100%;  /* Ajuste conforme necessário */
-    max-width: 180px;  /* Largura máxima para evitar distorções */
-    height: auto;
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: auto; /* Altura ajustável para manter proporções */
 `;
 
 function Logo() {

@@ -1,16 +1,13 @@
 import styled from "styled-components";
 import { useState } from 'react';
 
-
-
 const FormularioContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 20px; /* Adicionando padding igual nos lados */
-  overflow: hidden; /* Oculta o conteúdo que ultrapassa os limites da tela */
+  padding: 0 20px;
 `;
 
 const TituloFormulario = styled.h2`
@@ -29,7 +26,7 @@ const TituloFormulario = styled.h2`
 `;
 
 const Form = styled.form`
-  max-width: 600px;
+  max-width: 400px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,23 +34,25 @@ const Form = styled.form`
 
 const Input = styled.input`
   margin-bottom: 14px;
-  height: 34px;
+  height: 40px;
   border-radius: 4px;
   border: 0;
-  padding: 0 8px; 
+  padding: 0 12px; 
+  font-size: 16px;
 `;
 
 const Textarea = styled.textarea`
   margin-bottom: 14px;
   border-radius: 4px;
   border: 0;
-  padding: 8px; 
-  height: 94px;
+  padding: 12px; 
+  height: 120px;
   resize: none;
+  font-size: 16px;
 `;
 
 const Button = styled.button`
-  height: 34px;
+  height: 40px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
@@ -106,35 +105,32 @@ function Formulario() {
   }
 
   return (
-    <div>
-      <FormularioContainer>
-        <TituloFormulario>Fale Conosco</TituloFormulario>
-        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-        <Form onSubmit={sendEmail}>
-          <Input
-            placeholder="Digite seu nome"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-          />
+    <FormularioContainer>
+      <TituloFormulario>Fale Conosco</TituloFormulario>
+      {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+      <Form onSubmit={sendEmail}>
+        <Input
+          placeholder="Digite seu nome"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
 
-          <Input
-            placeholder="Digite seu email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
+        <Input
+          type="email"
+          placeholder="Digite seu email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
 
-          <Textarea
-            placeholder="Digite sua mensagem..."
-            onChange={(e) => setMessage(e.target.value)}
-            value={message}
-          />
+        <Textarea
+          placeholder="Digite sua mensagem..."
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+        />
 
-          <Button type="submit">Enviar</Button>
-        </Form>
-
-      </FormularioContainer>
-      </div>
-
+        <Button type="submit">Enviar</Button>
+      </Form>
+    </FormularioContainer>
   );
 }
 

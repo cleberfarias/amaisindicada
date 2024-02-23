@@ -10,72 +10,67 @@ const Card = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 25px 20px;
-  justify-content: space-around;
+  margin: 10px;
+  padding: 20px;
   width: 100%;
   
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    align-items: stretch;
+    margin: 10px auto;
+    max-width: 600px;
   }
 `;
 
 const Botao = styled(Link)`
   background-color: #EB9B00;
   color: #FFF;
-  padding: 10px 0px;
+  padding: 10px 20px;
   font-size: 16px;
   border-radius: 20px;
   font-weight: 900;
-  display: block;
+  display: inline-block;
   text-align: center;
-  width: 150px;
-  cursor: pointer;
   text-decoration: none;
   margin-top: 10px;
   
   &:hover {
     background-color: #FFA500;
   }
-  
-  @media screen and (min-width: 768px) {
-    margin-top: 0;
-  }
 `;
 
 const Descricao = styled.p`
-  max-width: 300px;
   color: #002F52;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
-  
+  margin-top: 10px;
+
   @media screen and (min-width: 768px) {
+    font-size: 16px;
     text-align: left;
+    margin-top: 0;
   }
 `;
 
 const Subtitulo = styled.h4`
   color: #002F52;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  margin: 15px 0;
+  margin: 10px 0;
   text-align: center;
-  
+
   @media screen and (min-width: 768px) {
+    font-size: 18px;
     text-align: left;
   }
 `;
 
 const ImgSabor = styled.img`
-  max-height: 250px;
-  width: 250%;
+  max-width: 100%;
+  height: auto;
 
   @media screen and (min-width: 768px) {
-    max-height: 120%; /* Use 100% da altura do contêiner pai */
-    width: 120%; /* Use 100% da largura do contêiner pai */
+    max-width: 250px;
   }
 `;
 

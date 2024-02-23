@@ -8,18 +8,22 @@ const UltimosLancamentosContainer = styled.section`
     background: linear-gradient(to right, #663300, #ffffff);
     padding-bottom: 20px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo na horizontal */
 `;
+
 const NovosSaboresContainer = styled.div`
     display: flex;
     justify-content: center;
-    cursor: pointer;
-    padding-bottom: 10px;
+    gap: 20px; /* Espaçamento entre os cards de sabores */
+    padding: 10px; /* Adiciona espaçamento interno */
+    flex-wrap: wrap; /* Permite que os cards de sabores quebrem para a próxima linha */
 `;
 
 const SaboresCard = styled.div`
-    margin: 10px; /* Ajuste a margem conforme necessário */
-    max-width: 300px; /* Ajuste a largura máxima conforme necessário */
+    flex: 0 0 auto; /* Impede que os cards de sabores se estiquem para preencher o espaço */
+    width: 300px; /* Define a largura fixa para cada card de sabor */
+    margin: 10px; /* Espaçamento entre os cards */
     img {
         width: 100%;
         height: auto;
@@ -30,7 +34,7 @@ const SaboresCard = styled.div`
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo> Últimos Lançamentos</Titulo>
+            <Titulo> Últimos Lançamentos </Titulo>
             <NovosSaboresContainer>
                 {sabores.map((sabor, index) => (
                     <SaboresCard key={index}>

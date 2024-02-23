@@ -14,11 +14,15 @@ const Icone = styled.li`
   background: none;
   cursor: pointer;
   position: relative;
-  margin-left: 20px;
+  margin: 0 10px; /* Adicionando margem para separar os ícones */
 
   img {
     max-width: auto;
     height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 10px 0; /* Ajustando a margem para dispositivos móveis */
   }
 `;
 
@@ -28,7 +32,7 @@ const Icones = styled.ul`
   cursor: pointer;
 
   @media screen and (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: column; /* Alterando a direção para coluna em telas menores */
     align-items: center;
   }
 `;
@@ -43,10 +47,15 @@ const CartStatus = styled.span`
   color: white;
   font-size: 11px;
   font-weight: 600;
-  border-radius: 15px;
+  border-radius: 50%; /* Alterando para um círculo */
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    position: relative; /* Removendo a posição absoluta em telas menores */
+    margin-top: -10px; /* Ajustando a margem para compensar a mudança na posição */
+  }
 `;
 
 const icones = [perfil, sacola];
