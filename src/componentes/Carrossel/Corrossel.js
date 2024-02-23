@@ -129,6 +129,7 @@ function Carrossel() {
           centeredSlides
           navigation
           pagination={{ clickable: true }}
+          autoplay={{ delay: 5000 }}
         >
           <SwiperSlide><img src={Banana} alt="Licor Banana" /></SwiperSlide>
           <SwiperSlide><img src={Cacau} alt="Licor Cacau" /></SwiperSlide>
