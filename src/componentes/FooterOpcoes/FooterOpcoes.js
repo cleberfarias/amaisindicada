@@ -77,6 +77,11 @@ function Footer() {
               Celso Ramos, Santa Catarina - Ver no Mapa
             </FooterLink>
           </FooterListItem>
+          <FooterListItem>
+          <FooterLink href="https://www.google.com/maps/d/viewer?mid=17VkTD20t_JdHAH97UhqKjxpVCvnsD3o&ll=-27.81435009999997%2C-50.3361287&z=17" target="_blank">
+              Lages, Santa Catarina - Ver no Mapa
+            </FooterLink>
+            </FooterListItem>
         </FooterList>
       </FooterBlock>
 

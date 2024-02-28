@@ -1,17 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
-
-
+import { BiCart } from 'react-icons/bi';// Importe o ícone do carrinho
 
 function HeaderCatalogo() {
     return (
-        <div style={{background: 'linear-gradient(to right, #ffffff, #663300)'}}>
-            <nav className="navbar navbar-expand-lg border-bottom shadow-sm navbar-dark mb-3" style={{background: 'linear-gradient(to right, #663300, #ffffff)'}}>
+        <div style={{background: 'linear-gradient(to right, #663300, #ffffff)'}}>
+            <nav className="navbar navbar-expand-lg border-bottom shadow-sm navbar-dark mb-3" style={{background: 'linear-gradient(to right, #ffffff, #663300)'}}>
                 <div className="container">
-                    <a className="navbar-brand" href="/"><b>Indica Online</b></a>
+                    <a className="navbar-brand" href="/catálogo"><b>Indica Online</b></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -35,7 +31,7 @@ function HeaderCatalogo() {
                                 <li className="nav-item">
                                     <span className="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0" title="5 produto(s) no carrinho"><small>5</small></span>
                                     <a href="/carrinho.html" className="nav-link text-white">
-                                        <i className="bi-cart" style={{fontSize: '24px', lineHeight: '24px'}}></i>
+                                        <BiCart size={32} /> {/* Use o ícone Cart3 e ajuste o tamanho */}
                                     </a>
                                 </li>
                             </ul>
@@ -49,8 +45,7 @@ function HeaderCatalogo() {
                     {/* Conteúdo do catálogo vai aqui */}
                 </div>
             </main>
-        
-            </div>
+        </div>
     );
 }
 

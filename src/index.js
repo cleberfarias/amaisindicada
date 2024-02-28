@@ -9,6 +9,12 @@ import Institucional from './rotas/Institucional';
 import Sacola from './rotas/sacola';
 import FaleConosco from './rotas/FaleConosco';
 import Catalogo from './rotas/Catalogo';
+import LoginPrincipal from './componentes/LoginCatalogo/LoginPrincipal';
+import CadastroSucesso from './componentes/LoginCatalogo/ConfirmacaoCadastro';
+import LoginForm from './componentes/LoginCatalogo/Login';
+import CadastrarNovaSenha from './componentes/LoginCatalogo/CadastrarNovaSenha';
+import CarrinhoDeCompras from './componentes/CarCatalogo/Carrinho';
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -51,6 +57,22 @@ const App = () => (
       <Route path="/Catálogo" element={<Catalogo />} />
       <Route path="/sacola" element={<Sacola />} />
       <Route path="/contato" element={<FaleConosco />} />
+      <Route path="/contato.html" element={<FaleConosco />} />
+      <Route path="/index.html" element={<Home />} />
+      <Route path="/cadastro.html" element={<LoginPrincipal />} />
+      <Route path="/index.html" element={<Home />} />
+      <Route path="/confirmarcadastro.html" element={<CadastroSucesso />} />
+      <Route path="/index.html" element={<Home />} />
+      <Route path="/login.html" element={<LoginForm />} />
+      <Route path="/index.html" element={<Home />} />
+      <Route path="/confirmcadastrosenha.html" element={<CadastrarNovaSenha />} />
+      <Route path="/index.html" element={<Home />} />
+      <Route path="/carrinho.html" element={<CarrinhoDeCompras/>} />
+      <Route path="/index.html" element={<Home />} />
+
+     
+  
+      
     </Routes>
   </BrowserRouter>
 );
