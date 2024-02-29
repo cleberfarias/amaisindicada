@@ -30,6 +30,7 @@ const FooterBlock = styled.div`
 `;
 
 const FooterTitle = styled.h2`
+  color: #22778b;
   font-size: 24px;
   margin-bottom: 1em;
 `;
@@ -47,9 +48,14 @@ const FooterListItem = styled.li`
 `;
 
 const FooterLink = styled.a`
-  color: #FFF;
+  color: #22778b;
   text-decoration: none;
   margin-left: 0.6em;
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+  
+  &:hover {
+    color: #ffd700; /* Altera a cor para amarelo quando o mouse estiver sobre o link */
+  }
 `;
 
 const InstagramIcon = styled(FaInstagram)`
@@ -78,10 +84,10 @@ function Footer() {
             </FooterLink>
           </FooterListItem>
           <FooterListItem>
-          <FooterLink href="https://www.google.com/maps/d/viewer?mid=17VkTD20t_JdHAH97UhqKjxpVCvnsD3o&ll=-27.81435009999997%2C-50.3361287&z=17" target="_blank">
+            <FooterLink href="https://www.google.com/maps/d/viewer?mid=17VkTD20t_JdHAH97UhqKjxpVCvnsD3o&ll=-27.81435009999997%2C-50.3361287&z=17" target="_blank">
               Lages, Santa Catarina - Ver no Mapa
             </FooterLink>
-            </FooterListItem>
+          </FooterListItem>
         </FooterList>
       </FooterBlock>
 

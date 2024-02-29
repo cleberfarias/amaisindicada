@@ -6,6 +6,9 @@ import Producao3 from "../imagens/carvalho.jpg";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
 import Header from "../componentes/Header/Header";
 
+
+
+
 const AppContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
@@ -127,6 +130,7 @@ function Institucional() {
               <Image className="imagem__producao" src={Producao1} alt="foto do alambique" />
               <Image className="imagem__producao" src={Producao2} alt="foto do alambique" />
               <Image className="imagem__producao" src={Producao3} alt="foto do alambique" />
+
             </ImageContainer>
             <TextoAgradecimento> Agradecemos por visitar o site da Cachaça A Mais Indicada e convidamos
               você a experimentar a riqueza de nossa cachaça artesanal. Esteja preparado

@@ -17,20 +17,21 @@ const Opcao = styled.li`
   padding: 10px;  /* Espaçamento uniforme */
   cursor: pointer;
   min-width: 120px;
-
-  @media screen and (max-width: 768px) {
-    padding: 8px;  /* Ajuste para telas menores */
-    font-size: 14px;  /* Redução de tamanho de fonte para telas menores */
-  }
+  margin-left: 0.6em;
+ 
 `;
 
 const TextoOpcao = styled.p`
   margin: 0;
   text-decoration: none; /* Removendo a decoração do texto */
   color: #22778b; /* Definindo a cor verde para o texto */
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
+  
+  &:hover {
+    color: #ffd700; /* Altera a cor para amarelo quando o mouse estiver sobre o link */
+  }
 `;
 
-// Removendo a decoração do texto para o componente p
 const LinkSemDecoracao = styled(Link)`
   text-decoration: none;
 `;

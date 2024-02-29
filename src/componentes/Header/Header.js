@@ -27,7 +27,7 @@ function Header() {
         <Logo />
       </Link>
       <OpcoesHeader />
-      <IconesHeader />
+      
     </HeaderContainer>
   );
 }
