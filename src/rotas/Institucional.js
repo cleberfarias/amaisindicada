@@ -44,8 +44,8 @@ const Titulo = styled.h2`
 const TextoInstitucional = styled.h3`
   width: 100%;
   padding: 30px 0;
-  font-weight: 200;
-  color: white;
+  font-weight: 500;
+  color: #22778b;
   font-size: 25px;
   text-align: justify;
   margin: 0 auto;
@@ -125,10 +125,11 @@ function Institucional() {
                   <p>Em nosso site, você encontrará informações detalhadas sobre nossos produtos, desde os diferentes tipos de cachaça que oferecemos até sugestões de como
                     apreciá-la da melhor maneira possível.</p>
                 </TextoInstitucional>
-                <Image className="imagem__producao" src={require("../imagens/EXP1.jpg")} alt="foto do alambique" />
+
               </div>
               <Titulo>Galeria<b> A Mais Indicada!</b></Titulo>
               <ImageContainer>
+                <Image className="imagem__producao" src={require("../imagens/EXP12.jpg")} alt="foto do alambique" />
                 <Image className="imagem__producao" src={require("../imagens/EXP3.jpg")} alt="foto do alambique" />
                 <Image className="imagem__producao" src={require("../imagens/EXP1.jpg")} alt="foto do alambique" />
                 <Image className="imagem__producao" src={require("../imagens/EXP2.jpg")} alt="foto do alambique" />
@@ -136,7 +137,6 @@ function Institucional() {
                 <Image className="imagem__producao" src={require("../imagens/EXP7.jpg")} alt="foto do alambique" />
                 <Image className="imagem__producao" src={require("../imagens/EXP9.jpg")} alt="foto do alambique" />
                 <Image className="imagem__producao" src={require("../imagens/EXP10.jpg")} alt="foto do alambique" />
-                <Image className="imagem__producao" src={require("../imagens/EXP12.jpg")} alt="foto do alambique" />
 
               </ImageContainer>
             </TextContainer>

@@ -8,7 +8,7 @@ const Opcoes = styled.ul`
 `;
 
 const Opcao = styled.li`
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,6 +23,8 @@ const Opcao = styled.li`
 
 const TextoOpcao = styled.p`
   margin: 0;
+  font-size: 20px;
+  font-weight: 400;
   text-decoration: none; /* Removendo a decoração do texto */
   color: #22778b; /* Definindo a cor verde para o texto */
   transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */

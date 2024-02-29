@@ -1,6 +1,5 @@
 import Logo from '../Logo/Logo';
 import OpcoesHeader from '../OpcoesHeader';
-import IconesHeader from '../IconesHeader/IconesHeader';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
