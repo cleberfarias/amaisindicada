@@ -5,6 +5,8 @@ const Opcoes = styled.ul`
   display: flex;
   justify-content: center;
   text-align: center;
+  height: 100px;
+  width: 100%; /* Define a largura como 100% para preencher toda a largura da página */
 `;
 
 const Opcao = styled.li`
@@ -18,6 +20,7 @@ const Opcao = styled.li`
   cursor: pointer;
   min-width: 120px;
   margin-left: 0.6em;
+  
  
 `;
 

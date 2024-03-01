@@ -53,15 +53,6 @@ const TextoInstitucional = styled.h3`
   ;
 `;
 
-const TextoAgradecimento = styled.h4`
-  width: 100%;
-  padding: 30px 0;
-  color: #EB9B00;
-  font-size: 18px;
-  text-align: center;
-  margin: 0 auto;
-`;
-
 const ImageContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -75,15 +66,15 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
-  max-width: 320px;
+  width: 50%;
+  max-width: 30%; /* Alterado para 100% para permitir que as imagens diminuam conforme a tela */
   height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
+  transition: transform 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho da imagem ao passar o mouse */
+    transform: scale(1.05);
   }
 `;
 

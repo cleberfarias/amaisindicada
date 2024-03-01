@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   padding: 20px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  height: 80px;
+  height: 100px;
   width: 100%; /* Define a largura como 100% para preencher toda a largura da página */
 
   @media screen and (max-width: 768px) {
