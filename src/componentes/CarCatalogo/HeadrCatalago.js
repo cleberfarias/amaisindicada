@@ -14,7 +14,7 @@ function HeaderCatalogo() {
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav flex-grow-1">
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/index.html">Principal</a>
+                                <a className="nav-link text-white" href="/">Principal</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-white" href="/contato.html">Contato</a>
