@@ -29,7 +29,7 @@ function HeaderCatalogo() {
                                     <a href="/login.html" className="nav-link text-white">Entrar</a>
                                 </li>
                                 <li className="nav-item">
-                                    <span className="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0" title="5 produto(s) no carrinho"><small>5</small></span>
+                                    <span className="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0" title="5 produto(s) no carrinho"><small></small></span>
                                     <a href="/carrinho.html" className="nav-link text-white">
                                         <BiCart size={32} /> {/* Use o ícone Cart3 e ajuste o tamanho */}
                                     </a>

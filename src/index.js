@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -14,6 +14,8 @@ import CadastroSucesso from './componentes/LoginCatalogo/ConfirmacaoCadastro';
 import LoginForm from './componentes/LoginCatalogo/Login';
 import CadastrarNovaSenha from './componentes/LoginCatalogo/CadastrarNovaSenha';
 import CarrinhoDeCompras from './componentes/CarCatalogo/Carrinho';
+import FechamentoCompra from './componentes/CarCatalogo/FechamentoCompra';
+
 
 
 const GlobalStyle = createGlobalStyle`
@@ -25,11 +27,11 @@ const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%; /* Garante que o body ocupe toda a altura da janela */
+    height: 100%;
   }
 
   #root {
-    height: 100%; /* Garante que o elemento root ocupe toda a altura da janela */
+    height: 100%;
   }
 
   code {
@@ -54,35 +56,28 @@ const App = () => (
     <Routes>
       <Route path="/Institucional" element={<Institucional />} />
       <Route path="/" element={<Home />} />
-      <Route path="/Catálogo" element={<Catalogo />} />
+      <Route path="/catálogo" element={<Catalogo />} />
       <Route path="/sacola" element={<Sacola />} />
       <Route path="/contato" element={<FaleConosco />} />
-      <Route path="/contato.html" element={<FaleConosco />} />
-      <Route path="/index.html" element={<Home />} />
-      <Route path="/cadastro.html" element={<LoginPrincipal />} />
-      <Route path="/index.html" element={<Home />} />
-      <Route path="/confirmarcadastro.html" element={<CadastroSucesso />} />
-      <Route path="/index.html" element={<Home />} />
-      <Route path="/login.html" element={<LoginForm />} />
-      <Route path="/index.html" element={<Home />} />
-      <Route path="/confirmcadastrosenha.html" element={<CadastrarNovaSenha />} />
-      <Route path="/index.html" element={<Home />} />
-      <Route path="/carrinho.html" element={<CarrinhoDeCompras/>} />
-      <Route path="/index.html" element={<Home />} />
-
-     
-  
+      <Route path="/cadastro" element={<LoginPrincipal />} />
+      <Route path="/confirmarcadastro" element={<CadastroSucesso />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/confirmcadastrosenha" element={<CadastrarNovaSenha />} />
+      <Route path="/carrinho" element={<CarrinhoDeCompras />} />
+      <Route path="/FechamentoCompra" element={<FechamentoCompra />} />
       
     </Routes>
   </BrowserRouter>
 );
 
-ReactDOM.render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <GlobalStyle />
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 reportWebVitals();

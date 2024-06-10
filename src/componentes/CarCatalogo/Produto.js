@@ -1,4 +1,7 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+import { useNavigate} from 'react-router-dom';
+
 
 import Prata from '../../imagens/fotos mais indicada/Prata.jpg';
 import Ouro from '../../imagens/fotos mais indicada/Ouro.jpg';
@@ -13,8 +16,10 @@ import Cacau from '../../imagens/fotos mais indicada/Cacau.jpg';
 import Banana from '../../imagens/fotos mais indicada/Banana.jpg';
 
 function Produtos() {
-    // Definindo o array de produtos
-    const produtos = [
+    
+    const navigate = useNavigate();
+    const [produtos, setProdutos] = useState([
+        // Defina seus produtos aqui...
         {
             id: 1,
             nome: 'Cachaça Prata',
@@ -105,9 +110,23 @@ function Produtos() {
         },
         
         
-        
-        // Adicione mais produtos conforme necessário
-    ];
+    ]);
+    const adicionarAoCarrinho = (produtoId) => {
+        const novoProdutos = produtos.map(produto => {
+            if (produto.id === produtoId && produto.estoque > 0) {
+                return {
+                    ...produto,
+                    estoque: produto.estoque - 1 // Diminui a quantidade de estoque do produto em 1
+                };
+            }
+            return produto;
+        });
+
+        setProdutos(novoProdutos);
+
+        const produto = novoProdutos.find(p => p.id === produtoId);
+        navigate('/carrinho', { state: { produto } });
+    };
 
     return (
         <>
@@ -130,9 +149,9 @@ function Produtos() {
                                 <p className="card-text truncar-3l">{produto.descricao}</p>
                             </div>
                             <div className="card-footer">
-                                <a href="carrinho.html" className="btn btn-danger mt-2 d-block">
+                                <button className="btn btn-danger mt-2 d-block" onClick={() => adicionarAoCarrinho(produto.id)}>
                                     Adicionar ao Carrinho
-                                </a>
+                                </button>
                                 <small className="text-success">{produto.estoque} unidades em estoque</small>
                             </div>
                         </div>
