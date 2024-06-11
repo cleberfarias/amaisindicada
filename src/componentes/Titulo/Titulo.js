@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Titulo = styled.h2`
     width: 100%;
     padding: 20px 0; /* Ajustei o padding para um espaçamento mais moderado */
-    background-color: #FFF;
     color: #EB9B00;
     font-size: 24px; /* Ajustei o tamanho da fonte */
     text-align: center;

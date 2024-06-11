@@ -4,7 +4,7 @@ import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 
 const FooterContainer = styled.footer`
-  background: linear-gradient(to right, #ffffff, #663300);
+  background: #ffffff;
   padding: 1em;
   display: flex;
   flex-direction: column;

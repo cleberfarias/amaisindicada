@@ -27,7 +27,7 @@ const CarrosselSection = styled.section`
 const CarrosselTitulo = styled.h2`
   width: 100%;
   padding: 10px 0;
-  background-color: #FFF;
+  background: linear-gradient(to right, #663300, #ffffff);
   color: #EB9B00;
   font-weight: 700;
   font-size: 26px;

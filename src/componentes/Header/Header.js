@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
-  background: linear-gradient(to right, #ffffff, #663300);
+  background: linear-gradient(to right, #663300,#ffffff );
   display: flex;
   justify-content: space-between;
   align-items: center;
