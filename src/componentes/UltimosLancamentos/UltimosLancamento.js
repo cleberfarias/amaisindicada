@@ -7,7 +7,6 @@ import imgSabores from '../../imagens/colecao.png'
 
 
 const UltimosLancamentosContainer = styled.section`
-    background: linear-gradient(to right, #663300, #ffffff);
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;

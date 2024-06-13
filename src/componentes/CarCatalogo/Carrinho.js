@@ -1,11 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import HeaderCatalogo from '../Header/Header';
 import FooterCatalogo from '../Footer/Footer';
+import FechamentoCompra from './FechamentoCompra';
 
 function Carrinho() {
     const location = useLocation();
-    const { produto } = location.state || {};
+    const { produtos } = location.state || { produtos: [] };
+
+    const [cep, setCep] = useState('');
+    const [frete, setFrete] = useState(0);
+
+    const handleCepChange = (e) => {
+        setCep(e.target.value);
+    };
+
+    const calcularFrete = () => {
+        // Simular cálculo do frete com base no CEP
+        // Aqui poderia ser feita uma chamada a uma API de cálculo de frete
+        setFrete(10.00); // Exemplo: frete fixo de R$ 10.00
+    };
+
+    const calcularValorTotalProdutos = () => {
+        return produtos.reduce((total, produto) => {
+            return total + (produto.preco * produto.quantidade);
+        }, 0);
+    };
 
     return (
         <div>
@@ -14,8 +34,8 @@ function Carrinho() {
                 <div className="container">
                     <h1>Carrinho de Compras</h1>
                     <ul className="list-group mb-3">
-                        {produto && (
-                            <li className="list-group-item py-3">
+                        {produtos.map(produto => (
+                            <li className="list-group-item py-3" key={produto.id}>
                                 <div className="row g-3">
                                     <div className="col-4 col-md-3 col-lg-2">
                                         <a href="#">
@@ -33,7 +53,7 @@ function Carrinho() {
                                             <button className="btn btn-outline-dark btn-sm" type="button">
                                                 <i className="bi bi-caret-down" style={{ fontSize: '16px', lineHeight: '16px' }}></i>
                                             </button>
-                                            <input type="text" className="form-control text-center border-dark" value="1" readOnly />
+                                            <input type="text" className="form-control text-center border-dark" value={produto.quantidade} readOnly />
                                             <button className="btn btn-outline-dark btn-sm" type="button">
                                                 <i className="bi bi-caret-up" style={{ fontSize: '16px', lineHeight: '16px' }}></i>
                                             </button>
@@ -43,17 +63,34 @@ function Carrinho() {
                                         </div>
                                         <div className="text-end mt-2">
                                             <small className="text-secondary">Valor: R$ {produto.preco.toFixed(2)}</small><br />
-                                            <span className="text-dark">Valor Item: R$ {produto.preco.toFixed(2)}</span>
+                                            <span className="text-dark">Valor Item: R$ {(produto.preco * produto.quantidade).toFixed(2)}</span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                        )}
+                        ))}
                     </ul>
-                    <div className="text-end">
-                        <h4 className="text-dark mb-3">Valor Total: R$ {produto ? produto.preco.toFixed(2) : '0.00'}</h4>
-                        <a href="/catálogo" className="btn btn-outline-success btn-lg">Continuar Comprando</a>
-                        <a href="/FechamentoCompra" className="btn btn-danger btn-lg ms-2 mt-xs-3">Fechar Compra</a>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="input-group mb-3">
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    placeholder="Digite o CEP"
+                                    value={cep}
+                                    onChange={handleCepChange}
+                                />
+                                <button className="btn btn-outline-secondary" type="button" onClick={calcularFrete}>
+                                    Calcular Frete
+                                </button>
+                            </div>
+                            {frete > 0 && (
+                                <p className="text-muted">Frete: R$ {frete.toFixed(2)}</p>
+                            )}
+                        </div>
+                        <div className="col-md-6 text-end">
+                            <FechamentoCompra produtos={produtos} frete={frete} calcularValorTotalProdutos={calcularValorTotalProdutos} />
+                        </div>
                     </div>
                 </div>
             </main>

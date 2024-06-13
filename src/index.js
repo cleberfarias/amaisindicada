@@ -16,8 +16,6 @@ import CadastrarNovaSenha from './componentes/LoginCatalogo/CadastrarNovaSenha';
 import CarrinhoDeCompras from './componentes/CarCatalogo/Carrinho';
 import FechamentoCompra from './componentes/CarCatalogo/FechamentoCompra';
 
-
-
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -28,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
+    background: linear-gradient(to right, #663300, #ffffff);
   }
 
   #root {
@@ -65,7 +64,6 @@ const App = () => (
       <Route path="/confirmcadastrosenha" element={<CadastrarNovaSenha />} />
       <Route path="/carrinho" element={<CarrinhoDeCompras />} />
       <Route path="/FechamentoCompra" element={<FechamentoCompra />} />
-      
     </Routes>
   </BrowserRouter>
 );

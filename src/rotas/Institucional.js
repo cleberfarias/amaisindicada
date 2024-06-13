@@ -13,7 +13,7 @@ import Header from "../componentes/Header/Header";
 const AppContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(to right, #663300, #ffffff);
+ 
 `;
 
 const ContentContainer = styled.div`

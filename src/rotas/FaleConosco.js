@@ -6,7 +6,6 @@ import Footer from '../componentes/FooterOpcoes/FooterOpcoes';
 const AppContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(to right, #663300, #ffffff);
   padding: 20px; /* Adicione algum preenchimento geral */
 `;
 

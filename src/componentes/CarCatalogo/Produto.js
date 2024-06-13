@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
-import { useNavigate} from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 import Prata from '../../imagens/fotos mais indicada/Prata.jpg';
 import Ouro from '../../imagens/fotos mais indicada/Ouro.jpg';
@@ -16,10 +14,8 @@ import Cacau from '../../imagens/fotos mais indicada/Cacau.jpg';
 import Banana from '../../imagens/fotos mais indicada/Banana.jpg';
 
 function Produtos() {
-    
     const navigate = useNavigate();
     const [produtos, setProdutos] = useState([
-        // Defina seus produtos aqui...
         {
             id: 1,
             nome: 'Cachaça Prata',
@@ -108,24 +104,42 @@ function Produtos() {
             descricao: 'Licor cremoso de Banana, produzida artesanalmente.',
             estoque: 150
         },
-        
-        
     ]);
-    const adicionarAoCarrinho = (produtoId) => {
-        const novoProdutos = produtos.map(produto => {
-            if (produto.id === produtoId && produto.estoque > 0) {
-                return {
-                    ...produto,
-                    estoque: produto.estoque - 1 // Diminui a quantidade de estoque do produto em 1
-                };
-            }
-            return produto;
+
+    const [quantidade, setQuantidade] = useState({});
+
+    const handleQuantidadeChange = (produtoId, value) => {
+        setQuantidade({
+            ...quantidade,
+            [produtoId]: value
         });
+    };
 
-        setProdutos(novoProdutos);
+    const adicionarTodosAoCarrinho = () => {
+        const produtosSelecionados = produtos
+            .filter(produto => (parseInt(quantidade[produto.id]) || 0) > 0)
+            .map(produto => ({
+                ...produto,
+                quantidade: parseInt(quantidade[produto.id])
+            }));
 
-        const produto = novoProdutos.find(p => p.id === produtoId);
-        navigate('/carrinho', { state: { produto } });
+        if (produtosSelecionados.length > 0) {
+            const novoProdutos = produtos.map(produto => {
+                const qtd = parseInt(quantidade[produto.id]) || 0;
+                if (qtd > 0 && produto.estoque >= qtd) {
+                    return {
+                        ...produto,
+                        estoque: produto.estoque - qtd
+                    };
+                }
+                return produto;
+            });
+
+            setProdutos(novoProdutos);
+            navigate('/carrinho', { state: { produtos: produtosSelecionados } });
+        } else {
+            alert('Nenhum produto selecionado.');
+        }
     };
 
     return (
@@ -147,16 +161,26 @@ function Produtos() {
                             <div className="card-body">
                                 <h5 className="card-title">{produto.nome}</h5>
                                 <p className="card-text truncar-3l">{produto.descricao}</p>
+                                <input 
+                                    type="number" 
+                                    className="form-control" 
+                                    min="0" 
+                                    max={produto.estoque} 
+                                    value={quantidade[produto.id] || 0}
+                                    onChange={(e) => handleQuantidadeChange(produto.id, e.target.value)}
+                                />
                             </div>
                             <div className="card-footer">
-                                <button className="btn btn-danger mt-2 d-block" onClick={() => adicionarAoCarrinho(produto.id)}>
-                                    Adicionar ao Carrinho
-                                </button>
                                 <small className="text-success">{produto.estoque} unidades em estoque</small>
                             </div>
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="text-center">
+                <button className="btn btn-danger mt-3" onClick={adicionarTodosAoCarrinho}>
+                    Adicionar Todos ao Carrinho
+                </button>
             </div>
         </>
     );

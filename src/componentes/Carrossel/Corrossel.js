@@ -16,7 +16,6 @@ import estrela from '../../imagens/Estrelinhas.svg';
 import MorangoECacau from '../../imagens/MorangoCacau.svg';
 
 const CarrosselSection = styled.section`
-  background: linear-gradient(to right, #663300, #ffffff);
   padding-bottom: 10px;
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@ const CarrosselSection = styled.section`
 const CarrosselTitulo = styled.h2`
   width: 100%;
   padding: 10px 0;
-  background: linear-gradient(to right, #663300, #ffffff);
   color: #EB9B00;
   font-weight: 700;
   font-size: 26px;
