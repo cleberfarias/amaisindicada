@@ -27,20 +27,20 @@ function LoginForm() {
                                 <label htmlFor="chkLembrar" className="form-check-label">Lembrar de mim</label>
                             </div>
 
-                            <button type="button" onClick={() => window.location.href = '/cliente_pedidos.html'} className="btn btn-lg btn-danger">Entrar</button>
+                            <button type="button" onClick={() => window.location.href = '/cliente_pedidos'} className="btn btn-lg btn-danger">Entrar</button>
 
                             <p className="mt-3">
-                                Ainda não é cadastrado? <a href="/cadastro.html" className="text-decoration-none text-danger">Clique aqui</a> para se cadastrar.
+                                Ainda não é cadastrado? <a href="/cadastro" className="text-decoration-none text-danger">Clique aqui</a> para se cadastrar.
                             </p>
 
                             <p className="mt-3">
-                                Esqueceu sua senha? <a href="/recuperarsenha.html" className="text-decoration-none text-danger">Clique aqui</a> para recuperá-la.
+                                Esqueceu sua senha? <a href="/recuperarsenha" className="text-decoration-none text-danger">Clique aqui</a> para recuperá-la.
                             </p>
                         </form>
                     </div>
                 </div>
             </main>
-            <FooterCatalogo />
+            
         </div>
 
     );

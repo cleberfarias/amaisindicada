@@ -17,20 +17,20 @@ function HeaderCatalogo() {
                                 <a className="nav-link text-white" href="/">Principal</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-white" href="/contato.html">Contato</a>
+                                <a className="nav-link text-white" href="/contato">Contato</a>
                             </li>
                         </ul>
                         <div className="align-self-end">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                    <a href="/cadastro.html" className="nav-link text-white">Quero Me Cadastrar</a>
+                                    <a href="/cadastro" className="nav-link text-white">Quero Me Cadastrar</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="/login.html" className="nav-link text-white">Entrar</a>
+                                    <a href="/login" className="nav-link text-white">Entrar</a>
                                 </li>
                                 <li className="nav-item">
                                     <span className="badge rounded-pill bg-light text-danger position-absolute ms-4 mt-0" title="5 produto(s) no carrinho"><small></small></span>
-                                    <a href="/carrinho.html" className="nav-link text-white">
+                                    <a href="/carrinho" className="nav-link text-white">
                                         <BiCart size={32} /> {/* Use o ícone Cart3 e ajuste o tamanho */}
                                     </a>
                                 </li>

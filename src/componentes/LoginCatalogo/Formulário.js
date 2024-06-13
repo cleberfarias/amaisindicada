@@ -93,10 +93,11 @@ function CadastroForm() {
                     <div className="mb-3 text-left">
                         <a className="btn btn-lg btn-light btn-outline-danger" href="/">Cancelar</a>
                         <input type="button" value="Criar meu cadastro" className="btn btn-lg btn-danger"
-                            onClick={() => window.location.href = '/confirmarcadastro.html'} />
+                            onClick={() => window.location.href = '/confirmarcadastro'} />
                     </div>
                 </form>
             </div>
+            
         </main>
        
     );
