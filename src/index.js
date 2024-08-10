@@ -1,12 +1,11 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './rotas/Home';
 import Institucional from './rotas/Institucional';
-import Sacola from './rotas/sacola';
 import FaleConosco from './rotas/FaleConosco';
 import Catalogo from './rotas/Catalogo';
 import LoginPrincipal from './componentes/LoginCatalogo/LoginPrincipal';
@@ -26,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
-    background: linear-gradient(to right, #663300, #ffffff);
+    background-color: #C29C6D;
   }
 
   #root {
@@ -53,17 +52,16 @@ const GlobalStyle = createGlobalStyle`
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/Institucional" element={<Institucional />} />
+      <Route path="/institucional" element={<Institucional />} />
       <Route path="/" element={<Home />} />
       <Route path="/catálogo" element={<Catalogo />} />
-      <Route path="/sacola" element={<Sacola />} />
       <Route path="/contato" element={<FaleConosco />} />
       <Route path="/cadastro" element={<LoginPrincipal />} />
       <Route path="/confirmarcadastro" element={<CadastroSucesso />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/confirmcadastrosenha" element={<CadastrarNovaSenha />} />
       <Route path="/carrinho" element={<CarrinhoDeCompras />} />
-      <Route path="/FechamentoCompra" element={<FechamentoCompra />} />
+      <Route path="/fechamentocompra" element={<FechamentoCompra />} />
     </Routes>
   </BrowserRouter>
 );

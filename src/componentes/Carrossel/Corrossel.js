@@ -14,6 +14,9 @@ import Canela from '../../imagens/Canela.svg';
 import Morango from '../../imagens/morango.svg';
 import estrela from '../../imagens/Estrelinhas.svg';
 import MorangoECacau from '../../imagens/MorangoCacau.svg';
+import BannerImage1 from '../../imagens/alambique 1.jpg'; // Example banner image 1
+import BannerImage2 from '../../imagens/alambique 1.jpg';; // Example banner image 2
+// Example banner image 4
 
 const CarrosselSection = styled.section`
   padding-bottom: 10px;
@@ -21,6 +24,17 @@ const CarrosselSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const BannerSwiper = styled(Swiper)`
+  width: 100%;
+  height: 300px; // Adjust the height as needed
+`;
+
+const BannerImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 const CarrosselTitulo = styled.h2`
@@ -39,6 +53,11 @@ const CarrosselContainer = styled.div`
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
+`;
+
+const SwiperImage = styled.img`
+  width: 100%;
+  height: auto;
 `;
 
 const Card = styled.div`
@@ -117,40 +136,54 @@ const BotoesAncora = styled.a`
 
 function Carrossel() {
   return (
-    <CarrosselSection>
-      <CarrosselTitulo>Nossa coleção</CarrosselTitulo>
+    <div>
+      <BannerSwiper
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+      >
+        <SwiperSlide><BannerImage src={BannerImage1} alt="Banner 1" /></SwiperSlide>
+        <SwiperSlide><BannerImage src={BannerImage2} alt="Banner 2" /></SwiperSlide>
+      
+      </BannerSwiper>
+      
+      <CarrosselSection>
+        <CarrosselTitulo>Nossa coleção</CarrosselTitulo>
 
-      <CarrosselContainer>
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={3}
-          centeredSlides
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000 }}
-        >
-          <SwiperSlide><img src={Banana} alt="Licor Banana" /></SwiperSlide>
-          <SwiperSlide><img src={Cacau} alt="Licor Cacau" /></SwiperSlide>
-          <SwiperSlide><img src={Maca} alt="Licor de Maçã Verde" /></SwiperSlide>
-          <SwiperSlide><img src={Amarula} alt="Licor Amarula" /></SwiperSlide>
-          <SwiperSlide><img src={figo} alt="Licor figo" /></SwiperSlide>
-          <SwiperSlide><img src={groselha} alt="Licor Groselha" /></SwiperSlide>
-          <SwiperSlide><img src={Canela} alt="Licor Canela" /></SwiperSlide>
-          <SwiperSlide><img src={Morango} alt="Licor Morango" /></SwiperSlide>
-        </Swiper>
-      </CarrosselContainer>
+        <CarrosselContainer>
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={3}
+            centeredSlides
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 5000 }}
+          >
+            <SwiperSlide><SwiperImage src={Banana} alt="Licor Banana" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={Cacau} alt="Licor Cacau" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={Maca} alt="Licor de Maçã Verde" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={Amarula} alt="Licor Amarula" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={figo} alt="Licor figo" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={groselha} alt="Licor Groselha" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={Canela} alt="Licor Canela" /></SwiperSlide>
+            <SwiperSlide><SwiperImage src={Morango} alt="Licor Morango" /></SwiperSlide>
+          </Swiper>
+        </CarrosselContainer>
 
-      <Card>
-        <DescricaoContainer>
-          <img src={estrela} alt="Avaliação 5 Estrelas" />
-          <DescricaoTitulo>A Mais Escolhida</DescricaoTitulo>
-          <DescricaoTituloLivro>Licor Fino de Chocolate e Morango</DescricaoTituloLivro>
-          <DescricaoTexto>A bebida mais escolhida pelas mulheres...</DescricaoTexto>
-          <BotoesAncora href='/catálogo'>Saiba mais</BotoesAncora>
-        </DescricaoContainer>
-        <DescricaoImagem src={MorangoECacau} alt="Licor Fino de Chocolate e Morango" />
-      </Card>
-    </CarrosselSection>
+        <Card>
+          <DescricaoContainer>
+            <img src={estrela} alt="Avaliação 5 Estrelas" />
+            <DescricaoTitulo>A Mais Escolhida</DescricaoTitulo>
+            <DescricaoTituloLivro>Licor Fino de Chocolate e Morango</DescricaoTituloLivro>
+            <DescricaoTexto>A bebida mais escolhida pelas mulheres...</DescricaoTexto>
+            <BotoesAncora href='/catálogo'>Saiba mais</BotoesAncora>
+          </DescricaoContainer>
+          <DescricaoImagem src={MorangoECacau} alt="Licor Fino de Chocolate e Morango" />
+        </Card>
+      </CarrosselSection>
+    </div>
   );
 }
 
