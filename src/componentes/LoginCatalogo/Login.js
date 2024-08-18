@@ -27,7 +27,7 @@ function LoginForm() {
                                 <label htmlFor="chkLembrar" className="form-check-label">Lembrar de mim</label>
                             </div>
 
-                            <button type="button" onClick={() => window.location.href = '/cliente_pedidos'} className="btn btn-lg btn-danger">Entrar</button>
+                            <button type="button" onClick={() => window.location.href = '/carrinho'} className="btn btn-lg btn-danger">Entrar</button>
 
                             <p className="mt-3">
                                 Ainda não é cadastrado? <a href="/cadastro" className="text-decoration-none text-danger">Clique aqui</a> para se cadastrar.
