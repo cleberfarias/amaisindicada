@@ -14,8 +14,8 @@ import Canela from '../../imagens/Canela.svg';
 import Morango from '../../imagens/morango.svg';
 import estrela from '../../imagens/Estrelinhas.svg';
 import MorangoECacau from '../../imagens/MorangoCacau.svg';
-import BannerImage1 from '../../imagens/alambique1.jpeg'; // Example banner image 1
-import BannerImage2 from '../../imagens/alambique1.jpeg';; // Example banner image 2
+import BannerImage1 from '../../imagens/bannerhome.png'; // Example banner image 1
+import BannerImage2 from '../../imagens/bannerhome.png';; // Example banner image 2
 // Example banner image 4
 
 const CarrosselSection = styled.section`
