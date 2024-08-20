@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Banner1 from "../../imagens/banner 1.jpg";
+import Banner1 from "../../imagens/Banner.png";
 import Banner2 from "../../imagens/Banner 2.jpg";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
@@ -18,7 +18,7 @@ function Banner() {
                         <img src={Banner1} className="d-block w-100" alt="" />
                     </div>
                     <div className="carousel-item" data-bs-interval="3000">
-                        <img src={Banner2} className="d-block w-100" alt="" />
+                        <img src={Banner1} className="d-block w-100" alt="" />
                     </div>
                     <div className="carousel-item" data-bs-interval="3000">
                         <img src={Banner1} className="d-block w-100" alt="" />

@@ -8,7 +8,7 @@ function Produtos() {
             id: 1,
             nome: 'Prata',
             descricao: 'Cachaça Prata Envelhecida',
-            preco: 25.00,
+            preco: 30.00,
             estoque: 100,
             imagem: require('../../imagens/fotos mais indicada/Prata.jpg')
         },
@@ -16,7 +16,7 @@ function Produtos() {
             id: 2,
             nome: 'Ouro',
             descricao: 'Envelhecida no Carvalho',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Ouro.jpg')
         },
@@ -24,7 +24,7 @@ function Produtos() {
             id: 3,
             nome: 'Licor Banana',
             descricao: 'Licor Fino de Banana',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Banana.jpg')
         },
@@ -32,7 +32,7 @@ function Produtos() {
             id: 4,
             nome: 'Licor Cacau',
             descricao: 'Licor Cremoso de Cacau',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Cacau.jpg')
         },
@@ -40,7 +40,7 @@ function Produtos() {
             id: 5,
             nome: 'Licor Cacau',
             descricao: 'Licor Fino de Canela',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Canela.jpg')
         },
@@ -48,7 +48,7 @@ function Produtos() {
             id: 6,
             nome: 'Licor Coco',
             descricao: 'Licor Cremoso de Coco',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Coco.jpg')
         },
@@ -56,7 +56,7 @@ function Produtos() {
             id: 7,
             nome: 'Licor Figo',
             descricao: 'Licor Fino de Figo',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Fico.jpg')
         },
@@ -64,15 +64,15 @@ function Produtos() {
             id: 8,
             nome: 'Licor Groselha',
             descricao: 'Licor Fino de Groselha',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
-            imagem: require('../../imagens/groselha.png')
+            imagem: require('../../imagens/groselha (2).png')
         },
         {
             id: 9,
             nome: 'Licor Maçã Verde',
             descricao: 'Licor Fino de Maçã Verde',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Maca.jpg')
         },
@@ -80,7 +80,7 @@ function Produtos() {
             id: 10,
             nome: 'Licor Maracuja',
             descricao: 'Licor Cremoso de Maracuja',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Maracuja.jpg')
         },
@@ -88,7 +88,7 @@ function Produtos() {
             id: 11,
             nome: 'Licor Morango',
             descricao: 'Licor Cremoso de Morango',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Morango.jpg')
         },
@@ -96,7 +96,7 @@ function Produtos() {
             id: 12,
             nome: 'Cachaça',
             descricao: 'Cachaça de Amburana',
-            preco: 30.00,
+            preco: 40.00,
             estoque: 50,
             imagem: require('../../imagens/fotos mais indicada/Amburana.jpg')
         },
