@@ -141,11 +141,12 @@ function Carrinho() {
                                 <p className="text-muted">Frete: R$ {frete.toFixed(2)}</p>
                             )}
                         </div>
-                        <div className="col-md-6 text-end">
+                       <div className="col-md-6 text-end">
                             <FechamentoCompra produtos={produtos} frete={frete} calcularValorTotalProdutos={calcularValorTotalProdutos} />
+                            {!paid && <div ref={paypalRef}></div>}
                         </div>
                     </div>
-                    {!paid && <div ref={paypalRef}></div>}
+                    
                 </div>
             </main>
             <FooterCatalogo />
