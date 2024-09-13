@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderCatalogo from '../CarCatalogo/HeadrCatalago';
-import FooterCatalogo from '../CarCatalogo/FooterCatalogo';
 
 function LoginForm() {
     return (

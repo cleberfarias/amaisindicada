@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Banner1 from "../../imagens/Banner.png";
-import Banner2 from "../../imagens/Banner 2.jpg";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function Banner() {
