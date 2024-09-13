@@ -14,9 +14,8 @@ import Canela from '../../imagens/Canela.svg';
 import Morango from '../../imagens/morango.svg';
 import estrela from '../../imagens/Estrelinhas.svg';
 import MorangoECacau from '../../imagens/MorangoCacau.svg';
-import BannerImage1 from '../../imagens/bannerhome.png'; // Example banner image 1
-import BannerImage2 from '../../imagens/bannerhome.png';; // Example banner image 2
-// Example banner image 4
+import BannerImage1 from '../../imagens/bannerhome1.png'; // Example banner image 1
+import BannerImage2 from '../../imagens/bannerhome.png'; // Example banner image 2
 
 const CarrosselSection = styled.section`
   padding-bottom: 10px;
@@ -33,8 +32,8 @@ const BannerSwiper = styled(Swiper)`
 
 const BannerImage = styled.img`
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 120%;
+   // Ensure the image covers the container without stretching
 `;
 
 const CarrosselTitulo = styled.h2`
@@ -144,9 +143,8 @@ function Carrossel() {
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
       >
-        /<SwiperSlide><BannerImage src={BannerImage1} alt="Banner 1" /></SwiperSlide>
+        <SwiperSlide><BannerImage src={BannerImage1} alt="Banner 1" /></SwiperSlide>
         <SwiperSlide><BannerImage src={BannerImage2} alt="Banner 2" /></SwiperSlide>
-      
       </BannerSwiper>
       
       <CarrosselSection>
