@@ -13,7 +13,7 @@ const FormularioContainer = styled.div`
 const TituloFormulario = styled.h2`
   font-family: 'Playfair Display', serif;
   font-weight: 400;
-  color: #22778b;
+  color: #30261d;
   font-size: 2rem;
   margin-bottom: 20px;
   text-shadow: 0 0 10px ${({ theme }) => theme.mainColor};
@@ -56,15 +56,18 @@ const Button = styled.button`
   border-radius: 4px;
   border: 0;
   cursor: pointer;
-  background-color: #0fdbff;
+  background-color: #30261d;
   font-size: 18px;
-  transition: background-color, transform 0.8s;
+  color: #ffd38f; /* Cor do texto padrão */
+  transition: background-color 0.8s, color 0.8s, transform 0.8s;
 
   &:hover {
-    background-color: #0fe3ff;
+    background-color: #C29c6d;
+    color: #5c4334; /* Cor do texto no hover */
     transform: scale(1.01);
   }
 `;
+
 
 const ErrorMessage = styled.p`
   color: red;

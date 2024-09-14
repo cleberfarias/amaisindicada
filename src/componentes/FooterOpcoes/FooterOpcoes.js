@@ -48,7 +48,7 @@ const FooterListItem = styled.li`
 `;
 
 const FooterLink = styled.a`
-  color: #22778b;
+  color: #30261d;
   text-decoration: none;
   margin-left: 0.6em;
   transition: color 0.3s ease; /* Adiciona uma transição suave para a mudança de cor */
