@@ -20,45 +20,48 @@ function Carrinho() {
 
   // Load PayPal SDK
   useEffect(() => {
-    if (!document.getElementById('paypal-sdk')) {
+    if (!window.paypal) {
       const script = document.createElement("script");
-      const id = process.env.REACT_APP_PAYPAL_CLIENT_ID; // Use an environment variable
-      script.src = `https://www.paypal.com/sdk/js?currency=BRL&client-id=${id}`;
+      script.src = `https://www.paypal.com/sdk/js?currency=BRL&client-id=Ad_4dmlreT74ytlqJxqONNIFYq0lP5F1yQY7HI980OI1aY5q9W28IRMu_C9X1A18PDEXau1eqx6UrcLg`;
       script.id = 'paypal-sdk';
       script.addEventListener("load", () => setLoaded(true));
+      script.addEventListener("error", (error) => {
+        console.error('Error loading PayPal SDK:', error);
+        setError('Erro ao carregar o PayPal SDK.');
+      });
       document.body.appendChild(script);
     } else {
       setLoaded(true);
     }
   }, []);
 
-  // Set up PayPal button after SDK is loaded
   useEffect(() => {
-    if (loaded) {
-      const createPurchaseUnits = () => {
-        return produtos.map(produto => ({
-          description: produto.descricao,
-          amount: {
-            currency_code: "BRL",
-            value: (produto.preco * produto.quantidade).toFixed(2)
-          }
-        }));
-      };
-
+    if (loaded && window.paypal) {
       window.paypal.Buttons({
         createOrder: (data, actions) => {
+          // Create an order object with purchase units
           return actions.order.create({
-            purchase_units: createPurchaseUnits()
+            purchase_units: produtos.map(product => ({
+              description: product.nome,
+              amount: {
+                currency_code: "BRL",
+                value: (product.preco * product.quantidade).toFixed(2)
+              }
+            }))
           });
         },
-        onApprove: async (data, actions) => {
-          try {
-            const order = await actions.order.capture();
+        onApprove: (data, actions) => {
+          return actions.order.capture().then((orderData) => {
+            console.log('Capture success', orderData);
             setPaid(true);
-            console.log(order);
-          } catch (error) {
-            console.error('Error capturing order:', error);
-          }
+          }).catch((err) => {
+            console.error('Error capturing order:', err);
+            setError('Erro ao capturar o pagamento.');
+          });
+        },
+        onError: (err) => {
+          console.error('PayPal button error:', err);
+          setError('Erro com o botão do PayPal.');
         }
       }).render(paypalRef.current);
     }
@@ -98,7 +101,6 @@ function Carrinho() {
         setError('Erro ao calcular o frete. Verifique o CEP e tente novamente.');
     }
 };
-
 
   // Calculate total value of products (if needed for `FechamentoCompra`)
   const calcularValorTotalProdutos = () => {
