@@ -1,7 +1,17 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Titulo } from '../Titulo/Titulo';
 import Coleaco from '../../imagens/colecao 1.svg';
 import { Link } from 'react-router-dom';
+
+// Animação de aparecer e sumir
+const fadeInOut = keyframes`
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+`;
 
 const Card = styled.div`
   align-items: center;
@@ -33,9 +43,8 @@ const Botao = styled(Link)`
   text-decoration: none;
   margin-top: 10px;
   
-  &:hover {
-    background-color: #FFA500;
-  }
+  /* Aplicando a animação de aparecer e sumir */
+  animation: ${fadeInOut} 2s infinite;
 `;
 
 const Descricao = styled.p`
@@ -84,7 +93,7 @@ function CardRecomenda({ titulo, subtitulo, descricao }) {
         <Botao to='/catálogo'>Saiba mais</Botao>
       </div>
       <div> 
-        <ImgSabor src={Coleaco} alt={titulo}/>
+        <ImgSabor src={Coleaco} alt={titulo} />
       </div>
     </Card>  
   );

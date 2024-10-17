@@ -2,44 +2,53 @@ import { sabores } from "./DadosUltimosLancamentos";
 import styled from 'styled-components'
 import CarRecomenda from "../CarRecomenda/CarRecomenda";
 import { Titulo } from "../Titulo/Titulo";
-import imgSabores from '../../imagens/colecao.png'
+import imgSabores from '../../imagens/colecao.png';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importando Bootstrap CSS
 
-
-
+// Container para organizar os lançamentos
 const UltimosLancamentosContainer = styled.section`
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo na horizontal */
+    align-items: center;
 `;
 
+// Adicionando responsividade e espaçamento entre os cards
 const NovosSaboresContainer = styled.div`
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espaçamento entre os cards de sabores */
-    padding: 10px; /* Adiciona espaçamento interno */
-    flex-wrap: wrap; /* Permite que os cards de sabores quebrem para a próxima linha */
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
 `;
 
+// Card estilizado com efeitos de hover usando Bootstrap
 const SaboresCard = styled.div`
-    flex: 0 0 auto; /* Impede que os cards de sabores se estiquem para preencher o espaço */
-    width: 300px; /* Define a largura fixa para cada card de sabor */
-    margin: 10px; /* Espaçamento entre os cards */
+    width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out; /* Transição suave no hover */
     img {
         width: 100%;
         height: auto;
-        border-radius: 8px; /* Adicione border-radius para cantos arredondados */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra suave */
+        transition: transform 0.3s ease-in-out; /* Transição suave no hover */
+    }
+
+    &:hover img {
+        transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
     }
 `;
 
 function UltimosLancamentos() {
     return (
-        <UltimosLancamentosContainer>
+        <UltimosLancamentosContainer className="container">
             <Titulo> Últimos Lançamentos </Titulo>
-            <NovosSaboresContainer>
+            <NovosSaboresContainer className="row">
                 {sabores.map((sabor, index) => (
-                    <SaboresCard key={index}>
-                        <img src={sabor.src} alt={`Sabor ${index + 1}`} />
+                    <SaboresCard className="col-md-4 col-sm-6" key={index}>
+                        <img src={sabor.src} alt={`Sabor ${index + 1}`} className="img-fluid" />
                     </SaboresCard>
                 ))}
             </NovosSaboresContainer>

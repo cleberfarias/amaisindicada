@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, Card, Button, Container } from 'react-bootstrap'; // Importando componentes do Bootstrap
-import styled from 'styled-components';  
+import styled, { keyframes } from 'styled-components';  
 
 import Banana from '../../imagens/banana.svg';
 import Cacau from '../../imagens/cacau.svg';
@@ -15,146 +15,109 @@ import MorangoECacau from '../../imagens/MorangoCacau.svg';
 import BannerImage1 from '../../imagens/bannerhome1.png'; // Exemplo de imagem do banner 1
 import BannerImage2 from '../../imagens/bannerhome.png';  // Exemplo de imagem do banner 2
 
-const CarrosselTitulo = styled.h2`
-  width: 100%;
-  padding: 10px 0;
+// Estilização com Styled Components
+const TituloCarrossel = styled.h2`
+  font-size: 2rem;
   color: #EB9B00;
   font-weight: 700;
-  font-size: 26px;
   text-align: center;
+  margin: 30px 0;
 `;
 
 const DescricaoTitulo = styled.h3`
   color: #EB9B00;
-  font-weight: 700;
-  font-size: 22px;
+  font-size: 1.8rem;
   margin: 10px auto;
-`;
-
-const DescricaoTituloLivro = styled.h2`
-  color: #328955;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 5px auto;
 `;
 
 const DescricaoTexto = styled.p`
-  font-size: 14px;
   color: #002F52;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
   margin: 10px auto;
+  text-align: center;
 `;
 
-const Carrossel = () => {
+// Animação de entrada da direita
+const slideInRight = keyframes`
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+// Card com a animação de entrada
+const CardAnimado = styled(Card.Img)`
+  animation: ${slideInRight} 1.5s ease-out;
+  height: 250px;
+  object-fit: cover;
+`;
+
+const ImagemGrande = styled.img`
+  height: 700px; /* Aumenta a altura da imagem */
+  object-fit: contain; /* Mantém a proporção da imagem */
+`;
+
+const CarrosselModerno = () => {
   return (
-    <div>
-      {/* Carrossel de Banners */}
-      <Carousel>
-        <Carousel.Item interval={2000}>
+    <Container fluid className="p-0">
+      {/* Carrossel de Banners Interativos */}
+      <Carousel fade className="mb-5">
+        <Carousel.Item interval={3000}>
           <img
             className="d-block w-100"
             src={BannerImage1}
             alt="Banner 1"
-            style={{ height: '300px' }} // Ajustando a altura da imagem
+            style={{ height: '300px', objectFit: 'cover' }} 
           />
         </Carousel.Item>
-        <Carousel.Item interval={2000}>
+        <Carousel.Item interval={3000}>
           <img
             className="d-block w-100"
             src={BannerImage2}
             alt="Banner 2"
-            style={{ height: '300px' }} // Ajustando a altura da imagem
+            style={{ height: '300px', objectFit: 'cover' }} 
           />
         </Carousel.Item>
       </Carousel>
 
       {/* Título da Coleção */}
-      <CarrosselTitulo>Nossa coleção</CarrosselTitulo>
+      <TituloCarrossel>Nossa Coleção</TituloCarrossel>
 
-      {/* Carrossel da Coleção de Produtos */}
-      <Carousel>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={Banana}
-            alt="Licor Banana"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={Cacau}
-            alt="Licor Cacau"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={Maca}
-            alt="Licor de Maçã Verde"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={Amarula}
-            alt="Licor Amarula"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={figo}
-            alt="Licor Figo"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={groselha}
-            alt="Licor Groselha"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={Canela}
-            alt="Licor Canela"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={1500}>
-          <img
-            className="d-block w-100"
-            src={Morango}
-            alt="Licor Morango"
-            style={{ height: '300px' }}
-          />
-        </Carousel.Item>
+      {/* Carrossel de Produtos com Zoom e Destaque */}
+      <Carousel className="carousel-dark">
+        {[Banana, Cacau, Maca, Amarula, figo, groselha, Canela, Morango].map((imagem, index) => (
+          <Carousel.Item key={index} interval={2000}>
+            <div className="d-flex justify-content-center">
+              <ImagemGrande
+                className="d-block"
+                src={imagem}
+                alt={`Licor ${index}`}
+              />
+            </div>
+          </Carousel.Item>
+        ))}
       </Carousel>
 
-      {/* Card de Destaque */}
-      <Card className="my-4 text-center">
-        <Card.Body>
-          <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3" />
+      {/* Card de Destaque com Animação de Hover */}
+      <Card className="text-center my-5 shadow-lg border-0" style={{ maxWidth: '600px', margin: '0 auto' }}>
+        <Card.Body className="p-4">
+          <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3" style={{ width: '80px' }} />
           <DescricaoTitulo>A Mais Escolhida</DescricaoTitulo>
-          <DescricaoTituloLivro>Licor Fino de Chocolate e Morango</DescricaoTituloLivro>
-          <DescricaoTexto>A bebida mais escolhida pelas mulheres...</DescricaoTexto>
-          <Button href="/catálogo" variant="warning">
-            Saiba mais
+          <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor Fino de Chocolate e Morango.</DescricaoTexto>
+          <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
+            Explore mais
           </Button>
         </Card.Body>
-        <Card.Img variant="bottom" src={MorangoECacau} alt="Licor Fino de Chocolate e Morango" />
+        {/* Imagem com animação de entrada */}
+        <CardAnimado variant="bottom" src={MorangoECacau} alt="Licor Fino de Chocolate e Morango" />
       </Card>
-    </div>
+    </Container>
   );
 };
 
-export default Carrossel;
+export default CarrosselModerno;
