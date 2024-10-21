@@ -44,7 +44,7 @@ const SaboresCard = styled.div`
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer className="container">
-            <Titulo> Últimos Lançamentos </Titulo>
+            <Titulo> Últimos Lançamentos! </Titulo>
             <NovosSaboresContainer className="row">
                 {sabores.map((sabor, index) => (
                     <SaboresCard className="col-md-4 col-sm-6" key={index}>
