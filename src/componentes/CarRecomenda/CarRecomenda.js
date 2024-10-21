@@ -1,101 +1,32 @@
-import styled, { keyframes } from 'styled-components';
+import React from 'react';
+import { Card, Button, Row, Col } from 'react-bootstrap';
 import { Titulo } from '../Titulo/Titulo';
-import Coleaco from '../../imagens/colecao 1.svg';
-import { Link } from 'react-router-dom';
+import Coleaco from '../../imagens/Licores (2).svg';
 
-// Animação de aparecer e sumir
-const fadeInOut = keyframes`
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-`;
 
-const Card = styled.div`
-  align-items: center;
-  background-color: #FFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  padding: 20px;
-  width: 100%;
-  
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    margin: 10px auto;
-    max-width: 600px;
-  }
-`;
 
-const Botao = styled(Link)`
-  background-color: #EB9B00;
-  color: #FFF;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 20px;
-  font-weight: 900;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  margin-top: 10px;
-  
-  /* Aplicando a animação de aparecer e sumir */
-  animation: ${fadeInOut} 2s infinite;
-`;
-
-const Descricao = styled.p`
-  color: #002F52;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 10px;
-
-  @media screen and (min-width: 768px) {
-    font-size: 16px;
-    text-align: left;
-    margin-top: 0;
-  }
-`;
-
-const Subtitulo = styled.h4`
-  color: #002F52;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px 0;
-  text-align: center;
-
-  @media screen and (min-width: 768px) {
-    font-size: 18px;
-    text-align: left;
-  }
-`;
-
-const ImgSabor = styled.img`
-  max-width: 100%;
-  height: auto;
-
-  @media screen and (min-width: 768px) {
-    max-width: 250px;
-  }
-`;
 
 function CardRecomenda({ titulo, subtitulo, descricao }) {
   return (
-    <Card>
-      <div>
-        <Titulo alinhamento="center">{titulo}</Titulo>
-        <Subtitulo>{subtitulo}</Subtitulo>
-        <Descricao>{descricao}</Descricao>
-        <Botao to='/catálogo'>Saiba mais</Botao>
-      </div>
-      <div> 
-        <ImgSabor src={Coleaco} alt={titulo} />
-      </div>
-    </Card>  
+    <Card style={{ margin: '10px auto', maxWidth: '1200px', display: 'flex' }}>
+      <Row>
+        <Col xs={12} md={6} className="d-flex flex-column align-items-center">
+          {/* Centralizando o texto no contêiner */}
+          <Titulo alinhamento="center">{titulo}</Titulo>
+          <h4 style={{ color: '#002F52', fontWeight: 'bold', margin: '10px 0', textAlign: 'center' }}>{subtitulo}</h4>
+          <p style={{ color: '#002F52', fontWeight: 'bold', fontSize: '14px', textAlign: 'center' }}>
+            {descricao}
+          </p>
+          <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
+            Saiba mais
+          </Button>
+        
+        </Col>
+        <Col xs={12} md={6} className="d-flex justify-content-center">
+          <img src={Coleaco} alt={titulo} style={{ width: '80%', height: 'auto', marginRight: '20px' }} />
+        </Col>
+      </Row>
+    </Card>
   );
 }
 

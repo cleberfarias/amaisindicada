@@ -1,13 +1,13 @@
-import banana from '../../imagens/banana.svg'
-import maracuja from '../../imagens/maracuja.svg'
-import cacau from '../../imagens/cacau.svg'
+import acucarMascavo from '../../imagens/AcucarMascavoNovo.svg';
+import Pistache from '../../imagens/PistacheNovo.svg';
+import ChocolateBranco from '../../imagens/ChocolaBrancoNovo.svg';
 
 
 export const sabores = [
    
-    {nome: 'Licor Fino de Banana', id: 7, src: banana},
-    {nome: 'Licor Fino de coco', id: 7, src: cacau},
-    {nome: 'Licor Fino de maracuja ', id: 7, src: maracuja},
+    {nome: 'Licor Fino de Açucar Mascavo', id: 7, src: acucarMascavo},
+    {nome: 'Licor Fino de Pistache', id: 7, src: Pistache},
+    {nome: 'Licor cremoso de Chocolate Branco', id: 7, src: ChocolateBranco},
     
 ]  
     

@@ -1,105 +1,180 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { sabores } from './imagens'
+
 
 function Produtos() {
     const navigate = useNavigate();
     const [produtos, setProdutos] = useState([
         {
-            id: 1,
-            nome: 'Prata',
-            descricao: 'Cachaça Prata Envelhecida',
-            preco: 30.00,
-            estoque: 100,
-            imagem: require('../../imagens/fotos mais indicada/Prata.jpg')
-        },
-        {
-            id: 2,
-            nome: 'Ouro',
-            descricao: 'Envelhecida no Carvalho',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Ouro.jpg')
-        },
-        {
-            id: 3,
-            nome: 'Licor Banana',
-            descricao: 'Licor Fino de Banana',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Banana.jpg')
-        },
-        {
-            id: 4,
-            nome: 'Licor Cacau',
-            descricao: 'Licor Cremoso de Cacau',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Cacau.jpg')
-        },
-        {
-            id: 5,
-            nome: 'Licor Cacau',
-            descricao: 'Licor Fino de Canela',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Canela.jpg')
-        },
-        {
-            id: 6,
-            nome: 'Licor Coco',
-            descricao: 'Licor Cremoso de Coco',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Coco.jpg')
-        },
-        {
-            id: 7,
-            nome: 'Licor Figo',
-            descricao: 'Licor Fino de Figo',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Fico.jpg')
-        },
-        {
-            id: 8,
-            nome: 'Licor Groselha',
-            descricao: 'Licor Fino de Groselha',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/groselha (2).png')
-        },
-        {
-            id: 9,
-            nome: 'Licor Maçã Verde',
-            descricao: 'Licor Fino de Maçã Verde',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Maca.jpg')
-        },
-        {
-            id: 10,
-            nome: 'Licor Maracuja',
-            descricao: 'Licor Cremoso de Maracuja',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Maracuja.jpg')
-        },
-        {
-            id: 11,
-            nome: 'Licor Morango',
-            descricao: 'Licor Cremoso de Morango',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Morango.jpg')
-        },
-        {
-            id: 12,
-            nome: 'Cachaça',
-            descricao: 'Cachaça de Amburana',
-            preco: 40.00,
-            estoque: 50,
-            imagem: require('../../imagens/fotos mais indicada/Amburana.jpg')
-        },
+    id: 1,
+    nome: 'Prata',
+    descricao: 'Cachaça Prata Envelhecida',
+    preco: 30.00,
+    estoque: 100,
+    imagem: sabores.Prata,
+},
+{
+    id: 2,
+    nome: 'Ouro',
+    descricao: 'Envelhecida no Carvalho',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Ouro
+},
+{
+    id: 12,
+    nome: 'Amburana',
+    descricao: 'Cachaça de Amburana',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Amburana
+},
+{
+    id: 19,
+    nome: 'Licor Fino de Café',
+    descricao: 'Licor Fino de Café',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Cafe
+},
+{
+    id: 16,
+    nome: 'Licor Fino de Canela',
+    descricao: 'Licor Fino de Canela',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Canela
+},
+{
+    id: 7,
+    nome: 'Licor Fino de Figo',
+    descricao: 'Licor Fino de Figo',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Figo
+},
+{
+    id: 8,
+    nome: 'Licor Fino de Groselha',
+    descricao: 'Licor Fino de Groselha',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Groselha
+},
+{
+    id: 9,
+    nome: 'Licor Fino de Maçã Verde',
+    descricao: 'Licor Fino de Maçã Verde',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.MacaVerde
+},
+{
+    id: 3,
+    nome: 'Licor Banana',
+    descricao: 'Licor Fino de Banana',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Banana
+},
+{
+    id: 18,
+    nome: 'Licor Fino de Menta',
+    descricao: 'Licor Fino de Menta',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Menta
+},
+{
+    id: 15,
+    nome: 'Licor Fino de Açúcar Mascavo',
+    descricao: 'Licor Fino de Açúcar Mascavo',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.AcucarMascavo
+},
+{
+    id: 4,
+    nome: 'Licor Cacau',
+    descricao: 'Licor Cremoso de Cacau',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Cacau
+},
+{
+    id: 6,
+    nome: 'Licor Coco',
+    descricao: 'Licor Cremoso de Coco',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Coco
+},
+{
+    id: 10,
+    nome: 'Licor Maracujá',
+    descricao: 'Licor Cremoso de Maracujá',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Maracuja
+},
+{
+    id: 11,
+    nome: 'Licor Morango',
+    descricao: 'Licor Cremoso de Morango',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Morango
+},
+{
+    id: 5,
+    nome: 'Licor Cremoso Abacaxi',
+    descricao: 'Licor Cremoso de Abacaxi',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Abacaxi
+},
+{
+    id: 13,
+    nome: 'Licor Cremoso de Paçoca',
+    descricao: 'Licor Cremoso de Paçoca',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Pacoca
+},
+{
+    id: 14,
+    nome: 'Licor Cremoso de Pistache',
+    descricao: 'Licor Cremoso de Pistache',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Pistache
+},
+{
+    id: 17,
+    nome: 'Licor Cremoso Doce de Leite',
+    descricao: 'Licor Cremoso Doce de Leite',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.DoceDeLeite
+},
+{
+    id: 20,
+    nome: 'Licor Cremoso de Limão',
+    descricao: 'Licor Cremoso de Limão',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.Limao
+},
+{
+    id: 18,
+    nome: 'Licor Cremoso de Chocolate Branco',
+    descricao: 'Licor Cremoso de Chocolate Branco',
+    preco: 40.00,
+    estoque: 50,
+    imagem: sabores.ChoclateBranco
+},
+
         // Adicione mais produtos conforme necessário
     ]);
     const [quantidade, setQuantidade] = useState({});
@@ -139,14 +214,14 @@ function Produtos() {
     };
 
     return (
-        <>
+         <>
             <hr className="mt-3" />
             <div className="row g-3">
                 {produtos.map(produto => (
-                    <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" key={produto.id}>
+                    <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={produto.id}>
                         <div className="card text-center bg-light position-relative">
                             <a href="#" className="position-absolute end-0 p-2 text-danger">
-                                <i className="bi-suit-heart" style={{ fontSize: "24px", lineHeight: "24px" }}></i>
+                            <i className="bi-suit-heart" style={{ fontSize: "24px", lineHeight: "24px" }}></i>
                             </a>
                             <a href={`/produto/${produto.id}`}>
                                 <img 

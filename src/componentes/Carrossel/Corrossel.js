@@ -2,18 +2,18 @@ import React from 'react';
 import { Carousel, Card, Button, Container } from 'react-bootstrap'; // Importando componentes do Bootstrap
 import styled, { keyframes } from 'styled-components';  
 
-import Banana from '../../imagens/banana.svg';
-import Cacau from '../../imagens/cacau.svg';
-import Maca from '../../imagens/Maça.svg';
-import Amarula from '../../imagens/amarula.svg';
-import figo from '../../imagens/figo.svg';
-import groselha from '../../imagens/groselha.svg';
-import Canela from '../../imagens/Canela.svg';
-import Morango from '../../imagens/morango.svg';
+import Banana from '../../imagens/BananaNovo.svg';
+import Cacau from '../../imagens/CacauNovo.svg';
+import Maca from '../../imagens/MacaVerdeNovo.svg';
+import Amarula from '../../imagens/Amburana 2.svg';
+import figo from '../../imagens/FigoNovo.svg';
+import groselha from '../../imagens/GroselhaNovo.svg';
+import Canela from '../../imagens/CanelaNovo.svg';
+import Morango from '../../imagens/MorangoNovo.svg';
 import estrela from '../../imagens/Estrelinhas.svg';
-import MorangoECacau from '../../imagens/MorangoCacau.svg';
-import BannerImage1 from '../../imagens/bannerhome1.png'; // Exemplo de imagem do banner 1
-import BannerImage2 from '../../imagens/bannerhome.png';  // Exemplo de imagem do banner 2
+import MorangoECacau from '../../imagens/ChocPistMorLim.svg';
+import BannerImage1 from '../../imagens/banner1.svg'; // Exemplo de imagem do banner 1
+import BannerImage2 from '../../imagens/banner2.svg';  // Exemplo de imagem do banner 2
 
 // Estilização com Styled Components
 const TituloCarrossel = styled.h2`
@@ -72,7 +72,7 @@ const CarrosselModerno = () => {
             className="d-block w-100"
             src={BannerImage1}
             alt="Banner 1"
-            style={{ height: '300px', objectFit: 'cover' }} 
+            style={{ height: '500px', width: 'auto', objectFit: 'contain' }} 
           />
         </Carousel.Item>
         <Carousel.Item interval={3000}>
@@ -80,7 +80,7 @@ const CarrosselModerno = () => {
             className="d-block w-100"
             src={BannerImage2}
             alt="Banner 2"
-            style={{ height: '300px', objectFit: 'cover' }} 
+            style={{ height: '500px', width: 'auto', objectFit: 'contain' }} 
           />
         </Carousel.Item>
       </Carousel>
@@ -104,18 +104,25 @@ const CarrosselModerno = () => {
       </Carousel>
 
       {/* Card de Destaque com Animação de Hover */}
-      <Card className="text-center my-5 shadow-lg border-0" style={{ maxWidth: '600px', margin: '0 auto' }}>
-        <Card.Body className="p-4">
-          <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3" style={{ width: '80px' }} />
-          <DescricaoTitulo>A Mais Escolhida</DescricaoTitulo>
-          <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor Fino de Chocolate e Morango.</DescricaoTexto>
-          <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
-            Explore mais
-          </Button>
-        </Card.Body>
-        {/* Imagem com animação de entrada */}
-        <CardAnimado variant="bottom" src={MorangoECacau} alt="Licor Fino de Chocolate e Morango" />
-      </Card>
+      <Card className="text-center my-5 shadow-lg border-0" style={{  maxWidth: '700px', margin: 'auto', display: 'flex', alignItems: 'center'}}>
+  <Card.Body className="p-4">
+    <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3" style={{ width: '80px' }} />
+    <CardAnimado 
+      variant="left"
+    src={MorangoECacau} 
+    alt="Licor Fino de Chocolate e Morango" 
+    style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+  />
+    <DescricaoTitulo>A Mais Escolhida</DescricaoTitulo>
+    <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor Fino de Chocolate, Pistache, Morango e Limão.</DescricaoTexto>
+    <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
+      Explore mais
+    </Button>
+  </Card.Body>
+  {/* Ajuste para garantir que a imagem não seja cortada */}
+  
+</Card>
+
     </Container>
   );
 };
