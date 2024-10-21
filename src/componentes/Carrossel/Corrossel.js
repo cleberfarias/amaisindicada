@@ -86,7 +86,7 @@ const CarrosselModerno = () => {
       </Carousel>
 
       {/* Título da Coleção */}
-      <TituloCarrossel>Nossa Coleção</TituloCarrossel>
+      <TituloCarrossel>Nossa Coleção!</TituloCarrossel>
 
       {/* Carrossel de Produtos com Zoom e Destaque */}
       <Carousel className="carousel-dark">
