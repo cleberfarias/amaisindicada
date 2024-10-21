@@ -113,7 +113,7 @@ const CarrosselModerno = () => {
     alt="Licor Fino de Chocolate e Morango" 
     style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
   />
-    <DescricaoTitulo>A Mais Escolhida</DescricaoTitulo>
+    <DescricaoTitulo>A Mais Escolhida!!!</DescricaoTitulo>
     <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor Fino de Chocolate, Pistache, Morango e Limão.</DescricaoTexto>
     <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
       Explore mais
