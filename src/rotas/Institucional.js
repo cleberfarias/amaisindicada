@@ -27,9 +27,9 @@ const ContentContainer = styled.div`
 const TextContainer = styled.div`
   flex: 1;
   text-align: justify;
-  max-width: 80%; /* Ocupa toda a largura disponível */
-  padding: 0 20px; /* Adiciona um espaçamento nas laterais */
-  box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
+  max-width: 80%; 
+  padding: 0 20px; 
+  box-sizing: border-box;
 `;
 
 const Titulo = styled.h2`
@@ -70,28 +70,45 @@ const ImageContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between; /* Distribui as imagens pelo espaço disponível */
-  align-items: center; /* Alinha as imagens verticalmente */
+  justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
-  padding: 0 20px; /* Adiciona um espaçamento nas laterais */
-  max-width: 1200px; /* Define uma largura máxima para o container */
-  margin: 0 auto; /* Centraliza o container na página */
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const Image = styled.img`
   width: 20%;
-  max-width: 20%; /* Alterado para 100% para permitir que as imagens diminuam conforme a tela */
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
   cursor: pointer;
-   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
-
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Media query para dispositivos menores */
+  @media (max-width: 768px) {
+    width: 100%; /* A imagem ocupa toda a largura do container */
+  }
+`;
+const Section = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+
+  /* Media query para dispositivos menores */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Coloca a imagem no topo */
+    text-align: center;
   }
 `;
 
@@ -103,14 +120,18 @@ function Institucional() {
         <ContentContainer>
           <TextContainer>
             <Titulo>Bem-vindo ao site da Cachaça<b> A Mais Indicada!</b></Titulo>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+
+            {/* Primeira Seção com imagem no topo em telas menores */}
+            <Section>
               <Image className="imagem__producao" src={Iziario} alt="foto do alambique" />
               <TextoInstitucional>
                 <p>E foi lá em 2004, na comunidade de Nossa Senhora do Caravaggio em Celso Ramos-SC, 
                   através do Seu Iziário que a história da A Mais Indicada começou!.</p>
               </TextoInstitucional>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            </Section>
+
+            {/* Segunda Seção */}
+            <Section>
               <TextoInstitucional>
                 <p>Com a necessidade de aperfeiçoamento, Iziário Pelozato realizou um 
                   curso para aprender um pouco mais do processo da cachaça. Dona Marizete, 
@@ -122,8 +143,10 @@ function Institucional() {
                 </p>
               </TextoInstitucional>
               <Image className="imagem__producao" src={MarizeteIziario} alt="foto do alambique" />
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            </Section>
+
+            {/* Terceira Seção */}
+            <Section>
               <Image className="imagem__producao" src={familia} alt="foto do alambique" />
               <TextoInstitucional>
                 <p>Roberson Pelozato, filho do casal, decidiu ampliar as vendas e criar uma 
@@ -133,8 +156,10 @@ function Institucional() {
                   prontamente a indicavam, 
                   e assim acabou se tornando A Mais Indicada Cachaça de Celso Ramos.</p>
               </TextoInstitucional>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            </Section>
+
+            {/* Quarta Seção */}
+            <Section>
               <TextoInstitucional>
                 <p>Cada produto é desenvolvido com carinho e dedicação pela nossa família, pensando 
                   sempre no melhor para você e sua família. A Mais Indicada conta com licores cremosos e 
@@ -143,18 +168,8 @@ function Institucional() {
                 </p>
               </TextoInstitucional>
               <Image className="imagem__producao" src={Geral} alt="foto do alambique" />
-            </div>
-            
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <TextoDestaque>
-                <p>A Mais Indicada é mais do que uma marca de bebidas, é uma celebração à cultura, à 
-                  tradição e ao prazer de brindar os momentos especiais da vida. Queremos que cada dose 
-                  represente a paixão que colocamos em nossa produção e que, ao saborear nossos produtos, você sinta a dedicação que transforma simples ingredientes em verdadeiras obras-primas.
-                    Seja em festas, encontros ou momentos de descanso, A Mais Indicada estará sempre ao seu 
-                    lado, tornando cada brinde inesquecível.
-</p>
-              </TextoDestaque>
-            </div>
+            </Section>
+
             <Titulo>Galeria<b> A Mais Indicada!</b></Titulo>
             <ImageContainer>
               <Image className="imagem__producao" src={require("../imagens/EXP12.jpg")} alt="foto do alambique" />

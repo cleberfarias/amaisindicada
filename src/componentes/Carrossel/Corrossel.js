@@ -104,25 +104,24 @@ const CarrosselModerno = () => {
       </Carousel>
 
       {/* Card de Destaque com Animação de Hover */}
-      <Card className="text-center my-5 shadow-lg border-0" style={{  width: '800px', height: '500px', margin: 'auto', display: 'flex', alignItems: 'center'}}>
+      <Card className="text-center my-5 shadow-lg border-0" style={{ width: '100%', maxWidth: '800px', margin: 'auto', display: 'flex', alignItems: 'center' }}>
   <Card.Body className="p-4">
-    <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3" style={{ width: '80px' }} />
-    <CardAnimado 
+    <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3 img-fluid" style={{ width: '80px', maxWidth: '100%' }} />
+    <CardAnimado
       variant="left"
-    src={MorangoECacau} 
-    alt="Licor Fino de Chocolate e Morango" 
-    style={{ objectFit: 'contain', width: '100%', height: '250px' }}
-  />
+      src={MorangoECacau}
+      alt="Licor Fino de Chocolate e Morango"
+      className="img-fluid"
+      style={{ objectFit: 'contain', width: '100%', maxHeight: '250px' }}
+    />
     <DescricaoTitulo>A Mais Escolhida!!!</DescricaoTitulo>
-    <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor 
-      Fino de Chocolate, Pistache, Morango e Limão.</DescricaoTexto>
+    <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor Fino de Chocolate, Pistache, Morango e Limão.</DescricaoTexto>
     <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
       Explore mais
     </Button>
   </Card.Body>
-  {/* Ajuste para garantir que a imagem não seja cortada */}
-  
 </Card>
+
 
     </Container>
   );
