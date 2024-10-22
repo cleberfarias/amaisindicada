@@ -5,7 +5,7 @@ import styled, { keyframes } from 'styled-components';  
 import Banana from '../../imagens/BananaNovo.svg';
 import Cacau from '../../imagens/CacauNovo.svg';
 import Maca from '../../imagens/MacaVerdeNovo.svg';
-import Amarula from '../../imagens/Amburana 2.svg';
+import Amarula from '../../imagens/AmburanaNovo.svg';
 import figo from '../../imagens/FigoNovo.svg';
 import groselha from '../../imagens/GroselhaNovo.svg';
 import Canela from '../../imagens/CanelaNovo.svg';

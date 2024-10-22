@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Producao1 from "../imagens/produca4.png.jpg";
 import Producao2 from "../imagens/producao3.jpg";
-import Producao3 from "../imagens/carvalho.jpg";
+import Producao3 from "../imagens/CarvalhoNovo.svg";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
 import Header from "../componentes/Header/Header";
 
