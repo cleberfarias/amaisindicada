@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Producao1 from "../imagens/produca4.png.jpg";
-import Producao2 from "../imagens/producao3.jpg";
-import Producao3 from "../imagens/ouro.svg";
+import Iziario from "../imagens/IZIÁRIO 1 (2).png";
+import MarizeteIziario from "../imagens/Marizete e Iziario (1) 1.png";
+import familia from "../imagens/Familia completa (2) 1.png";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
 import Header from "../componentes/Header/Header";
+import Geral from "../imagens/Geral (2) 1.png";
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -34,7 +35,7 @@ const TextContainer = styled.div`
 const Titulo = styled.h2`
   width: 100%;
   padding: 30px 0;
-  color: #000000;
+  color: #505050;
   font-size: 32px;
   font-family: 'PT Sans Caption', sans-serif;
   font-weight: bold;
@@ -45,9 +46,10 @@ const Titulo = styled.h2`
 const TextoInstitucional = styled.h3`
   width: 100%;
   padding: 20px;
-  font-size: 32px;
+  font-size: 20px;
   font-family: 'PT Sans Caption', sans-serif;
   font-weight: regular;
+  color: #505050;
   text-align: justify;
   margin: 0 auto;
   flex: 1;
@@ -55,7 +57,8 @@ const TextoInstitucional = styled.h3`
 const TextoDestaque = styled.h3`
   width: 100%;
   padding: 20px;
-  font-size: 32px;
+  font-size: 18px;
+  color: #505050;
   font-family: 'PT Sans Caption', sans-serif;
   font-weight: bold;
   text-align: center;
@@ -76,15 +79,19 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-  width: 50%;
-  max-width: 30%; /* Alterado para 100% para permitir que as imagens diminuam conforme a tela */
+  width: 20%;
+  max-width: 20%; /* Alterado para 100% para permitir que as imagens diminuam conforme a tela */
   height: auto;
   object-fit: cover;
+  border-radius: 8px;
   transition: transform 0.3s ease;
   cursor: pointer;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+
 
   &:hover {
     transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra no hover */
   }
 `;
 
@@ -97,33 +104,55 @@ function Institucional() {
           <TextContainer>
             <Titulo>Bem-vindo ao site da Cachaça<b> A Mais Indicada!</b></Titulo>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Image className="imagem__producao" src={Producao1} alt="foto do alambique" />
+              <Image className="imagem__producao" src={Iziario} alt="foto do alambique" />
               <TextoInstitucional>
-                <p>Nossa cachaça é produzida de maneira artesanal na encantadora cidade
-                  de Celso Ramos, situada em Santa Catarina. Aqui, a tradição e a paixão pela
-                  produção de cachaça estão enraizadas em nossa família, os Pelozato.</p>
+                <p>E foi lá em 2004, na comunidade de Nossa Senhora do Caravaggio em Celso Ramos-SC, 
+                  através do Seu Iziário que a história da A Mais Indicada começou!.</p>
               </TextoInstitucional>
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <TextoInstitucional>
-                <p>Nossos fundadores são verdadeiros conhecedores da arte da destilação,
-                  utilizando técnicas tradicionais. Cada etapa do processo de produção é cuidadosamente
-                  supervisionada para garantir que nossa cachaça atinja os mais altos padrões de excelência.</p>
+                <p>Com a necessidade de aperfeiçoamento, Iziário Pelozato realizou um 
+                  curso para aprender um pouco mais do processo da cachaça. Dona Marizete, 
+                  sua companheira, 
+                    acompanhou-o na ideia trazendo a doçura e inventando sabores para dar 
+                    vida aos licores. O primeiro licor foi o de figo.
+                    Fazendo primeiramente para o consumo e os vizinhos tomarem, a notícia da 
+                    boa cachaça se espalhou no município conhecido como Terra da Cana-de-Açúcar e a freguesia foi chegando… 
+                </p>
               </TextoInstitucional>
-              <Image className="imagem__producao" src={Producao2} alt="foto do alambique" />
+              <Image className="imagem__producao" src={MarizeteIziario} alt="foto do alambique" />
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Image className="imagem__producao" src={Producao3} alt="foto do alambique" />
+              <Image className="imagem__producao" src={familia} alt="foto do alambique" />
               <TextoInstitucional>
-                <p>Além disso, a Cachaça A Mais Indicada é envelhecida em tonéis de madeira especial,
-                  permitindo que os sabores se desenvolvam e se aperfeiçoem ao longo do tempo. O resultado é uma
-                  bebida suave, equilibrada e cheia de personalidade, que agrada aos paladares mais exigentes.</p>
+                <p>Roberson Pelozato, filho do casal, decidiu ampliar as vendas e criar uma 
+                  nova cara sem deixar suas raízes. O nome A MAIS INDICADA surgiu quando os 
+                  próprios clientes passavam pela região e pediam a indicação de uma boa 
+                  cachaça, como a população estava acostumada com a cachaça do Iziário, 
+                  prontamente a indicavam, 
+                  e assim acabou se tornando A Mais Indicada Cachaça de Celso Ramos.</p>
               </TextoInstitucional>
             </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <TextoInstitucional>
+                <p>Cada produto é desenvolvido com carinho e dedicação pela nossa família, pensando 
+                  sempre no melhor para você e sua família. A Mais Indicada conta com licores cremosos e 
+                  finos, além da tradicional cachaça e aquelas envelhecidas em barris. Juntos, estamos 
+                  criando histórias, compartilhando momentos e construindo um futuro feliz. 
+                </p>
+              </TextoInstitucional>
+              <Image className="imagem__producao" src={Geral} alt="foto do alambique" />
+            </div>
+            
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <TextoDestaque>
-                <p>Em nosso site, você encontrará informações detalhadas sobre nossos produtos, desde os diferentes tipos de cachaça que oferecemos até sugestões de como
-                  apreciá-la da melhor maneira possível.</p>
+                <p>A Mais Indicada é mais do que uma marca de bebidas, é uma celebração à cultura, à 
+                  tradição e ao prazer de brindar os momentos especiais da vida. Queremos que cada dose 
+                  represente a paixão que colocamos em nossa produção e que, ao saborear nossos produtos, você sinta a dedicação que transforma simples ingredientes em verdadeiras obras-primas.
+                    Seja em festas, encontros ou momentos de descanso, A Mais Indicada estará sempre ao seu 
+                    lado, tornando cada brinde inesquecível.
+</p>
               </TextoDestaque>
             </div>
             <Titulo>Galeria<b> A Mais Indicada!</b></Titulo>

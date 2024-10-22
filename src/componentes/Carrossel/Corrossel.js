@@ -104,17 +104,18 @@ const CarrosselModerno = () => {
       </Carousel>
 
       {/* Card de Destaque com Animação de Hover */}
-      <Card className="text-center my-5 shadow-lg border-0" style={{  maxWidth: '700px', margin: 'auto', display: 'flex', alignItems: 'center'}}>
+      <Card className="text-center my-5 shadow-lg border-0" style={{  width: '800px', height: '500px', margin: 'auto', display: 'flex', alignItems: 'center'}}>
   <Card.Body className="p-4">
     <img src={estrela} alt="Avaliação 5 Estrelas" className="mb-3" style={{ width: '80px' }} />
     <CardAnimado 
       variant="left"
     src={MorangoECacau} 
     alt="Licor Fino de Chocolate e Morango" 
-    style={{ objectFit: 'contain', width: '100%', height: 'auto' }}
+    style={{ objectFit: 'contain', width: '100%', height: '250px' }}
   />
     <DescricaoTitulo>A Mais Escolhida!!!</DescricaoTitulo>
-    <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor Fino de Chocolate, Pistache, Morango e Limão.</DescricaoTexto>
+    <DescricaoTexto>A bebida favorita entre nossas clientes é o delicioso Licor 
+      Fino de Chocolate, Pistache, Morango e Limão.</DescricaoTexto>
     <Button href="/catálogo" variant="warning" size="lg" className="mt-3">
       Explore mais
     </Button>
