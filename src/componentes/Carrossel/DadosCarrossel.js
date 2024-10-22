@@ -1,6 +1,6 @@
-import banana from '../../imagens/banana.png';
-import maracuja from '../../imagens/maracuja.png';
-import coco from '../../imagens/coco.png';
+import banana from '../../imagens/banana.svg';
+import maracuja from '../../imagens/marcauja.svg';
+import coco from '../../imagens/coco.svg';
 
 
 export const sabores = [

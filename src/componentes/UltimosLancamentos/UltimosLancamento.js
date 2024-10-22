@@ -2,7 +2,7 @@ import { sabores } from "./DadosUltimosLancamentos";
 import styled from 'styled-components'
 import CarRecomenda from "../CarRecomenda/CarRecomenda";
 import { Titulo } from "../Titulo/Titulo";
-import imgSabores from '../../imagens/colecao.png';
+import imgSabores from '../../imagens/colecao 1.svg';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importando Bootstrap CSS
 
 // Container para organizar os lançamentos

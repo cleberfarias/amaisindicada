@@ -2,16 +2,16 @@ import React from 'react';
 import { Carousel, Card, Button, Container } from 'react-bootstrap'; // Importando componentes do Bootstrap
 import styled, { keyframes } from 'styled-components';  
 
-import Banana from '../../imagens/BananaNovo.svg';
-import Cacau from '../../imagens/CacauNovo.svg';
-import Maca from '../../imagens/MacaVerdeNovo.svg';
-import Amarula from '../../imagens/AmburanaNovo.svg';
-import figo from '../../imagens/FigoNovo.svg';
-import groselha from '../../imagens/GroselhaNovo.svg';
-import Canela from '../../imagens/CanelaNovo.svg';
-import Morango from '../../imagens/MorangoNovo.svg';
+import Banana from '../../imagens/banana.svg';
+import Cacau from '../../imagens/cacau.svg';
+import Maca from '../../imagens/verde.svg';
+import Amarula from '../../imagens/Amburana.svg';
+import figo from '../../imagens/figo.svg';
+import groselha from '../../imagens/groselha.svg';
+import Canela from '../../imagens/canela.svg';
+import Morango from '../../imagens/morango.svg';
 import estrela from '../../imagens/Estrelinhas.svg';
-import MorangoECacau from '../../imagens/ChocPistMorLim.svg';
+import MorangoECacau from '../../imagens/ChocPistMorLim.png';
 import BannerImage1 from '../../imagens/banner1.svg'; // Exemplo de imagem do banner 1
 import BannerImage2 from '../../imagens/banner2.svg';  // Exemplo de imagem do banner 2
 

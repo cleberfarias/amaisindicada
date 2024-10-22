@@ -1,6 +1,6 @@
-import acucarMascavo from '../../imagens/AcucarMascavoNovo.svg';
-import Pistache from '../../imagens/PistacheNovo.svg';
-import ChocolateBranco from '../../imagens/ChocolaBrancoNovo.svg';
+import acucarMascavo from '../../imagens/mascavo.svg';
+import Pistache from '../../imagens/pistache.svg';
+import ChocolateBranco from '../../imagens/chocolateBranco.svg';
 
 
 export const sabores = [

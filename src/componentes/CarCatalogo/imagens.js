@@ -1,25 +1,25 @@
 // imagens.js
-import Prata from '../../imagens/18.svg';
-import Ouro from '../../imagens/CarvalhoNovo.svg';
-import Amburana from '../../imagens/AmburanaNovo.svg';
-import Cafe from '../../imagens/CafeNovo.svg';
-import Canela from '../../imagens/CanelaNovo.svg';
-import Figo from '../../imagens/FigoNovo.svg';
-import Groselha from '../../imagens/GroselhaNovo.svg';
-import MacaVerde from '../../imagens/MacaVerdeNovo.svg';
-import Banana from '../../imagens/BananaNovo.svg';
-import Menta from '../../imagens/MentaNovo.svg';
-import AcucarMascavo from '../../imagens/AcucarMascavoNovo.svg';
-import Cacau from '../../imagens/CacauNovo.svg';
-import Maracuja from '../../imagens/MaracujaNovo.svg';
-import Morango from '../../imagens/MaracujaNovo.svg';
-import Abacaxi from '../../imagens/AbacaxiNovo.svg';
-import Pacoca from '../../imagens/PacocaNovo.svg';
-import Pistache from '../../imagens/PistacheNovo.svg';
-import DoceDeLeite from '../../imagens/DoceLeiteNovo.svg';
-import Limao from '../../imagens/LimaoNovo.svg';
-import ChoclateBranco from '../../imagens/ChocolaBrancoNovo.svg';
-import Coco from '../../imagens/CocoNovo.svg';
+import Prata from '../../imagens/prata.svg';
+import Ouro from '../../imagens/ouro.svg';
+import Amburana from '../../imagens/Amburana.svg';
+import Cafe from '../../imagens/cafe.svg';
+import Canela from '../../imagens/canela.svg';
+import Figo from '../../imagens/figo.svg';
+import Groselha from '../../imagens/groselha.svg';
+import MacaVerde from '../../imagens/verde.svg';
+import Banana from '../../imagens/banana.svg';
+import Menta from '../../imagens/menta.svg';
+import AcucarMascavo from '../../imagens/mascavo.svg';
+import Cacau from '../../imagens/cacau.svg';
+import Maracuja from '../../imagens/marcauja.svg';
+import Morango from '../../imagens/morango.svg';
+import Abacaxi from '../../imagens/abacaxi.svg';
+import Pacoca from '../../imagens/pacoca.svg';
+import Pistache from '../../imagens/pistache.svg';
+import DoceDeLeite from '../../imagens/leite.svg';
+import Limao from '../../imagens/limao.svg';
+import ChoclateBranco from '../../imagens/chocolateBranco.svg';
+import Coco from '../../imagens/coco.svg';
 
 
 // Importe os outros 20 sabores da mesma forma
