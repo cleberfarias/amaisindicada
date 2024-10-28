@@ -4,6 +4,7 @@ import FooterCatalogo from './FooterCatalogo';
 import Banner from './Banner';
 import OpcoesMenu from './OpcoesMenu';
 import Produtos from './Produto';
+import DetalhesProduto from './sobre';
 
 
 
@@ -15,6 +16,7 @@ function CardCatalogo() {
             <Banner/>
             <OpcoesMenu/>
             <Produtos/>
+            <DetalhesProduto/>
             <FooterCatalogo />
         </div>
 

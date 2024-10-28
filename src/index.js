@@ -14,6 +14,7 @@ import LoginForm from './componentes/LoginCatalogo/Login';
 import CadastrarNovaSenha from './componentes/LoginCatalogo/CadastrarNovaSenha';
 import CarrinhoDeCompras from './componentes/CarCatalogo/Carrinho';
 import FechamentoCompra from './componentes/CarCatalogo/FechamentoCompra';
+import DetalhesProduto from './componentes/CarCatalogo/sobre';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -55,6 +56,7 @@ const App = () => (
       <Route path="/institucional" element={<Institucional />} />
       <Route path="/" element={<Home />} />
       <Route path="/catálogo" element={<Catalogo />} />
+      <Route path="/produto/:id" element={<DetalhesProduto />} />
       <Route path="/contato" element={<FaleConosco />} />
       <Route path="/cadastro" element={<LoginPrincipal />} />
       <Route path="/confirmarcadastro" element={<CadastroSucesso />} />

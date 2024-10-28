@@ -175,8 +175,12 @@ function Produtos() {
     imagem: sabores.ChoclateBranco
 },
 
+
         // Adicione mais produtos conforme necessário
     ]);
+    const handleNavigate = (id) => {
+        navigate(`/produto/${id}`);
+    };
     const [quantidade, setQuantidade] = useState({});
 
     const handleQuantidadeChange = (produtoId, value) => {
@@ -223,7 +227,7 @@ function Produtos() {
                             <a href="#" className="position-absolute end-0 p-2 text-danger">
                             <i className="bi-suit-heart" style={{ fontSize: "24px", lineHeight: "24px" }}></i>
                             </a>
-                            <a href={`/produto/${produto.id}`}>
+                            <a onClick={() => handleNavigate(produto.id)} style={{ cursor: 'pointer' }}>
                                 <img 
                                     src={produto.imagem || 'https://via.placeholder.com/150'} 
                                     className="card-img-top" 

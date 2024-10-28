@@ -27,8 +27,8 @@ const ContentContainer = styled.div`
 const TextContainer = styled.div`
   flex: 1;
   text-align: justify;
-  max-width: 80%; 
-  padding: 0 20px; 
+  max-width: 80%;
+  padding: 0 20px;
   box-sizing: border-box;
 `;
 
@@ -48,12 +48,13 @@ const TextoInstitucional = styled.h3`
   padding: 20px;
   font-size: 20px;
   font-family: 'PT Sans Caption', sans-serif;
-  font-weight: regular;
+  font-weight: normal;
   color: #505050;
   text-align: justify;
   margin: 0 auto;
   flex: 1;
 `;
+
 const TextoDestaque = styled.h3`
   width: 100%;
   padding: 20px;
@@ -93,11 +94,11 @@ const Image = styled.img`
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
   }
 
-  /* Media query para dispositivos menores */
   @media (max-width: 768px) {
-    width: 100%; /* A imagem ocupa toda a largura do container */
+    width: 100%;
   }
 `;
+
 const Section = styled.div`
   display: flex;
   align-items: center;
@@ -105,12 +106,42 @@ const Section = styled.div`
   margin-bottom: 20px;
   width: 100%;
 
-  /* Media query para dispositivos menores */
   @media (max-width: 768px) {
-    flex-direction: column; /* Coloca a imagem no topo */
+    flex-direction: column;
     text-align: center;
   }
 `;
+
+const Container = styled.div`
+  position: relative;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+`;
+
+const Iframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+`;
+
+const VideoPlayer = () => {
+  const videoId = 'TkL6RvNYB4A'; // Substitua pelo ID correto do vídeo
+  const url = `https://www.youtube.com/embed/${videoId}`;
+  
+  return (
+    <Container>
+      <Iframe
+        src={url}
+        allowFullScreen
+        title="Video Institucional"
+      ></Iframe>
+    </Container>
+  );
+};
 
 function Institucional() {
   return (
@@ -119,9 +150,9 @@ function Institucional() {
       <AppContainer>
         <ContentContainer>
           <TextContainer>
-            <Titulo>Bem-vindo ao site da Cachaça<b> A Mais Indicada!</b></Titulo>
+            <Titulo>Bem-vindo ao site da Cachaça <b>A Mais Indicada!</b></Titulo>
 
-            {/* Primeira Seção com imagem no topo em telas menores */}
+            {/* Primeira Seção */}
             <Section>
               <Image className="imagem__producao" src={Iziario} alt="foto do alambique" />
               <TextoInstitucional>
@@ -136,10 +167,10 @@ function Institucional() {
                 <p>Com a necessidade de aperfeiçoamento, Iziário Pelozato realizou um 
                   curso para aprender um pouco mais do processo da cachaça. Dona Marizete, 
                   sua companheira, 
-                    acompanhou-o na ideia trazendo a doçura e inventando sabores para dar 
-                    vida aos licores. O primeiro licor foi o de figo.
-                    Fazendo primeiramente para o consumo e os vizinhos tomarem, a notícia da 
-                    boa cachaça se espalhou no município conhecido como Terra da Cana-de-Açúcar e a freguesia foi chegando… 
+                  acompanhou-o na ideia trazendo a doçura e inventando sabores para dar 
+                  vida aos licores. O primeiro licor foi o de figo.
+                  Fazendo primeiramente para o consumo e os vizinhos tomarem, a notícia da 
+                  boa cachaça se espalhou no município conhecido como Terra da Cana-de-Açúcar e a freguesia foi chegando… 
                 </p>
               </TextoInstitucional>
               <Image className="imagem__producao" src={MarizeteIziario} alt="foto do alambique" />
@@ -170,17 +201,8 @@ function Institucional() {
               <Image className="imagem__producao" src={Geral} alt="foto do alambique" />
             </Section>
 
-            <Titulo>Galeria<b> A Mais Indicada!</b></Titulo>
-            <ImageContainer>
-              <Image className="imagem__producao" src={require("../imagens/EXP12.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP3.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP1.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP2.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP4.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP7.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP9.jpg")} alt="foto do alambique" />
-              <Image className="imagem__producao" src={require("../imagens/EXP10.jpg")} alt="foto do alambique" />
-            </ImageContainer>
+            <Titulo>Galeria <b>A Mais Indicada!</b></Titulo>
+            <VideoPlayer />
           </TextContainer>
         </ContentContainer>
       </AppContainer>
