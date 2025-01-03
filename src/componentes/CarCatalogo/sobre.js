@@ -274,22 +274,34 @@ Após aberto conservar resfriado por até 7 dias. Agite antes de beber.  Proibid
       <div
         style={{
           display: "flex",
+          flexDirection: "column",
           padding: "20px",
           maxWidth: "900px",
           margin: "0 auto",
           backgroundColor: "#ffebcf",
+          borderRadius: "8px",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <div style={{ flex: 1, textAlign: "center" }}>
+        <div style={{ flex: 1, textAlign: "center", marginBottom: "20px" }}>
           <img
             src={produto.imagem}
             alt={produto.nome}
-            style={{ width: "300px", height: "auto", borderRadius: "8px" }}
+            style={{
+              width: "100%",
+              maxWidth: "300px",
+              height: "auto",
+              borderRadius: "8px",
+            }}
           />
         </div>
-        <div style={{ flex: 2, paddingLeft: "20px" }}>
-          <h1>{produto.nome}</h1>
-          <p>{produto.descricao}</p>
+        <div style={{ flex: 2, paddingLeft: "20px", textAlign: "center" }}>
+          <h1 style={{ fontSize: "24px", marginBottom: "10px" }}>
+            {produto.nome}
+          </h1>
+          <p style={{ fontSize: "16px", lineHeight: "1.5" }}>
+            {produto.descricao}
+          </p>
         </div>
       </div>
       <div style={{ textAlign: "center", margin: "20px" }}>

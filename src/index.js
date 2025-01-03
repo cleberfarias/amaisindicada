@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App = () => (
   <BrowserRouter>
+   
     <Routes>
       <Route path="/institucional" element={<Institucional />} />
       <Route path="/" element={<Home />} />
