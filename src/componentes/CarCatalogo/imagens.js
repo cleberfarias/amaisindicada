@@ -1,7 +1,7 @@
 // imagens.js
 import Prata from '../../imagens/prata.svg';
 import Ouro from '../../imagens/ouro.svg';
-import Amburana from '../../imagens/Amburana.svg';
+import Amburana from '../../imagens/amburana.svg';
 import Cafe from '../../imagens/cafe.svg';
 import Canela from '../../imagens/canela.svg';
 import Figo from '../../imagens/figo.svg';
@@ -20,6 +20,9 @@ import DoceDeLeite from '../../imagens/leite.svg';
 import Limao from '../../imagens/limao.svg';
 import ChoclateBranco from '../../imagens/chocolateBranco.svg';
 import Coco from '../../imagens/coco.svg';
+import Jambu from '../../imagens/jambu.svg';
+import Ouro1ano from '../../imagens/ouro1ano.svg';
+import Ouro2anos from '../../imagens/ouro2anos.svg';
 
 
 // Importe os outros 20 sabores da mesma forma
@@ -45,6 +48,10 @@ export const sabores = {
   Pistache,
   DoceDeLeite,
   Limao,
-  ChoclateBranco
+  ChoclateBranco,
+  Jambu,
+  Ouro1ano,
+  Ouro2anos
+
   // Adicione os outros sabores
 };

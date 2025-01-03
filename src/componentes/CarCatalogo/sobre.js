@@ -247,6 +247,33 @@ Após aberto conservar resfriado por até 7 dias. Agite antes de beber.  Proibid
       estoque: 50,
       imagem: sabores.ChoclateBranco,
     },
+    {
+          id: 23,
+          nome: "Jambu",
+          descricao: `A dormência da Amazônia para nossa região através do jambu.
+Ingredientes: Cachaça, água para correção de volume, erva jambu desidratada. Graduação alcoólica 40% em volume. 
+Não contém glúten. Prazo de validade: indeterminado. Proibida a venda para menores de 18 anos. Evite o consumo excessivo de álcool. 
+Se beber não dirija.`,
+          preco: 40.0,
+          estoque: 50,
+          imagem: sabores.Jambu,
+        },
+        {
+          id: 24,
+          nome: "Carvalor Ouro",
+          descricao: "Carvalor Ouro 1 ano",
+          preco: 40.0,
+          estoque: 50,
+          imagem: sabores.Ouro1ano,
+        },
+        {
+          id: 25,
+          nome: "Carvalor Ouro 2 anos",
+          descricao: "Carvalor Ouro 2 ano",
+          preco: 40.0,
+          estoque: 50,
+          imagem: sabores.Ouro2anos,
+        },
   ];
 
   const produto = produtos.find((produto) => produto.id === parseInt(id));

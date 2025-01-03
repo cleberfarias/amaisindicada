@@ -175,6 +175,32 @@ function Produtos() {
       estoque: 50,
       imagem: sabores.ChoclateBranco,
     },
+    {
+      id: 23,
+      nome: "Jambu",
+      descricao: "Cachaça Jambu",
+      preco: 40.0,
+      estoque: 50,
+      imagem: sabores.Jambu,
+    },
+    {
+      id: 24,
+      nome: "Carvalor Ouro",
+      descricao: "Carvalor Ouro 1 ano",
+      preco: 40.0,
+      estoque: 50,
+      imagem: sabores.Ouro1ano,
+    },
+    {
+      id: 25,
+      nome: "Carvalor Ouro 2 anos",
+      descricao: "Carvalor Ouro 2 ano",
+      preco: 40.0,
+      estoque: 50,
+      imagem: sabores.Ouro2anos,
+    },
+    
+
    
 
     // Adicione mais produtos conforme necessário
