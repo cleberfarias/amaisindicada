@@ -1,7 +1,7 @@
 // imagens.js
 import Prata from '../../imagens/prata.svg';
 import Ouro from '../../imagens/ouro.svg';
-import Amburana from '../../imagens/amburana.svg';
+import Amburana from '../../imagens/Amburana.svg';
 import Cafe from '../../imagens/cafe.svg';
 import Canela from '../../imagens/canela.svg';
 import Figo from '../../imagens/figo.svg';
