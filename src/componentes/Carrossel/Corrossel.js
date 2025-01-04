@@ -5,7 +5,6 @@ import styled, { keyframes } from 'styled-components';  
 import Banana from '../../imagens/banana.svg';
 import Cacau from '../../imagens/cacau.svg';
 import Maca from '../../imagens/verde.svg';
-import Amarula from '../../imagens/amburana.svg';
 import figo from '../../imagens/figo.svg';
 import groselha from '../../imagens/groselha.svg';
 import Canela from '../../imagens/canela.svg';
@@ -90,7 +89,7 @@ const CarrosselModerno = () => {
 
       {/* Carrossel de Produtos com Zoom e Destaque */}
       <Carousel className="carousel-dark">
-        {[Banana, Cacau, Maca, Amarula, figo, groselha, Canela, Morango].map((imagem, index) => (
+        {[Banana, Cacau, Maca, figo, groselha, Canela, Morango].map((imagem, index) => (
           <Carousel.Item key={index} interval={2000}>
             <div className="d-flex justify-content-center">
               <ImagemGrande
