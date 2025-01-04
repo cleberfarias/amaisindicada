@@ -5,13 +5,13 @@ import { BiCart } from 'react-icons/bi'; // Importe o ícone do carrinho
 function HeaderCatalogo() {
     return (
         <div style={{ background: '#ffffff' }}>
-            <nav className="navbar navbar-expand-lg border-bottom shadow-sm navbar-dark mb-3" style={{ background: '#ffffff' }}>
+            <nav className="navbar navbar-expand-lg border-bottom shadow-sm navbar-light mb-3" style={{ background: '#ffffff' }}>
                 <div className="container">
-                    <a className="navbar-brand" href="/catálogo"><b>Indica Online</b></a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <a className="navbar-brand" href="/catálogo"><b>Loja Indicada</b></a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse">
+                    <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav flex-grow-1">
                             <li className="nav-item">
                                 <a className="nav-link" href="/" style={{ color: '#30261d', transition: 'color 0.3s' }} onMouseOver={(e) => e.target.style.color = '#ffd38f'} onMouseOut={(e) => e.target.style.color = '#30261d'}>Principal</a>
