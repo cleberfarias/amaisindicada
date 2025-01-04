@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Iziario from "../imagens/IZIÁRIO 1 (2).png";
 import MarizeteIziario from "../imagens/Marizete e Iziario (1) 1.png";
 import familia from "../imagens/Familia completa (2) 1.png";
@@ -7,11 +7,22 @@ import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
 import Header from "../componentes/Header/Header";
 import Geral from "../imagens/Geral (2) 1.png";
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const AppContainer = styled.div`
   width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #ff8a00);
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const ContentContainer = styled.div`
@@ -28,8 +39,9 @@ const TextContainer = styled.div`
   flex: 1;
   text-align: justify;
   max-width: 80%;
-  padding: 0 20px;
+  padding: 0; /* Increased padding */
   box-sizing: border-box;
+  animation: ${fadeIn} 1.5s ease-in-out;
 `;
 
 const Titulo = styled.h2`
@@ -40,12 +52,15 @@ const Titulo = styled.h2`
   font-family: 'PT Sans Caption', sans-serif;
   font-weight: bold;
   text-align: center;
-  margin: 0 auto;
+  margin: 0;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const TextoInstitucional = styled.h3`
   width: 100%;
-  padding: 20px;
+  padding: 40px; /* Increased padding */
   font-size: 20px;
   font-family: 'PT Sans Caption', sans-serif;
   font-weight: normal;
@@ -53,6 +68,7 @@ const TextoInstitucional = styled.h3`
   text-align: justify;
   margin: 0 auto;
   flex: 1;
+  animation: ${fadeIn} 2s ease-in-out;
 `;
 
 const TextoDestaque = styled.h3`
@@ -65,18 +81,9 @@ const TextoDestaque = styled.h3`
   text-align: center;
   margin: 0 auto;
   flex: 1;
-`;
-
-const ImageContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  padding: 0 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const Image = styled.img`
@@ -85,12 +92,12 @@ const Image = styled.img`
   height: auto;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.1) rotate(2deg);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
   }
 
@@ -105,6 +112,7 @@ const Section = styled.div`
   justify-content: center;
   margin-bottom: 20px;
   width: 100%;
+  animation: ${fadeIn} 2.5s ease-in-out;
 
   @media (max-width: 768px) {
     flex-direction: column;
