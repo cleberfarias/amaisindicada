@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components';
@@ -50,33 +50,69 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const App = () => (
-  <BrowserRouter>
-   
-    <Routes>
-      <Route path="/institucional" element={<Institucional />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/catálogo" element={<Catalogo />} />
-      <Route path="/produto/:id" element={<DetalhesProduto />} />
-      <Route path="/contato" element={<FaleConosco />} />
-      <Route path="/cadastro" element={<LoginPrincipal />} />
-      <Route path="/confirmarcadastro" element={<CadastroSucesso />} />
-      <Route path="/login" element={<LoginForm />} />
-      <Route path="/confirmcadastrosenha" element={<CadastrarNovaSenha />} />
-      <Route path="/carrinho" element={<CarrinhoDeCompras />} />
-      <Route path="/fechamentocompra" element={<FechamentoCompra />} />
-    </Routes>
-  </BrowserRouter>
+const AgeVerificationModal = ({ onConfirm }) => (
+  <div style={{
+    position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center'
+  }}>
+    <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', textAlign: 'center' }}>
+      <h2>Você tem 18 anos ou mais?</h2>
+      <button onClick={() => onConfirm(true)} style={{ marginRight: '10px', padding: '10px 20px' }}>Sim</button>
+      <button onClick={() => onConfirm(false)} style={{ padding: '10px 20px' }}>Não</button>
+    </div>
+  </div>
 );
+
+const App = () => {
+  const [ageVerified, setAgeVerified] = useState(null);
+
+  useEffect(() => {
+    const verified = localStorage.getItem('ageVerified');
+    if (verified) {
+      setAgeVerified(true);
+    }
+  }, []);
+
+  const handleAgeVerification = (isVerified) => {
+    if (isVerified) {
+      localStorage.setItem('ageVerified', 'true');
+      setAgeVerified(true);
+    } else {
+      alert('Você deve ter 18 anos ou mais para acessar este site.');
+      window.location.href = 'https://www.google.com';
+    }
+  };
+
+  if (!ageVerified) {
+    return <AgeVerificationModal onConfirm={handleAgeVerification} />;
+  }
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/institucional" element={<Institucional />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/catálogo" element={<Catalogo />} />
+        <Route path="/produto/:id" element={<DetalhesProduto />} />
+        <Route path="/contato" element={<FaleConosco />} />
+        <Route path="/cadastro" element={<LoginPrincipal />} />
+        <Route path="/confirmarcadastro" element={<CadastroSucesso />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/confirmcadastrosenha" element={<CadastrarNovaSenha />} />
+        <Route path="/carrinho" element={<CarrinhoDeCompras />} />
+        <Route path="/fechamentocompra" element={<FechamentoCompra />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-// Forçar HTTPS
 if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost') {
   window.location.href = `https://${window.location.host}${window.location.pathname}${window.location.search}`;
 }
 
-// Registrar Service Worker (opcional, necessário criar o arquivo service-worker.js)
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js')
     .then((registration) => {
