@@ -199,6 +199,14 @@ function Produtos() {
       estoque: 50,
       imagem: sabores.Ouro2anos,
     },
+    {
+      id: 26,
+      nome: "Licor Uva",
+      descricao: "Licor Cremoso de Uva",
+      preco: 40.0,
+      estoque: 50,
+      imagem: sabores.Uva,
+    },
     
 
    
