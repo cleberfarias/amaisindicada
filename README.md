@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# 🥃 A Mais Indicada – Site Institucional & Loja Online
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Plataforma digital para apresentação da marca **A Mais Indicada** e venda de cachaças e licores artesanais produzidos em Santa Catarina.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 Sobre o projeto
 
-### `npm start`
+Este projeto é o **site oficial** e a **loja online** da marca **A Mais Indicada**, uma cachaçaria artesanal catarinense que produz cachaças e licores com mão de obra familiar e foco em qualidade. [oai_citation:0‡Instagram](https://www.instagram.com/maisindicada/?hl=en&utm_source=chatgpt.com)  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O objetivo principal do sistema é:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Fortalecer a **presença digital** da marca;
+- Apresentar a **história, o processo produtivo e o catálogo de produtos**;
+- Permitir que clientes conheçam melhor a marca e encontrem os canais de compra.
 
-### `npm test`
+> Este repositório representa a parte **front-end** do projeto (site e/ou loja).  
+> O back-end (cadastro de produtos, pedidos, etc.) foi desenvolvido separadamente, utilizando **Java Spring Boot + PostgreSQL**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎯 Objetivos de negócio
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Dar uma identidade digital profissional para a marca **A Mais Indicada**;
+- Facilitar o acesso às informações sobre:
+  - Tipos de cachaça e licores;
+  - Origem e história da marca;
+  - Pontos de venda e contato;
+- Criar uma base sólida para futura expansão de **vendas online** e campanhas de marketing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧩 Funcionalidades principais
 
-### `npm run eject`
+Adapte de acordo com o que existe hoje no seu código:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Página inicial (Home)**
+  - Apresentação da marca com destaque visual;
+  - Seção de produtos em destaque;
+  - Chamadas para conhecer a história e os licores/cachaças.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Catálogo de produtos**
+  - Listagem de cachaças e licores;
+  - Informações de cada produto (nome, tipo, teor alcoólico, descrição, volume, etc.);
+  - Espaço para fotos de alta qualidade.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Página “Sobre / Nossa História”**
+  - História da marca e da família produtora;
+  - Região e tradição na produção de cachaça artesanal.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Contato**
+  - Formulário de contato (nome, e-mail, mensagem);
+  - Links para redes sociais (Instagram, Facebook, etc.);
+  - Informações de localização e canais de atendimento.
 
-## Learn More
+- **(Opcional) Carrinho / Loja**
+  - Visualização de produtos selecionados;
+  - Cálculo básico de valores;
+  - Integração com back-end ou redirecionamento para canais de venda.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🏗️ Stack técnica
 
-### Code Splitting
+> Ajuste se algo não bater com o que está no seu código.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Front-end**
+  - React (Create React App)
+  - JavaScript (ES6+)
+  - HTML5 / CSS3
+  - Bootstrap / CSS customizado
 
-### Analyzing the Bundle Size
+- **Back-end (projeto separado)**
+  - Java Spring Boot
+  - PostgreSQL
+  - API REST para produtos e, futuramente, pedidos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Outros**
+  - Git / GitHub para versionamento
+  - Deploy em ambiente web (ex: servidor próprio ou serviço de hospedagem)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🧱 Arquitetura e Organização
 
-### Advanced Configuration
+Sugestão de descrição (ajuste com o que o repo realmente tem):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+src/
+  components/
+    Header/
+    Footer/
+    ProductCard/
+    ProductList/
+    HeroSection/
+    AboutSection/
+    ContactForm/
+  pages/
+    Home/
+    Produtos/
+    Sobre/
+    Contato/
+  services/
+    api.js        # Módulo de acesso à API (produtos, etc.)
+  assets/
+    images/
+    icons/
+  styles/
+    global.css
+    variables.css
+  App.js
+  index.js
