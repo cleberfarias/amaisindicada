@@ -261,6 +261,63 @@ app.use((req, res, next) => {
 
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 
+const SITE_URL = "https://amaisindicada.com.br";
+const STATIC_PAGES = ["/", "/catalogo", "/institucional", "/exportacao", "/contato", "/blog"];
+
+const escapeXml = (value) =>
+  String(value || "").replace(/[<>&'"]/g, (char) => ({
+    "<": "&lt;",
+    ">": "&gt;",
+    "&": "&amp;",
+    "'": "&apos;",
+    '"': "&quot;",
+  }[char]));
+
+const staticUrlEntry = (path) => {
+  const pt = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
+  const en = path === "/" ? `${SITE_URL}/en` : `${SITE_URL}/en${path}`;
+  const es = path === "/" ? `${SITE_URL}/es` : `${SITE_URL}/es${path}`;
+  return `  <url>
+    <loc>${escapeXml(pt)}</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="${escapeXml(pt)}" />
+    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(en)}" />
+    <xhtml:link rel="alternate" hreflang="es" href="${escapeXml(es)}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(pt)}" />
+  </url>`;
+};
+
+const dynamicUrlEntry = (path) => `  <url>
+    <loc>${escapeXml(`${SITE_URL}${path}`)}</loc>
+  </url>`;
+
+app.get("/api/sitemap.xml", async (req, res) => {
+  const [produtosSnap, postsSnap] = await Promise.all([
+    db.collection("produtos").get(),
+    db.collection("posts").get(),
+  ]);
+
+  const produtoUrls = produtosSnap.docs
+    .map((doc) => doc.data())
+    .filter(isPublicProduct)
+    .map((produto) => dynamicUrlEntry(`/produto/${produto.id}`));
+
+  const postUrls = postsSnap.docs
+    .map((doc) => doc.data())
+    .filter(isPublicPost)
+    .map((post) => dynamicUrlEntry(`/blog/${post.id}`));
+
+  const entries = [...STATIC_PAGES.map(staticUrlEntry), ...produtoUrls, ...postUrls];
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${entries.join("\n")}
+</urlset>
+`;
+
+  res.set("Content-Type", "application/xml; charset=utf-8");
+  res.send(xml);
+});
+
 app.post("/api/auth/login", async (req, res) => {
   const ip = req.ip || "unknown";
   if (isRateLimited(ip)) {

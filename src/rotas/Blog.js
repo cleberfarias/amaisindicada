@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiEdit3 } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { listarPosts } from "../services/blogApi";
 import { theme } from "../styles/theme";
 import { useLocalizedPath } from "../contexts/LocaleContext";
@@ -176,6 +177,7 @@ function Blog() {
 
   return (
     <Page>
+      <Seo titleKey="blog.seo.title" descriptionKey="blog.seo.description" />
       <Header />
       <Main>
         <Hero>

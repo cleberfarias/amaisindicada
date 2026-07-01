@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiCheckCircle, FiGlobe, FiMail, FiMessageCircle } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { listarProdutos } from "../services/produtosApi";
 import { theme } from "../styles/theme";
 import { useLocalizedPath } from "../contexts/LocaleContext";
@@ -293,6 +294,7 @@ function Exportacao() {
 
   return (
     <Page>
+      <Seo titleKey="exportacao.seo.title" descriptionKey="exportacao.seo.description" />
       <Header />
       <Hero>
         <HeroInner>

@@ -5,12 +5,14 @@ import { useTranslation } from "react-i18next";
 import { FiArrowRight, FiGlobe, FiMessageCircle, FiShield } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { produtosDestaque, perfisRecomendacao } from "../data/produtos";
 import { listarBanners, listarProdutos } from "../services/produtosApi";
 import { theme } from "../styles/theme";
 import { useLocalizedPath } from "../contexts/LocaleContext";
 import HeroImage from "../imagens/Geral (2) 1.png";
 import FamiliaImage from "../imagens/Familia completa (2) 1.png";
+import Logo from "../imagens/Logo.png";
 import ProducaoImage from "../imagens/producao3.jpg";
 
 const Page = styled.div`
@@ -437,8 +439,18 @@ function Home() {
     t("home.recommender.whatsappMessage", { sugestao: recommendation.sugestao })
   );
 
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "A Mais Indicada",
+    url: "https://amaisindicada.com.br",
+    logo: `https://amaisindicada.com.br${Logo}`,
+    sameAs: ["https://www.instagram.com/maisindicada/"],
+  };
+
   return (
     <Page>
+      <Seo titleKey="home.seo.title" descriptionKey="home.seo.description" jsonLd={organizationJsonLd} />
       <Header />
 
       <Hero>

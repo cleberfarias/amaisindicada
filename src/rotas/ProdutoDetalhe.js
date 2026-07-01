@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FiArrowLeft, FiMessageCircle } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { catalogoProdutos } from "../data/produtos";
 import { buscarProduto } from "../services/produtosApi";
 import { theme } from "../styles/theme";
@@ -159,6 +160,7 @@ function ProdutoDetalhe() {
   if (!produto) {
     return (
       <Page>
+        <Seo noindex title={t("produtoDetalhe.notFoundTitle")} />
         <Header />
         <Main>
           <EmptyState>
@@ -176,9 +178,21 @@ function ProdutoDetalhe() {
 
   const message = encodeURIComponent(t("produtoDetalhe.whatsappMessage", { nome: produto.nome }));
   const specFallback = t("produtoDetalhe.specFallback");
+  const imageUrl = produto.imagem.startsWith("http")
+    ? produto.imagem
+    : `https://amaisindicada.com.br${produto.imagem}`;
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: produto.nome,
+    description: produto.descricaoLonga || produto.perfil,
+    image: imageUrl,
+    brand: { "@type": "Brand", name: "A Mais Indicada" },
+  };
 
   return (
     <Page>
+      <Seo title={`${produto.nome} | A Mais Indicada`} description={produto.perfil} jsonLd={productJsonLd} />
       <Header />
       <Main>
         <BackLink to={lp("/catalogo")}>

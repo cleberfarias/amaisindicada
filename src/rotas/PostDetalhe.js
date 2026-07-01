@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { FiArrowLeft } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { buscarPost } from "../services/blogApi";
 import { theme } from "../styles/theme";
 import { useLocalizedPath } from "../contexts/LocaleContext";
@@ -118,6 +119,7 @@ function PostDetalhe() {
   if (loaded && !post) {
     return (
       <Page>
+        <Seo noindex title={t("postDetalhe.notFound")} />
         <Header />
         <Main>
           <EmptyState>
@@ -142,8 +144,25 @@ function PostDetalhe() {
     );
   }
 
+  const postImageUrl = post.imagemCapa
+    ? post.imagemCapa.startsWith("http")
+      ? post.imagemCapa
+      : `https://amaisindicada.com.br${post.imagemCapa}`
+    : undefined;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.titulo,
+    description: post.resumo,
+    image: postImageUrl,
+    datePublished: post.publicadoEm,
+    author: { "@type": "Organization", name: post.autor || "A Mais Indicada" },
+    publisher: { "@type": "Organization", name: "A Mais Indicada" },
+  };
+
   return (
     <Page>
+      <Seo title={`${post.titulo} | A Mais Indicada`} description={post.resumo} jsonLd={articleJsonLd} />
       <Header />
       <Main>
         <BackLink to={lp("/blog")}>

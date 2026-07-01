@@ -13,5 +13,44 @@
     "publicadoEm": "2026-07-01T00:00:00.000Z",
     "ordem": 0,
     "ativo": true
+  },
+  {
+    "id": "harmonizar-licor-com-sobremesa",
+    "titulo": "Como harmonizar licores artesanais com sobremesas",
+    "resumo": "Dicas simples para combinar os licores finos e cremosos da A Mais Indicada com as sobremesas certas e impressionar em qualquer ocasiao.",
+    "conteudoMarkdown": "Harmonizar bebida com comida nao precisa ser complicado. Com licores artesanais, a regra mais simples e pensar em sabores que se completam: um licor doce combina bem com sobremesas mais neutras, e um licor mais citrico ou aromatico ajuda a equilibrar doces mais pesados.\n\n## Licores cremosos pedem sobremesas leves\n\nO Licor Cremoso de Pistache tem um perfil suave e presenteavel, otimo com bolos simples, sorvete de creme ou uma torta de nozes. Ja o Licor Cremoso de Limao, mais citrico e fresco, cai bem depois de refeicoes mais pesadas, funcionando quase como um digestivo.\n\n## Licores finos combinam com sabores tradicionais\n\nO Licor Fino de Figo carrega a memoria da producao artesanal da familia e combina naturalmente com queijos, pao de mel e sobremesas a base de frutas secas. Ja o Licor Fino de Cafe e uma escolha certeira para acompanhar chocolate amargo ou um tiramisu.\n\n## Uma dica pratica\n\nSirva o licor gelado, em tacas pequenas, e deixe a sobremesa ser a protagonista. O licor deve completar o prato, nao competir com ele.\n\nQuer sugestoes personalizadas para o seu evento ou loja? Fale com a gente pelo WhatsApp na pagina de contato.",
+    "imagemCapa": "",
+    "autor": "Equipe A Mais Indicada",
+    "tags": ["harmonizacao", "licores", "dicas"],
+    "status": "rascunho",
+    "publicadoEm": "2026-07-01T12:00:00.000Z",
+    "ordem": 1,
+    "ativo": true
+  },
+  {
+    "id": "cachaca-ouro-ou-prata-diferenca",
+    "titulo": "Cachaca Ouro ou Prata? Entenda a diferenca",
+    "resumo": "Veja as principais diferencas entre a Cachaca Prata e a Cachaca Ouro da A Mais Indicada, e qual escolher para cada ocasiao.",
+    "conteudoMarkdown": "Uma duvida comum de quem esta conhecendo a linha da A Mais Indicada e qual cachaca escolher: Prata ou Ouro? A resposta depende do que voce procura.\n\n## Cachaca Prata: leve e versatil\n\nA Cachaca Prata e a nossa cachaca classica, sem passagem por madeira. Tem um perfil leve e versatil, ideal para caipirinhas, drinks e para quem prefere um sabor mais limpo e direto.\n\n## Cachaca Ouro: envelhecida e elegante\n\nJa a Cachaca Ouro passa por um processo de envelhecimento que traz mais complexidade, cor dourada e um final mais macio. E uma boa porta de entrada para quem procura uma cachaca para tomar pura, em pequenas doses, ou para presentear.\n\n## Qual escolher\n\nSe o objetivo e um drink refrescante ou uma caipirinha no dia a dia, a Prata e a escolha certa. Se a ideia e degustar aos poucos ou presentear alguem que aprecia cachaca, a Ouro costuma agradar mais.\n\nAinda com duvida? Fale com a gente pelo WhatsApp e te ajudamos a escolher.",
+    "imagemCapa": "",
+    "autor": "Equipe A Mais Indicada",
+    "tags": ["cachaca", "guia", "produtos"],
+    "status": "rascunho",
+    "publicadoEm": "2026-07-01T12:00:00.000Z",
+    "ordem": 2,
+    "ativo": true
+  },
+  {
+    "id": "ideias-de-presente-licor-cachaca",
+    "titulo": "Ideias de presente com licores e cachacas artesanais",
+    "resumo": "Sugestoes de presente com cachacas e licores artesanais da A Mais Indicada para toda ocasiao.",
+    "conteudoMarkdown": "Cachacas e licores artesanais sao presentes que carregam historia, e a linha da A Mais Indicada tem opcoes para varios perfis de pessoas.\n\n## Para quem gosta de algo sofisticado\n\nO Licor Cremoso de Pistache tem visual marcante e perfil premium, combinando bem com ocasioes especiais como aniversarios e datas comemorativas.\n\n## Para quem valoriza tradicao\n\nA Cachaca Ouro, envelhecida e elegante, e uma otima escolha para presentear alguem que ja aprecia cachaca e procura algo com mais historia por tras.\n\n## Para presentes em grupo ou empresas\n\nUma selecao com mais de um sabor - por exemplo, um licor fino e uma cachaca - costuma funcionar bem em kits de fim de ano ou lembrancas corporativas.\n\n## Como comprar\n\nFale com a gente pelo WhatsApp informando a ocasiao e o perfil de quem vai receber o presente. A equipe ajuda a montar a combinacao ideal.",
+    "imagemCapa": "",
+    "autor": "Equipe A Mais Indicada",
+    "tags": ["presentes", "cachaca", "licores"],
+    "status": "rascunho",
+    "publicadoEm": "2026-07-01T12:00:00.000Z",
+    "ordem": 3,
+    "ativo": true
   }
 ]

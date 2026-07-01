@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FiMail, FiMapPin, FiMessageCircle, FiSend } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { theme } from "../styles/theme";
 
 const interesseIds = ["consumidor", "lojista", "representante", "exportacao", "eventos"];
@@ -201,6 +202,7 @@ function FaleConosco() {
 
   return (
     <Page>
+      <Seo titleKey="faleConosco.seo.title" descriptionKey="faleConosco.seo.description" />
       <Header />
       <Main>
         <HeaderBlock>

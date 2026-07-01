@@ -38,6 +38,10 @@
     "alert": "You must be 18 years of age or older to access this website."
   },
   "home": {
+    "seo": {
+      "title": "A Mais Indicada | Handcrafted Cachaca and Liqueurs from Santa Catarina, Brazil",
+      "description": "Handcrafted cachaca and liqueurs made in Celso Ramos, Santa Catarina, Brazil. Explore the catalog, our family story and export opportunities."
+    },
     "portfolio": {
       "eyebrow": "Portfolio",
       "title": "Product lines with an artisanal feel and a commercial presentation.",
@@ -76,6 +80,10 @@
     }
   },
   "institucional": {
+    "seo": {
+      "title": "Our Story | A Mais Indicada - Handcrafted Cachaca from Brazil",
+      "description": "Discover the story of A Mais Indicada, a family brand producing handcrafted cachaca and liqueurs in Celso Ramos and Lages, Santa Catarina, since 2004."
+    },
     "hero": {
       "eyebrow": "Our story",
       "title": "A family brand that grew through word of mouth.",
@@ -109,6 +117,10 @@
     }
   },
   "catalogo": {
+    "seo": {
+      "title": "Cachaca and Liqueur Catalog | A Mais Indicada",
+      "description": "Browse the full catalog of handcrafted cachaca (prata, ouro, amburana) and fine and creamy liqueurs from A Mais Indicada, Santa Catarina, Brazil."
+    },
     "hero": {
       "eyebrow": "Smart catalog",
       "title": "Products organized for choosing, reselling and serving customers.",
@@ -138,6 +150,10 @@
     "whatsappMessage": "Hello, I'm interested in the product {{nome}}. I'd like to receive business information."
   },
   "exportacao": {
+    "seo": {
+      "title": "Cachaca and Liqueur Export | A Mais Indicada",
+      "description": "Portfolio for distributors, retailers and international buyers. Handcrafted cachaca and liqueurs from Santa Catarina ready for export and B2B partnerships."
+    },
     "hero": {
       "eyebrow": "Export & business partnerships",
       "title": "Brazilian flavors ready for new conversations.",
@@ -176,6 +192,10 @@
     }
   },
   "blog": {
+    "seo": {
+      "title": "Blog | A Mais Indicada - Handcrafted Cachaca and Liqueurs",
+      "description": "Articles about artisanal production, pairing tips and news from A Mais Indicada, a cachaca and liqueur brand from Santa Catarina, Brazil."
+    },
     "hero": {
       "eyebrow": "Blog",
       "title": "Stories, production and flavors from A Mais Indicada.",
@@ -191,6 +211,10 @@
     "fallbackAuthor": "A Mais Indicada"
   },
   "faleConosco": {
+    "seo": {
+      "title": "Contact | A Mais Indicada - Handcrafted Cachaca from Brazil",
+      "description": "Get in touch with A Mais Indicada via WhatsApp or email. Support for consumers, retailers, distributors and export inquiries."
+    },
     "hero": {
       "eyebrow": "Smart contact",
       "title": "Choose the right way to talk to the brand.",

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import { useTranslation } from "react-i18next";
+import { HelmetProvider } from "react-helmet-async";
 
 import "./i18n/config";
 import Home from "./rotas/Home";
@@ -198,7 +199,9 @@ if (window.location.protocol !== "https:" && window.location.hostname !== "local
 
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <HelmetProvider>
+      <GlobalStyle />
+      <App />
+    </HelmetProvider>
   </React.StrictMode>
 );

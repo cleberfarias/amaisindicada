@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { FiEye, FiFilter, FiMessageCircle, FiSearch } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { catalogoProdutos } from "../data/produtos";
 import { listarProdutos } from "../services/produtosApi";
 import { theme } from "../styles/theme";
@@ -253,6 +254,7 @@ function Catalogo() {
 
   return (
     <Page>
+      <Seo titleKey="catalogo.seo.title" descriptionKey="catalogo.seo.description" />
       <Header />
       <Main>
         <Hero>

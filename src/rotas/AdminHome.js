@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FiBarChart2, FiBox, FiEdit3 } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
+import Seo from "../componentes/Seo/Seo";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
 import AdminShell from "../componentes/AdminShell/AdminShell";
 import AdminAuthGate from "../componentes/AdminShell/AdminAuthGate";
@@ -90,6 +91,7 @@ const Card = styled(Link)`
 function AdminHome() {
   return (
     <Page>
+      <Seo noindex title="Admin | A Mais Indicada" />
       <Header />
       <Main>
         <Eyebrow>Administrativo</Eyebrow>

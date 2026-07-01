@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { FiClock, FiHeart, FiMapPin, FiShield } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
+import Seo from "../componentes/Seo/Seo";
 import { theme } from "../styles/theme";
 import Familia from "../imagens/Familia completa (2) 1.png";
 import MarizeteIziario from "../imagens/Marizete e Iziario (1) 1.png";
@@ -191,6 +192,7 @@ function Institucional() {
 
   return (
     <Page>
+      <Seo titleKey="institucional.seo.title" descriptionKey="institucional.seo.description" />
       <Header />
       <Hero>
         <HeroInner>

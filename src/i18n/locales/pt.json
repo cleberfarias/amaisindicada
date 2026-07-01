@@ -38,6 +38,10 @@
     "alert": "Voce deve ter 18 anos ou mais para acessar este site."
   },
   "home": {
+    "seo": {
+      "title": "A Mais Indicada | Cachaca e Licor Artesanal de Santa Catarina",
+      "description": "Cachacas e licores artesanais produzidos em Celso Ramos, Santa Catarina. Conheca o catalogo, a historia da familia e a area de exportacao da A Mais Indicada."
+    },
     "portfolio": {
       "eyebrow": "Portfolio",
       "title": "Linhas com leitura artesanal e apresentacao comercial.",
@@ -76,6 +80,10 @@
     }
   },
   "institucional": {
+    "seo": {
+      "title": "Nossa Historia | A Mais Indicada - Cachaca Artesanal SC",
+      "description": "Conheca a historia da A Mais Indicada, marca familiar de cachaca e licor artesanal de Celso Ramos e Lages, Santa Catarina, desde 2004."
+    },
     "hero": {
       "eyebrow": "Nossa historia",
       "title": "Uma marca familiar que cresceu pela indicacao.",
@@ -109,6 +117,10 @@
     }
   },
   "catalogo": {
+    "seo": {
+      "title": "Catalogo de Cachacas e Licores Artesanais | A Mais Indicada",
+      "description": "Veja o catalogo completo de cachacas (prata, ouro, amburana) e licores finos e cremosos artesanais da A Mais Indicada, direto de Santa Catarina."
+    },
     "hero": {
       "eyebrow": "Catalogo inteligente",
       "title": "Produtos organizados para escolha, revenda e atendimento.",
@@ -138,6 +150,10 @@
     "whatsappMessage": "Ola, tenho interesse no produto {{nome}}. Gostaria de receber informacoes comerciais."
   },
   "exportacao": {
+    "seo": {
+      "title": "Exportacao de Cachaca e Licor Artesanal | A Mais Indicada",
+      "description": "Portfolio para distribuidores, lojistas e compradores internacionais. Cachacas e licores artesanais de Santa Catarina prontos para exportacao e parcerias B2B."
+    },
     "hero": {
       "eyebrow": "Exportacao e parcerias comerciais",
       "title": "Sabores brasileiros prontos para novas conversas.",
@@ -176,6 +192,10 @@
     }
   },
   "blog": {
+    "seo": {
+      "title": "Blog | A Mais Indicada - Cachaca e Licor Artesanal",
+      "description": "Artigos sobre producao artesanal, harmonizacao e novidades da A Mais Indicada, marca de cachaca e licor de Santa Catarina."
+    },
     "hero": {
       "eyebrow": "Blog",
       "title": "Historias, producao e sabores da A Mais Indicada.",
@@ -191,6 +211,10 @@
     "fallbackAuthor": "A Mais Indicada"
   },
   "faleConosco": {
+    "seo": {
+      "title": "Contato | A Mais Indicada - Cachaca e Licor Artesanal SC",
+      "description": "Fale com a A Mais Indicada pelo WhatsApp ou e-mail. Atendimento para consumidores, lojistas, distribuidores e exportacao."
+    },
     "hero": {
       "eyebrow": "Contato inteligente",
       "title": "Escolha o caminho certo para falar com a marca.",

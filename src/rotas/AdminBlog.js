@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { FiEdit3, FiEye, FiPlus, FiRefreshCw, FiSave, FiTrash2, FiUpload } from "react-icons/fi";
 import Header from "../componentes/Header/Header";
+import Seo from "../componentes/Seo/Seo";
 import Footer from "../componentes/FooterOpcoes/FooterOpcoes";
 import AdminShell from "../componentes/AdminShell/AdminShell";
 import AdminAuthGate from "../componentes/AdminShell/AdminAuthGate";
@@ -362,6 +363,7 @@ function AdminBlog() {
 
   return (
     <Page>
+      <Seo noindex title="Admin | Blog" />
       <Header />
       <Main>
         <HeaderGrid>
