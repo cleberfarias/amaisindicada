@@ -1,103 +1,235 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../../imagens/Logo.png'
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { useTranslation } from "react-i18next";
+import { FiMenu, FiSettings, FiX } from "react-icons/fi";
+import Logo from "../../imagens/Logo.png";
+import { theme } from "../../styles/theme";
+import { useLocalizedPath, useLocaleSwitchLinks } from "../../contexts/LocaleContext";
 
-// Estilo do HeaderContainer usando styled-components
 const HeaderContainer = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid ${theme.colors.line};
+  backdrop-filter: blur(16px);
+`;
+
+const HeaderInner = styled.div`
+  width: min(${theme.layout.maxWidth}, calc(100% - 32px));
+  min-height: 82px;
+  margin: 0 auto;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 24px;
+`;
+
+const Brand = styled(Link)`
+  display: inline-flex;
   align-items: center;
-  padding: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #FFFFFF;
-  height: 100px;
-  width: 100%;
-  @media screen and (max-width: 768px) {
+  gap: 12px;
+  text-decoration: none;
+  color: ${theme.colors.brown};
+`;
+
+const BrandLogo = styled.img`
+  width: 92px;
+  height: auto;
+  display: block;
+`;
+
+const BrandText = styled.span`
+  display: flex;
+  flex-direction: column;
+  font-family: ${theme.fonts.body};
+  font-size: 0.72rem;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${theme.colors.brownSoft};
+
+  strong {
+    font-family: ${theme.fonts.heading};
+    font-size: 1.05rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: ${theme.colors.brown};
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 820px) {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 90px;
+    display: ${({ $open }) => ($open ? "flex" : "none")};
     flex-direction: column;
-    align-items: center;
-    height: auto;
+    align-items: stretch;
+    padding: 16px;
+    background: ${theme.colors.white};
+    border: 1px solid ${theme.colors.line};
+    box-shadow: 0 18px 50px rgba(48, 38, 29, 0.16);
   }
 `;
 
-// Estilo para o componente de opções do menu
-const Opcoes = styled.ul`
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  height: 100px;
-  width: 100%;
-  list-style: none;
-  padding: 0;
+const NavigationLink = styled(NavLink)`
+  padding: 10px 14px;
+  color: ${theme.colors.brown};
+  border-radius: 999px;
+  font-family: ${theme.fonts.body};
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover,
+  &.active {
+    color: ${theme.colors.tealDark};
+    background: rgba(34, 119, 139, 0.1);
+  }
 `;
 
-const Opcao = styled.li`
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
+const PrimaryLink = styled(NavigationLink)`
+  color: ${theme.colors.white};
+  background: ${theme.colors.brown};
+
+  &:hover,
+  &.active {
+    color: ${theme.colors.white};
+    background: ${theme.colors.teal};
+  }
+`;
+
+const AdminLink = styled(NavigationLink)`
+  display: inline-flex;
   align-items: center;
-  text-align: center;
-  height: 100%;
-  padding: 10px;
-  cursor: pointer;
-  min-width: 120px;
-  margin-left: 0.6em;
+  gap: 7px;
 `;
 
-const TextoOpcao = styled.p`
-  margin: 0;
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-  color: #30261d;
-  transition: color 0.3s ease;
-  &:hover {
-    color: #ffd700;
+const LangSwitcher = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 1px solid ${theme.colors.line};
+
+  @media (max-width: 820px) {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    justify-content: center;
   }
 `;
 
-const LinkSemDecoracao = styled(Link)`
+const LangButton = styled(Link)`
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: ${({ $active }) => ($active ? theme.colors.tealDark : theme.colors.brownSoft)};
+  background: ${({ $active }) => ($active ? "rgba(34, 119, 139, 0.1)" : "transparent")};
+  font-size: 0.78rem;
+  font-weight: 800;
   text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: ${theme.colors.tealDark};
+  }
 `;
 
-// Função Header usando Bootstrap
+const MenuButton = styled.button`
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid ${theme.colors.line};
+  border-radius: 50%;
+  color: ${theme.colors.brown};
+  background: ${theme.colors.white};
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 820px) {
+    display: inline-flex;
+  }
+`;
+
 function Header() {
-  const textoOpcoes = ['Institucional', 'Contato', 'Catálogo'];
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation();
+  const lp = useLocalizedPath();
+  const { isLocalized, links, current } = useLocaleSwitchLinks();
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <HeaderContainer className="container-fluid">
-      {/* Logo */}
-      <Link to="/" className="navbar-brand">
-      <img src={Logo} alt="Logo" style={{ height: '130px', width: 'auto' }} />
-      </Link>
+    <HeaderContainer>
+      <HeaderInner>
+        <Brand to={lp("/")} onClick={closeMenu} aria-label={t("header.brand.name")}>
+          <BrandLogo src={Logo} alt={t("header.brand.name")} />
+          <BrandText>
+            <strong>{t("header.brand.name")}</strong>
+            {t("header.brand.tagline")}
+          </BrandText>
+        </Brand>
 
-      {/* Opções do menu */}
-      <nav className="navbar navbar-expand-md navbar-light">
-        <button
-          className="navbar-toggler"
+        <MenuButton
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={() => setMenuOpen((current) => !current)}
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
         >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+          {menuOpen ? <FiX size={21} /> : <FiMenu size={21} />}
+        </MenuButton>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <Opcoes className="navbar-nav ml-auto">
-            {textoOpcoes.map((texto) => (
-              <LinkSemDecoracao to={`/${texto.toLowerCase()}`} key={texto}>
-                <Opcao className="nav-item">
-                  <TextoOpcao className="nav-link">{texto}</TextoOpcao>
-                </Opcao>
-              </LinkSemDecoracao>
-            ))}
-          </Opcoes>
-        </div>
-      </nav>
+        <Nav $open={menuOpen}>
+          <NavigationLink to={lp("/")} end onClick={closeMenu}>
+            {t("header.nav.inicio")}
+          </NavigationLink>
+          <NavigationLink to={lp("/institucional")} onClick={closeMenu}>
+            {t("header.nav.historia")}
+          </NavigationLink>
+          <NavigationLink to={lp("/catalogo")} onClick={closeMenu}>
+            {t("header.nav.catalogo")}
+          </NavigationLink>
+          <NavigationLink to={lp("/exportacao")} onClick={closeMenu}>
+            {t("header.nav.exportacao")}
+          </NavigationLink>
+          <NavigationLink to={lp("/blog")} onClick={closeMenu}>
+            {t("header.nav.blog")}
+          </NavigationLink>
+          <PrimaryLink to={lp("/contato")} onClick={closeMenu}>
+            {t("header.nav.contato")}
+          </PrimaryLink>
+          <AdminLink to="/admin" onClick={closeMenu}>
+            <FiSettings /> {t("header.nav.admin")}
+          </AdminLink>
+          {isLocalized ? (
+            <LangSwitcher>
+              <LangButton to={links.pt} $active={current === "pt"} onClick={closeMenu}>
+                PT
+              </LangButton>
+              <LangButton to={links.en} $active={current === "en"} onClick={closeMenu}>
+                EN
+              </LangButton>
+              <LangButton to={links.es} $active={current === "es"} onClick={closeMenu}>
+                ES
+              </LangButton>
+            </LangSwitcher>
+          ) : null}
+        </Nav>
+      </HeaderInner>
     </HeaderContainer>
   );
 }

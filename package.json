@@ -3,31 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@api/melhorenvio": "file:.api/apis/melhorenvio",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "amaisindicada": "file:",
-    "axios": "^1.7.7",
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.0",
-    "firebase": "^10.13.0",
-    "image-minimizer-webpack-plugin": "^4.1.0",
-    "imagemin-webp": "^8.0.0",
-    "mongoose": "^8.5.2",
+    "i18next": "^26.3.4",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
+    "react-i18next": "^17.0.8",
     "react-icons": "^4.12.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.26.2",
-    "react-scripts": "5.0.1",
-    "styled-components": "^6.1.0",
-    "swiper": "^11.1.4",
-    "web-vitals": "^2.1.4"
+    "styled-components": "^6.1.0"
   },
   "scripts": {
+    "api": "node server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -56,6 +42,7 @@
     "@babel/plugin-transform-private-property-in-object": "^7.25.8",
     "eslint": "^8.54.0",
     "eslint-plugin-react": "^7.33.2",
+    "react-scripts": "^5.0.1",
     "webpack-bundle-analyzer": "^4.10.2"
   }
 }

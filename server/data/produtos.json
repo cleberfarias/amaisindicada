@@ -1,0 +1,165 @@
+[
+  {
+    "id": "prata",
+    "nome": "Cachaca Prata",
+    "linha": "Cachacas",
+    "perfil": "Leve, classica e versatil",
+    "imagem": "/produtos/prata.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "ouro",
+    "nome": "Cachaca Ouro",
+    "linha": "Cachacas",
+    "perfil": "Envelhecida, elegante e marcante",
+    "imagem": "/produtos/ouro.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "amburana",
+    "nome": "Cachaca Amburana",
+    "linha": "Cachacas",
+    "perfil": "Aromatica, brasileira e intensa",
+    "descricaoLonga": "",
+    "imagem": "/produtos/Amburana.webp",
+    "volume": "",
+    "teorAlcoolico": "",
+    "ingredientes": "",
+    "embalagem": "",
+    "status": "publicado",
+    "destaque": true,
+    "exibirHome": true,
+    "exibirCatalogo": true,
+    "exibirExportacao": false,
+    "ordem": 0,
+    "ativo": true
+  },
+  {
+    "id": "cafe",
+    "nome": "Licor Fino de Cafe",
+    "linha": "Licores finos",
+    "perfil": "Intenso, aromatico e afetivo",
+    "imagem": "/produtos/cafe.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "figo",
+    "nome": "Licor Fino de Figo",
+    "linha": "Licores finos",
+    "perfil": "Tradicional, doce e familiar",
+    "imagem": "/produtos/figo.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "pistache",
+    "nome": "Licor Cremoso de Pistache",
+    "linha": "Licores cremosos",
+    "perfil": "Cremoso, premium e presenteavel",
+    "imagem": "/produtos/pistache.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "morango",
+    "nome": "Licor Cremoso de Morango",
+    "linha": "Licores cremosos",
+    "perfil": "Doce, frutado e delicado",
+    "imagem": "/produtos/morango.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "limao",
+    "nome": "Licor Cremoso de Limao",
+    "linha": "Licores cremosos",
+    "perfil": "Citrico, fresco e equilibrado",
+    "imagem": "/produtos/limao.webp",
+    "destaque": true,
+    "ativo": true
+  },
+  {
+    "id": "canela",
+    "nome": "Licor Fino de Canela",
+    "linha": "Licores finos",
+    "perfil": "Especiado, aromatico e acolhedor",
+    "imagem": "/produtos/canela.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "groselha",
+    "nome": "Licor Fino de Groselha",
+    "linha": "Licores finos",
+    "perfil": "Frutado, doce e marcante",
+    "imagem": "/produtos/groselha.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "banana",
+    "nome": "Licor Fino de Banana",
+    "linha": "Licores finos",
+    "perfil": "Brasileiro, doce e familiar",
+    "imagem": "/produtos/banana.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "menta",
+    "nome": "Licor Fino de Menta",
+    "linha": "Licores finos",
+    "perfil": "Refrescante, leve e aromatico",
+    "imagem": "/produtos/menta.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "cacau",
+    "nome": "Licor Cremoso de Cacau",
+    "linha": "Licores cremosos",
+    "perfil": "Cremoso, intenso e sobremesa",
+    "imagem": "/produtos/cacau.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "coco",
+    "nome": "Licor Cremoso de Coco",
+    "linha": "Licores cremosos",
+    "perfil": "Tropical, cremoso e suave",
+    "imagem": "/produtos/coco.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "maracuja",
+    "nome": "Licor Cremoso de Maracuja",
+    "linha": "Licores cremosos",
+    "perfil": "Frutado, citrico e brasileiro",
+    "imagem": "/produtos/marcauja.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "abacaxi",
+    "nome": "Licor Cremoso de Abacaxi",
+    "linha": "Licores cremosos",
+    "perfil": "Tropical, doce e vibrante",
+    "imagem": "/produtos/abacaxi.webp",
+    "destaque": false,
+    "ativo": true
+  },
+  {
+    "id": "pacoca",
+    "nome": "Licor Cremoso de Pacoca",
+    "linha": "Licores cremosos",
+    "perfil": "Brasileiro, cremoso e afetivo",
+    "imagem": "/produtos/pacoca.webp",
+    "destaque": false,
+    "ativo": true
+  }
+]

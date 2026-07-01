@@ -1,0 +1,17 @@
+[
+  {
+    "id": "bem-vindos-ao-blog",
+    "titulo": "Bem-vindos ao blog da A Mais Indicada",
+    "resumo": "Um espaco para falar sobre producao artesanal, sabores brasileiros e novidades da marca.",
+    "conteudoMarkdown": "Este e um artigo de exemplo criado para mostrar como o blog funciona.\n\nEdite ou remova este post pelo painel administrativo em **/admin/blog**, e publique quando estiver pronto.",
+    "imagemCapa": "",
+    "autor": "Equipe A Mais Indicada",
+    "tags": [
+      "novidades"
+    ],
+    "status": "rascunho",
+    "publicadoEm": "2026-07-01T00:00:00.000Z",
+    "ordem": 0,
+    "ativo": true
+  }
+]

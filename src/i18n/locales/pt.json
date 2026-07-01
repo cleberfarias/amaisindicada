@@ -1,0 +1,228 @@
+{
+  "header": {
+    "brand": {
+      "name": "A Mais Indicada",
+      "tagline": "Cachacas e licores artesanais"
+    },
+    "nav": {
+      "inicio": "Inicio",
+      "historia": "Historia",
+      "catalogo": "Catalogo",
+      "exportacao": "Exportacao",
+      "blog": "Blog",
+      "contato": "Contato",
+      "admin": "Admin"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "A Mais Indicada",
+      "text": "Cachacas e licores artesanais de Celso Ramos, feitos com memoria familiar, cuidado no processo e vocacao para novos mercados."
+    },
+    "columns": {
+      "contact": "Contato comercial",
+      "addresses": "Enderecos"
+    },
+    "blog": "Blog",
+    "admin": "Area administrativa",
+    "bottom": {
+      "copyright": "A Mais Indicada © 2026. Venda proibida para menores de 18 anos.",
+      "note": "Site em reformulacao para catalogo, B2B e exportacao."
+    }
+  },
+  "ageGate": {
+    "title": "Voce tem 18 anos ou mais?",
+    "text": "Este site apresenta bebidas alcoolicas. Acesso permitido somente para maiores de 18 anos.",
+    "yes": "Sim, tenho 18+",
+    "no": "Nao",
+    "alert": "Voce deve ter 18 anos ou mais para acessar este site."
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Linhas com leitura artesanal e apresentacao comercial.",
+      "lead": "O catalogo ganha organizacao por linha, perfil de sabor e ocasiao de consumo para facilitar escolha, revenda e atendimento.",
+      "cta": "Abrir catalogo"
+    },
+    "recommender": {
+      "eyebrow": "IA aplicada ao atendimento",
+      "title": "Recomendador inicial de sabores.",
+      "lead": "Esta primeira versao usa regras controladas. Depois, a mesma base pode evoluir para IA com busca semantica e FAQ aprovado pela marca.",
+      "whatsapp": "Pedir atendimento com esta sugestao",
+      "whatsappMessage": "Ola, tenho interesse em {{sugestao}}. Quero saber mais sobre catalogo e atendimento.",
+      "profiles": {
+        "presente": { "label": "Presente sofisticado", "motivo": "Tem leitura premium, visual marcante e combina com ocasioes especiais." },
+        "tradicao": { "label": "Sabor tradicional", "motivo": "Carrega a memoria do primeiro licor da familia e reforca a origem da marca." },
+        "classico": { "label": "Cachaca classica", "motivo": "Boa porta de entrada para quem procura uma cachaca envelhecida e elegante." },
+        "refrescante": { "label": "Mais leve e fresco", "motivo": "Perfil citrico, facil de apresentar em degustacoes e combinacoes." }
+      }
+    },
+    "story": {
+      "eyebrow": "Origem",
+      "title": "Historia familiar com acabamento de marca madura.",
+      "text": "A Mais Indicada nasceu em Celso Ramos, em uma trajetoria ligada a familia, a cana-de-acucar e aos sabores que passaram de vizinho para vizinho. A nova experiencia do site preserva essa memoria, mas organiza a comunicacao para consumidores, lojistas e parceiros.",
+      "proof": {
+        "responsible": { "title": "Venda responsavel", "text": "Comunicacao clara para maiores de 18 anos." },
+        "support": { "title": "Atendimento direto", "text": "Contato comercial por WhatsApp e e-mail." },
+        "export": { "title": "Base para exportacao", "text": "Pagina B2B preparada para novos mercados." }
+      }
+    },
+    "exportBand": {
+      "eyebrow": "Exportacao e B2B",
+      "title": "Um site preparado para conversa comercial.",
+      "lead": "A nova area de exportacao organiza portfolio, origem, diferenciais e contato para distribuidores, representantes e compradores.",
+      "ctaPrimary": "Conhecer area B2B",
+      "ctaSecondary": "Falar com a marca"
+    }
+  },
+  "institucional": {
+    "hero": {
+      "eyebrow": "Nossa historia",
+      "title": "Uma marca familiar que cresceu pela indicacao.",
+      "lead": "A Mais Indicada nasce em Celso Ramos, Santa Catarina, unindo cachaca, licores, afeto familiar e uma reputacao construida de cliente para cliente."
+    },
+    "timeline": {
+      "item1": { "year": "2004", "title": "O inicio em Celso Ramos", "text": "Na comunidade de Nossa Senhora do Caravaggio, Seu Iziario deu inicio a historia da marca, em uma regiao ligada a cana-de-acucar e a producao artesanal." },
+      "item2": { "year": "Familia", "title": "Sabores criados em casa", "text": "Dona Marizete trouxe a docura dos licores e ajudou a transformar a producao em uma linha de sabores. O primeiro licor foi o de figo." },
+      "item3": { "year": "Marca", "title": "A mais indicada da regiao", "text": "O nome surgiu da propria reputacao: quando alguem pedia uma boa cachaca na regiao, a indicacao dos clientes levava ate a familia." }
+    },
+    "process": {
+      "eyebrow": "Processo e cuidado",
+      "title": "Tradicao com apresentacao profissional.",
+      "text": "Cada produto precisa carregar a memoria da familia e, ao mesmo tempo, falar com consumidores, lojistas e parceiros comerciais. A reformulacao do site organiza essa historia com mais clareza, destaque para produtos e entrada para contatos B2B."
+    },
+    "today": {
+      "eyebrow": "Hoje",
+      "title": "Portfolio pronto para ser apresentado melhor.",
+      "text": "A linha de cachacas e licores ganha uma experiencia digital mais escaneavel, com catalogo, recomendacao de sabores, contato direto e uma pagina dedicada para exportacao."
+    },
+    "proof": {
+      "origin": { "title": "Origem catarinense", "text": "Celso Ramos como ponto de partida da narrativa da marca." },
+      "family": { "title": "Producao familiar", "text": "Historia humana e proxima como diferencial institucional." },
+      "since": { "title": "Desde 2004", "text": "Tempo de trajetoria para reforcar confianca comercial." },
+      "responsible": { "title": "Venda responsavel", "text": "Comunicacao voltada apenas para maiores de 18 anos." }
+    },
+    "nextPhase": {
+      "eyebrow": "Proxima fase",
+      "title": "Conteudo comercial com dados validados.",
+      "text": "Para evoluir a pagina institucional, ainda precisamos confirmar premios, registros, capacidade produtiva, formatos de embalagem e informacoes que podem ser usadas em exportacao."
+    }
+  },
+  "catalogo": {
+    "hero": {
+      "eyebrow": "Catalogo inteligente",
+      "title": "Produtos organizados para escolha, revenda e atendimento.",
+      "lead": "Uma primeira versao mais moderna do catalogo, com busca, filtro por linha e contato direto por produto. O carrinho antigo fica fora do MVP ate a operacao comercial ser validada."
+    },
+    "searchPlaceholder": "Buscar por sabor, linha ou perfil",
+    "filterAll": "Todos",
+    "detailsButton": "Ver detalhes",
+    "whatsappButton": "Consultar produto",
+    "whatsappMessage": "Ola, tenho interesse no produto {{nome}}. Gostaria de receber informacoes do catalogo.",
+    "empty": "Nenhum produto encontrado para esta busca."
+  },
+  "produtoDetalhe": {
+    "back": "Voltar ao catalogo",
+    "notFoundTitle": "Produto nao encontrado.",
+    "notFoundText": "Escolha um item disponivel no catalogo para consultar detalhes.",
+    "specs": {
+      "linha": "Linha",
+      "perfil": "Perfil",
+      "volume": "Volume",
+      "teor": "Teor alcoolico",
+      "embalagem": "Embalagem",
+      "ingredientes": "Ingredientes"
+    },
+    "specFallback": "Consultar",
+    "whatsappButton": "Consultar este produto",
+    "whatsappMessage": "Ola, tenho interesse no produto {{nome}}. Gostaria de receber informacoes comerciais."
+  },
+  "exportacao": {
+    "hero": {
+      "eyebrow": "Exportacao e parcerias comerciais",
+      "title": "Sabores brasileiros prontos para novas conversas.",
+      "lead": "Uma pagina criada para distribuidores, representantes, lojistas e compradores que precisam entender portfolio, origem, diferenciais e contato comercial com rapidez."
+    },
+    "cards": {
+      "origin": { "title": "Origem artesanal", "text": "Marca familiar de Celso Ramos, Santa Catarina, com narrativa ligada a producao local e sabores brasileiros." },
+      "portfolio": { "title": "Portfolio comercial", "text": "Linhas de cachacas, licores finos e licores cremosos para varejo, presentes, degustacoes e revenda." },
+      "contact": { "title": "Contato B2B", "text": "Atendimento direcionado para entender pais, volume, interesse e necessidade de documentacao." }
+    },
+    "validate": {
+      "eyebrow": "Informacoes para validar",
+      "title": "Base preparada para crescer com dados reais.",
+      "lead": "Antes de prometer exportacao, o site deve confirmar capacidade, documentacao, registros, embalagens, idiomas e politica comercial. A IA pode ajudar no atendimento, mas somente com informacoes aprovadas."
+    },
+    "checklist": {
+      "item1": "Portfolio por linha, sabor, volume e perfil de consumo.",
+      "item2": "Formulario B2B com pais, empresa, interesse e volume estimado.",
+      "item3": "Conteudo pronto para versoes em ingles e espanhol com revisao humana.",
+      "item4": "FAQ controlado para evitar respostas comerciais sem confirmacao."
+    },
+    "products": {
+      "eyebrow": "Portfolio",
+      "title": "Produtos disponiveis para exportacao.",
+      "lead": "Itens selecionados pela marca para conversas comerciais e de exportacao.",
+      "whatsappButton": "Consultar para exportacao",
+      "whatsappMessage": "Ola, tenho interesse de exportacao/B2B no produto {{nome}}. Gostaria de receber informacoes comerciais."
+    },
+    "contactBand": {
+      "eyebrow": "Proximo passo",
+      "title": "Fale com a marca sobre distribuicao ou exportacao.",
+      "whatsapp": "WhatsApp comercial",
+      "email": "Enviar e-mail",
+      "catalog": "Ver catalogo",
+      "whatsappMessage": "Ola, tenho interesse comercial/exportacao da A Mais Indicada. Gostaria de receber informacoes do catalogo B2B."
+    }
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "Blog",
+      "title": "Historias, producao e sabores da A Mais Indicada.",
+      "lead": "Artigos sobre o processo artesanal, novidades da marca e conteudo para quem quer conhecer melhor a producao."
+    },
+    "readMore": "Ler artigo",
+    "empty": "Nenhum artigo publicado ainda.",
+    "fallbackAuthor": "A Mais Indicada"
+  },
+  "postDetalhe": {
+    "back": "Voltar ao blog",
+    "notFound": "Artigo nao encontrado.",
+    "fallbackAuthor": "A Mais Indicada"
+  },
+  "faleConosco": {
+    "hero": {
+      "eyebrow": "Contato inteligente",
+      "title": "Escolha o caminho certo para falar com a marca.",
+      "lead": "O contato agora classifica o interesse e gera uma mensagem pronta para WhatsApp. Essa base pode evoluir para atendimento assistido por IA."
+    },
+    "form": {
+      "nome": "Nome",
+      "nomePlaceholder": "Seu nome ou empresa",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@email.com",
+      "interesseLabel": "Tipo de interesse",
+      "mensagem": "Mensagem",
+      "mensagemPlaceholder": "Conte rapidamente o que voce procura."
+    },
+    "interesses": {
+      "consumidor": "Consumidor final",
+      "lojista": "Lojista ou distribuidor",
+      "representante": "Representante comercial",
+      "exportacao": "Exportacao",
+      "eventos": "Eventos e presentes"
+    },
+    "generatedLabel": "Mensagem gerada:",
+    "generatedTemplate": "Ola, sou {{nome}}. Interesse: {{interesse}}. {{mensagem}}",
+    "defaultNome": "Visitante do site",
+    "defaultMensagem": "Gostaria de receber mais informacoes.",
+    "sendWhatsapp": "Enviar pelo WhatsApp",
+    "sendEmail": "Enviar por e-mail",
+    "channels": {
+      "eyebrow": "Canais oficiais",
+      "lead": "Para lojistas, distribuidores e exportacao, envie o maximo de contexto possivel: empresa, cidade, pais, volume estimado e linha de interesse.",
+      "whatsapp": "WhatsApp: +55 (49) 99926-9857",
+      "address": "Celso Ramos, Santa Catarina"
+    }
+  }
+}

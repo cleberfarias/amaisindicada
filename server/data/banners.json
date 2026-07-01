@@ -1,0 +1,18 @@
+[
+  {
+    "id": "home-principal",
+    "area": "home-hero",
+    "titulo": "A Mais Indicada",
+    "subtitulo": "Uma marca familiar com sabores brasileiros, processo artesanal e uma nova presenca digital preparada para varejo, distribuidores e conversas de exportacao.",
+    "selo": "Cachacas e licores artesanais de Santa Catarina",
+    "imagem": "/produtos/prata.webp",
+    "imagemAlt": "Produtos A Mais Indicada em exposicao",
+    "ctaPrincipalTexto": "Ver catalogo",
+    "ctaPrincipalUrl": "/catalogo",
+    "ctaSecundarioTexto": "Area de exportacao",
+    "ctaSecundarioUrl": "/exportacao",
+    "status": "publicado",
+    "ordem": 1,
+    "ativo": true
+  }
+]

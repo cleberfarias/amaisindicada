@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Todo acesso passa pela API (server/index.js, Admin SDK), que ignora
+    // estas regras. Bloqueia qualquer leitura/escrita direta do navegador.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

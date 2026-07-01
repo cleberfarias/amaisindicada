@@ -1,0 +1,228 @@
+{
+  "header": {
+    "brand": {
+      "name": "A Mais Indicada",
+      "tagline": "Handcrafted cachaca and liqueurs"
+    },
+    "nav": {
+      "inicio": "Home",
+      "historia": "Our Story",
+      "catalogo": "Catalog",
+      "exportacao": "Export",
+      "blog": "Blog",
+      "contato": "Contact",
+      "admin": "Admin"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "A Mais Indicada",
+      "text": "Handcrafted cachaca and liqueurs from Celso Ramos, made with family memory, careful production and an eye on new markets."
+    },
+    "columns": {
+      "contact": "Business contact",
+      "addresses": "Locations"
+    },
+    "blog": "Blog",
+    "admin": "Admin area",
+    "bottom": {
+      "copyright": "A Mais Indicada © 2026. Sale prohibited to persons under 18.",
+      "note": "Site being redesigned for catalog, B2B and export."
+    }
+  },
+  "ageGate": {
+    "title": "Are you 18 or older?",
+    "text": "This website features alcoholic beverages. Access is allowed only to persons 18 years of age or older.",
+    "yes": "Yes, I'm 18+",
+    "no": "No",
+    "alert": "You must be 18 years of age or older to access this website."
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Product lines with an artisanal feel and a commercial presentation.",
+      "lead": "The catalog is now organized by line, flavor profile and occasion, making it easier to choose, resell and serve customers.",
+      "cta": "Open catalog"
+    },
+    "recommender": {
+      "eyebrow": "AI applied to customer service",
+      "title": "First flavor recommender.",
+      "lead": "This first version uses controlled rules. Later, the same foundation can evolve into AI with semantic search and brand-approved FAQ.",
+      "whatsapp": "Request assistance with this suggestion",
+      "whatsappMessage": "Hello, I'm interested in {{sugestao}}. I'd like to know more about the catalog and service.",
+      "profiles": {
+        "presente": { "label": "Sophisticated gift", "motivo": "Has a premium feel and a striking look, perfect for special occasions." },
+        "tradicao": { "label": "Traditional flavor", "motivo": "Carries the memory of the family's first liqueur and reinforces the brand's origin." },
+        "classico": { "label": "Classic cachaca", "motivo": "A great entry point for those looking for an aged, elegant cachaca." },
+        "refrescante": { "label": "Lighter and fresher", "motivo": "Citrus profile, easy to serve in tastings and pairings." }
+      }
+    },
+    "story": {
+      "eyebrow": "Origin",
+      "title": "A family history with the finish of a mature brand.",
+      "text": "A Mais Indicada was born in Celso Ramos, in a story tied to family, sugarcane, and flavors passed from neighbor to neighbor. The new website experience preserves that memory while organizing communication for consumers, retailers and partners.",
+      "proof": {
+        "responsible": { "title": "Responsible sales", "text": "Clear communication for people 18 and older." },
+        "support": { "title": "Direct support", "text": "Business contact via WhatsApp and email." },
+        "export": { "title": "Ready for export", "text": "A B2B page prepared for new markets." }
+      }
+    },
+    "exportBand": {
+      "eyebrow": "Export & B2B",
+      "title": "A website ready for business conversations.",
+      "lead": "The new export area organizes portfolio, origin, differentiators and contact for distributors, representatives and buyers.",
+      "ctaPrimary": "Explore the B2B area",
+      "ctaSecondary": "Talk to the brand"
+    }
+  },
+  "institucional": {
+    "hero": {
+      "eyebrow": "Our story",
+      "title": "A family brand that grew through word of mouth.",
+      "lead": "A Mais Indicada was born in Celso Ramos, Santa Catarina, bringing together cachaca, liqueurs, family affection and a reputation built one customer at a time."
+    },
+    "timeline": {
+      "item1": { "year": "2004", "title": "The beginning in Celso Ramos", "text": "In the community of Nossa Senhora do Caravaggio, Mr. Iziario started the brand's story, in a region tied to sugarcane and artisanal production." },
+      "item2": { "year": "Family", "title": "Flavors created at home", "text": "Dona Marizete brought the sweetness of the liqueurs and helped turn the production into a line of flavors. The first liqueur was fig." },
+      "item3": { "year": "Brand", "title": "The most recommended in the region", "text": "The name came from its own reputation: whenever someone asked for good cachaca in the region, customers' recommendations led straight to the family." }
+    },
+    "process": {
+      "eyebrow": "Process and care",
+      "title": "Tradition with a professional presentation.",
+      "text": "Every product needs to carry the family's memory while speaking to consumers, retailers and business partners. The site redesign organizes that story more clearly, highlighting products and creating an entry point for B2B contacts."
+    },
+    "today": {
+      "eyebrow": "Today",
+      "title": "A portfolio ready to be presented better.",
+      "text": "The cachaca and liqueur line now has a more scannable digital experience, with a catalog, flavor recommendations, direct contact and a dedicated export page."
+    },
+    "proof": {
+      "origin": { "title": "Origin in Santa Catarina", "text": "Celso Ramos as the starting point of the brand's narrative." },
+      "family": { "title": "Family production", "text": "A human, close story as an institutional differentiator." },
+      "since": { "title": "Since 2004", "text": "Years of history to reinforce business trust." },
+      "responsible": { "title": "Responsible sales", "text": "Communication aimed only at people 18 and older." }
+    },
+    "nextPhase": {
+      "eyebrow": "Next phase",
+      "title": "Business content backed by validated data.",
+      "text": "To evolve this institutional page, we still need to confirm awards, registrations, production capacity, packaging formats and information that can be used for export."
+    }
+  },
+  "catalogo": {
+    "hero": {
+      "eyebrow": "Smart catalog",
+      "title": "Products organized for choosing, reselling and serving customers.",
+      "lead": "A more modern first version of the catalog, with search, filtering by line and direct contact per product. The old shopping cart is out of the MVP until the business operation is validated."
+    },
+    "searchPlaceholder": "Search by flavor, line or profile",
+    "filterAll": "All",
+    "detailsButton": "View details",
+    "whatsappButton": "Ask about this product",
+    "whatsappMessage": "Hello, I'm interested in the product {{nome}}. I'd like to receive catalog information.",
+    "empty": "No products found for this search."
+  },
+  "produtoDetalhe": {
+    "back": "Back to catalog",
+    "notFoundTitle": "Product not found.",
+    "notFoundText": "Choose an available item in the catalog to see its details.",
+    "specs": {
+      "linha": "Line",
+      "perfil": "Profile",
+      "volume": "Volume",
+      "teor": "Alcohol content",
+      "embalagem": "Packaging",
+      "ingredientes": "Ingredients"
+    },
+    "specFallback": "Ask us",
+    "whatsappButton": "Ask about this product",
+    "whatsappMessage": "Hello, I'm interested in the product {{nome}}. I'd like to receive business information."
+  },
+  "exportacao": {
+    "hero": {
+      "eyebrow": "Export & business partnerships",
+      "title": "Brazilian flavors ready for new conversations.",
+      "lead": "A page created for distributors, representatives, retailers and buyers who need to quickly understand our portfolio, origin, differentiators and business contact."
+    },
+    "cards": {
+      "origin": { "title": "Artisanal origin", "text": "A family brand from Celso Ramos, Santa Catarina, with a narrative tied to local production and Brazilian flavors." },
+      "portfolio": { "title": "Business portfolio", "text": "Cachaca, fine liqueur and creamy liqueur lines for retail, gifts, tastings and resale." },
+      "contact": { "title": "B2B contact", "text": "Dedicated service to understand country, volume, interest and documentation needs." }
+    },
+    "validate": {
+      "eyebrow": "Information to validate",
+      "title": "A foundation ready to grow with real data.",
+      "lead": "Before promising export capability, the site needs to confirm capacity, documentation, registrations, packaging, languages and commercial policy. AI can help with service, but only with approved information."
+    },
+    "checklist": {
+      "item1": "Portfolio by line, flavor, volume and consumption profile.",
+      "item2": "B2B form with country, company, interest and estimated volume.",
+      "item3": "Content ready for English and Spanish versions with human review.",
+      "item4": "Controlled FAQ to avoid business answers without confirmation."
+    },
+    "products": {
+      "eyebrow": "Portfolio",
+      "title": "Products available for export.",
+      "lead": "Items selected by the brand for business and export conversations.",
+      "whatsappButton": "Ask about export",
+      "whatsappMessage": "Hello, I'm interested in exporting/B2B for the product {{nome}}. I'd like to receive business information."
+    },
+    "contactBand": {
+      "eyebrow": "Next step",
+      "title": "Talk to the brand about distribution or export.",
+      "whatsapp": "Business WhatsApp",
+      "email": "Send email",
+      "catalog": "View catalog",
+      "whatsappMessage": "Hello, I have a business/export interest in A Mais Indicada. I'd like to receive B2B catalog information."
+    }
+  },
+  "blog": {
+    "hero": {
+      "eyebrow": "Blog",
+      "title": "Stories, production and flavors from A Mais Indicada.",
+      "lead": "Articles about our artisanal process, brand news and content for those who want to know our production better."
+    },
+    "readMore": "Read article",
+    "empty": "No articles published yet.",
+    "fallbackAuthor": "A Mais Indicada"
+  },
+  "postDetalhe": {
+    "back": "Back to blog",
+    "notFound": "Article not found.",
+    "fallbackAuthor": "A Mais Indicada"
+  },
+  "faleConosco": {
+    "hero": {
+      "eyebrow": "Smart contact",
+      "title": "Choose the right way to talk to the brand.",
+      "lead": "Contact now classifies your interest and generates a ready-made WhatsApp message. This foundation can evolve into AI-assisted service."
+    },
+    "form": {
+      "nome": "Name",
+      "nomePlaceholder": "Your name or company",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "interesseLabel": "Type of interest",
+      "mensagem": "Message",
+      "mensagemPlaceholder": "Quickly tell us what you're looking for."
+    },
+    "interesses": {
+      "consumidor": "Individual consumer",
+      "lojista": "Retailer or distributor",
+      "representante": "Sales representative",
+      "exportacao": "Export",
+      "eventos": "Events and gifts"
+    },
+    "generatedLabel": "Generated message:",
+    "generatedTemplate": "Hello, I'm {{nome}}. Interest: {{interesse}}. {{mensagem}}",
+    "defaultNome": "Website visitor",
+    "defaultMensagem": "I'd like to receive more information.",
+    "sendWhatsapp": "Send via WhatsApp",
+    "sendEmail": "Send via email",
+    "channels": {
+      "eyebrow": "Official channels",
+      "lead": "For retailers, distributors and export, please send as much context as possible: company, city, country, estimated volume and line of interest.",
+      "whatsapp": "WhatsApp: +55 (49) 99926-9857",
+      "address": "Celso Ramos, Santa Catarina"
+    }
+  }
+}
