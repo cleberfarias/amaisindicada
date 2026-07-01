@@ -196,17 +196,6 @@ if (window.location.protocol !== "https:" && window.location.hostname !== "local
   window.location.href = `https://${window.location.host}${window.location.pathname}${window.location.search}`;
 }
 
-if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/service-worker.js")
-    .then((registration) => {
-      console.log("Service Worker registrado com sucesso:", registration);
-    })
-    .catch((error) => {
-      console.error("Erro ao registrar o Service Worker:", error);
-    });
-}
-
 root.render(
   <React.StrictMode>
     <GlobalStyle />
