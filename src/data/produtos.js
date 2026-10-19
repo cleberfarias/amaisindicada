@@ -56,7 +56,7 @@ const makeProduct = ([id, nome, arquivo, perfil, sabor], linha, volume) => ({
 
 export const catalogoProdutos = [
   ...cachaças.map((produto) => makeProduct(produto, "Cachaças", "750 ml")),
-  ...licores.map((produto) => makeProduct(produto, "Licores", "500 ml")),
+  ...licores.map((produto) => makeProduct(produto, "Licores", "750 ml")),
 ];
 export const produtosDestaque = catalogoProdutos.slice(0, 8);
 export const perfisRecomendacao = [

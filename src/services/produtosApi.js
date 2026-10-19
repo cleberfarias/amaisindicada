@@ -11,6 +11,7 @@ const getDefaultProductPrice = (produto) => {
 
 const normalizarImagem = (produto) => ({
   ...produto,
+  volume: produto.volume || "750 ml",
   preco: Number(produto.preco) > 0 ? Number(produto.preco) : getDefaultProductPrice(produto),
   imagem:
     produto.imagem && produto.imagem.startsWith("/")
