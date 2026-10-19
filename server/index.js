@@ -8,12 +8,25 @@ const path = require("path");
 const jwt = require("jsonwebtoken");
 
 const port = Number(process.env.PORT || 4000);
-const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:3000";
+const allowedOrigins = (process.env.ALLOWED_ORIGIN || "http://localhost:3000,http://localhost:4174")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 const sessionTtlHours = Number(process.env.SESSION_TTL_HOURS || 12);
 const sessionSecret = process.env.SESSION_SECRET;
 const adminUsername = process.env.ADMIN_USERNAME || "";
 const adminPassword = process.env.ADMIN_PASSWORD || "";
 const uploadDir = path.join(__dirname, "uploads");
+const correiosBaseUrl =
+  process.env.CORREIOS_AMBIENTE === "homologacao" ? "https://apihom.correios.com.br" : "https://api.correios.com.br";
+const correiosServices = (process.env.CORREIOS_SERVICOS || "03220:PAC,03298:SEDEX")
+  .split(",")
+  .map((item) => {
+    const [codigo, nome] = item.split(":");
+    return { codigo: String(codigo || "").trim(), nome: String(nome || codigo || "").trim() };
+  })
+  .filter((item) => item.codigo);
+let correiosTokenCache = null;
 
 if (!sessionSecret) {
   console.error("SESSION_SECRET nao configurado. Defina essa variavel antes de subir o servidor.");
@@ -58,6 +71,18 @@ const normalizeSlug = (value) =>
 const normalizeUploadName = (filename) => {
   const parsed = path.parse(String(filename || "produto"));
   return normalizeSlug(parsed.name || "produto");
+};
+
+const getDefaultProductPrice = (product) => {
+  const linha = String(product.linha || "").toLowerCase();
+  const id = String(product.id || "").toLowerCase();
+  const isSpecial = linha.includes("cremos") || ["ouro", "amburana"].includes(id);
+  return isSpecial ? 50 : 40;
+};
+
+const getProductPrice = (product) => {
+  const price = Number(product.preco);
+  return Number.isFinite(price) && price > 0 ? price : getDefaultProductPrice(product);
 };
 
 const hashPassword = (password, salt = randomBytes(16).toString("hex")) => {
@@ -145,6 +170,11 @@ const sanitizeProduct = (body) => {
   const perfil = String(body.perfil || "").trim();
   const imagem = String(body.imagem || "").trim();
   const id = normalizeSlug(body.id || nome);
+  const preco = Number(String(body.preco || "").replace(",", "."));
+  const pesoGramas = Number(body.pesoGramas);
+  const comprimentoCm = Number(body.comprimentoCm);
+  const larguraCm = Number(body.larguraCm);
+  const alturaCm = Number(body.alturaCm);
   const status = ["publicado", "rascunho", "oculto", "lancamento", "fora-de-linha"].includes(body.status)
     ? body.status
     : "publicado";
@@ -164,11 +194,18 @@ const sanitizeProduct = (body) => {
     teorAlcoolico: String(body.teorAlcoolico || "").trim(),
     ingredientes: String(body.ingredientes || "").trim(),
     embalagem: String(body.embalagem || "").trim(),
+    preco: Number.isFinite(preco) && preco > 0 ? preco : getDefaultProductPrice({ id, linha }),
+    estoque: String(body.estoque || "").trim(),
+    pesoGramas: Number.isFinite(pesoGramas) && pesoGramas > 0 ? pesoGramas : 1200,
+    comprimentoCm: Number.isFinite(comprimentoCm) && comprimentoCm > 0 ? comprimentoCm : 20,
+    larguraCm: Number.isFinite(larguraCm) && larguraCm > 0 ? larguraCm : 20,
+    alturaCm: Number.isFinite(alturaCm) && alturaCm > 0 ? alturaCm : 20,
     status,
     destaque: Boolean(body.destaque || body.exibirHome),
     exibirHome: Boolean(body.exibirHome || body.destaque),
     exibirCatalogo: body.exibirCatalogo !== false,
     exibirExportacao: Boolean(body.exibirExportacao),
+    exibirLoja: body.exibirLoja !== false,
     ordem: Number.isFinite(Number(body.ordem)) ? Number(body.ordem) : 0,
     ativo: body.ativo !== false,
   };
@@ -178,6 +215,204 @@ const isPublicProduct = (product) =>
   product.ativo !== false &&
   product.exibirCatalogo !== false &&
   !["rascunho", "oculto", "fora-de-linha"].includes(product.status);
+
+const digitsOnly = (value) => String(value || "").replace(/\D/g, "");
+
+const formatDateBr = (date = new Date()) => {
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+  return `${day}/${month}/${year}`;
+};
+
+const parseMoney = (value) => {
+  if (typeof value === "number") {
+    return value;
+  }
+  const normalized = String(value || "0")
+    .replace(/[^\d,.-]/g, "")
+    .replace(/\./g, "")
+    .replace(",", ".");
+  const parsed = Number(normalized);
+  return Number.isFinite(parsed) ? parsed : 0;
+};
+
+const getCorreiosToken = async () => {
+  if (correiosTokenCache && correiosTokenCache.expiresAt > Date.now() + 60_000) {
+    return correiosTokenCache.token;
+  }
+
+  const idCorreios = process.env.CORREIOS_ID;
+  const codigoAcesso = process.env.CORREIOS_CODIGO_ACESSO;
+  const cartaoPostagem = process.env.CORREIOS_CARTAO_POSTAGEM;
+
+  if (!idCorreios || !codigoAcesso || !cartaoPostagem) {
+    throw new Error("Credenciais dos Correios nao configuradas.");
+  }
+
+  const response = await fetch(`${correiosBaseUrl}/token/v1/autentica/cartaopostagem`, {
+    method: "POST",
+    headers: {
+      Authorization: `Basic ${Buffer.from(`${idCorreios}:${codigoAcesso}`).toString("base64")}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      numero: cartaoPostagem,
+      contrato: process.env.CORREIOS_CONTRATO || undefined,
+      dr: process.env.CORREIOS_DR ? Number(process.env.CORREIOS_DR) : undefined,
+    }),
+  });
+
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok || !data.token) {
+    throw new Error(data.msg || data.message || "Nao foi possivel autenticar nos Correios.");
+  }
+
+  correiosTokenCache = {
+    token: data.token,
+    expiresAt: data.expiraEm ? new Date(data.expiraEm).getTime() : Date.now() + 50 * 60 * 1000,
+  };
+  return correiosTokenCache.token;
+};
+
+const buildPackageFromItems = (items) => {
+  const pesoGramas = items.reduce((sum, item) => sum + Number(item.pesoGramas || 1200) * item.quantidade, 0);
+  const comprimentoCm = Math.max(...items.map((item) => Number(item.comprimentoCm || 20)), 20);
+  const larguraCm = Math.max(...items.map((item) => Number(item.larguraCm || 20)), 20);
+  const alturaCm = Math.max(2, items.reduce((sum, item) => sum + Number(item.alturaCm || 20) * item.quantidade, 0));
+
+  return {
+    pesoGramas: Math.max(300, Math.ceil(pesoGramas)),
+    comprimentoCm: Math.ceil(comprimentoCm),
+    larguraCm: Math.ceil(larguraCm),
+    alturaCm: Math.ceil(alturaCm),
+  };
+};
+
+const normalizeCorreiosOption = (service, priceData, prazoData) => ({
+  id: service.codigo,
+  nome: service.nome,
+  codigo: service.codigo,
+  valor: parseMoney(priceData.pcFinal || priceData.valor || priceData.preco || priceData.precoFinal),
+  prazoDias: Number(prazoData.prazoEntrega || prazoData.prazo || prazoData.dias || 0),
+});
+
+const calculateCorreiosShipping = async ({ cepDestino, items }) => {
+  const cepOrigem = digitsOnly(process.env.CORREIOS_CEP_ORIGEM);
+  const destino = digitsOnly(cepDestino);
+  if (cepOrigem.length !== 8 || destino.length !== 8) {
+    throw new Error("Informe CEP de origem e destino com 8 digitos.");
+  }
+
+  const token = await getCorreiosToken();
+  const pacote = buildPackageFromItems(items);
+
+  const results = await Promise.all(
+    correiosServices.map(async (service) => {
+      const params = new URLSearchParams({
+        cepDestino: destino,
+        cepOrigem,
+        psObjeto: String(pacote.pesoGramas),
+        tpObjeto: "2",
+        comprimento: String(pacote.comprimentoCm),
+        largura: String(pacote.larguraCm),
+        altura: String(pacote.alturaCm),
+      });
+
+      const [priceResponse, prazoResponse] = await Promise.all([
+        fetch(`${correiosBaseUrl}/preco/v1/nacional/${service.codigo}?${params}`, {
+          headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
+        }),
+        fetch(`${correiosBaseUrl}/prazo/v1/nacional`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            idLote: "loja",
+            parametrosPrazo: [
+              {
+                coProduto: service.codigo,
+                nuRequisicao: service.codigo,
+                cepOrigem,
+                cepDestino: destino,
+                dataPostagem: formatDateBr(),
+              },
+            ],
+          }),
+        }),
+      ]);
+
+      const priceData = await priceResponse.json().catch(() => ({}));
+      const prazoData = await prazoResponse.json().catch(() => ({}));
+      if (!priceResponse.ok || !prazoResponse.ok) {
+        return null;
+      }
+
+      const normalizedPrice = Array.isArray(priceData) ? priceData[0] : priceData;
+      const normalizedPrazo = Array.isArray(prazoData) ? prazoData[0] : prazoData?.prazoEntrega?.[0] || prazoData;
+      const option = normalizeCorreiosOption(service, normalizedPrice, normalizedPrazo);
+      return option.valor > 0 ? option : null;
+    })
+  );
+
+  return results.filter(Boolean);
+};
+
+const getCheckoutItems = async (items = []) => {
+  const normalizedItems = Array.isArray(items)
+    ? items
+        .map((item) => ({ id: String(item.id || ""), quantidade: Math.max(1, Number(item.quantidade || 1)) }))
+        .filter((item) => item.id)
+    : [];
+
+  if (!normalizedItems.length) {
+    throw new Error("Carrinho vazio.");
+  }
+
+  const productDocs = await Promise.all(normalizedItems.map((item) => db.collection("produtos").doc(item.id).get()));
+  return normalizedItems.map((item, index) => {
+    const product = productDocs[index].exists ? productDocs[index].data() : null;
+    if (!product || !isPublicProduct(product) || product.exibirLoja === false) {
+      throw new Error("Um dos produtos nao esta disponivel para compra.");
+    }
+
+    return {
+      id: product.id,
+      nome: product.nome,
+      preco: getProductPrice(product),
+      quantidade: item.quantidade,
+      pesoGramas: product.pesoGramas,
+      comprimentoCm: product.comprimentoCm,
+      larguraCm: product.larguraCm,
+      alturaCm: product.alturaCm,
+    };
+  });
+};
+
+const publicOrder = (pedido) => {
+  if (!pedido) {
+    return null;
+  }
+
+  const { accessToken, ...safeOrder } = pedido;
+  return safeOrder;
+};
+
+const requireOrderAccess = async (req, res) => {
+  const doc = await db.collection("pedidos").doc(req.params.id).get();
+  const pedido = doc.exists ? doc.data() : null;
+  const token = String(req.query.token || req.body?.token || req.headers["x-order-token"] || "");
+
+  if (!pedido || !pedido.accessToken || pedido.accessToken !== token) {
+    res.status(404).json({ error: "Pedido nao encontrado." });
+    return null;
+  }
+
+  return { ref: doc.ref, pedido };
+};
 
 const sanitizeBanner = (body) => {
   const titulo = String(body.titulo || "").trim();
@@ -209,6 +444,23 @@ const sanitizeBanner = (body) => {
 
 const isPublicBanner = (banner) => banner.ativo !== false && banner.status === "publicado";
 
+const sanitizePostTranslations = (translations = {}) => {
+  const langs = ["en", "es"];
+
+  return langs.reduce((acc, lang) => {
+    const source = translations[lang] || {};
+    const titulo = String(source.titulo || "").trim();
+    const resumo = String(source.resumo || "").trim();
+    const conteudoMarkdown = String(source.conteudoMarkdown || "").trim();
+
+    if (titulo || resumo || conteudoMarkdown) {
+      acc[lang] = { titulo, resumo, conteudoMarkdown };
+    }
+
+    return acc;
+  }, {});
+};
+
 const sanitizePost = (body) => {
   const titulo = String(body.titulo || "").trim();
   const resumo = String(body.resumo || "").trim();
@@ -234,6 +486,7 @@ const sanitizePost = (body) => {
     imagemCapa: String(body.imagemCapa || "").trim(),
     autor: String(body.autor || "").trim(),
     tags,
+    translations: sanitizePostTranslations(body.translations),
     status,
     publicadoEm: body.publicadoEm ? String(body.publicadoEm) : new Date().toISOString(),
     ordem: Number.isFinite(Number(body.ordem)) ? Number(body.ordem) : 0,
@@ -248,7 +501,10 @@ const byOrdem = (a, b) => (a.ordem || 0) - (b.ordem || 0);
 const app = express();
 app.use(express.json({ limit: "8mb" }));
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  const origin = req.headers.origin;
+  if (!origin || allowedOrigins.includes("*") || allowedOrigins.includes(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin || allowedOrigins[0] || "*");
+  }
   res.setHeader("Vary", "Origin");
   res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
@@ -453,6 +709,206 @@ app.delete("/api/produtos/:id", requireAdmin, async (req, res) => {
   const updated = { ...doc.data(), ativo: false };
   await ref.set(updated);
   res.json(updated);
+});
+
+app.post("/api/checkout/frete", async (req, res) => {
+  try {
+    const items = await getCheckoutItems(req.body.items);
+    const options = await calculateCorreiosShipping({ cepDestino: req.body.cepDestino, items });
+    res.json({ options });
+  } catch (error) {
+    const status = error.message.includes("Credenciais dos Correios") ? 503 : 400;
+    res.status(status).json({ error: error.message || "Nao foi possivel calcular o frete." });
+  }
+});
+
+app.post("/api/pedidos", async (req, res) => {
+  try {
+    const items = await getCheckoutItems(req.body.items);
+    const frete = req.body.frete || {};
+    const cliente = req.body.cliente || {};
+    const endereco = req.body.endereco || {};
+    const nome = String(cliente.nome || "").trim();
+    const email = String(cliente.email || "").trim();
+    const telefone = String(cliente.telefone || "").trim();
+    const cep = digitsOnly(endereco.cep);
+
+    if (!nome || !email || !telefone || cep.length !== 8 || !endereco.logradouro || !endereco.numero || !endereco.cidade || !endereco.uf) {
+      res.status(400).json({ error: "Preencha dados de contato e endereco de entrega." });
+      return;
+    }
+
+    if (!frete.id || !frete.nome || !Number.isFinite(Number(frete.valor))) {
+      res.status(400).json({ error: "Selecione uma opcao de frete valida." });
+      return;
+    }
+
+    const subtotal = items.reduce((sum, item) => sum + item.preco * item.quantidade, 0);
+    const freteValor = Number(frete.valor);
+    const total = subtotal + freteValor;
+    const ref = db.collection("pedidos").doc();
+    const accessToken = randomBytes(24).toString("hex");
+    const pedido = {
+      id: ref.id,
+      accessToken,
+      cliente: { nome, email, telefone },
+      endereco: {
+        cep,
+        logradouro: String(endereco.logradouro || "").trim(),
+        numero: String(endereco.numero || "").trim(),
+        complemento: String(endereco.complemento || "").trim(),
+        bairro: String(endereco.bairro || "").trim(),
+        cidade: String(endereco.cidade || "").trim(),
+        uf: String(endereco.uf || "").trim().toUpperCase().slice(0, 2),
+      },
+      items,
+      frete: {
+        id: String(frete.id),
+        nome: String(frete.nome),
+        valor: freteValor,
+        prazoDias: Number(frete.prazoDias || 0),
+      },
+      subtotal,
+      total,
+      status: "aguardando_pagamento",
+      historico: [{ status: "aguardando_pagamento", data: new Date().toISOString(), nota: "Pedido criado." }],
+      rastreio: "",
+      cancelamento: null,
+      devolucao: null,
+      pagamento: {
+        metodo: String(req.body.pagamento?.metodo || "pix").trim(),
+        status: "pendente",
+      },
+      criadoEm: new Date().toISOString(),
+      atualizadoEm: new Date().toISOString(),
+    };
+
+    await ref.set(pedido);
+    res.status(201).json({ ...publicOrder(pedido), accessToken });
+  } catch (error) {
+    res.status(400).json({ error: error.message || "Nao foi possivel criar o pedido." });
+  }
+});
+
+app.get("/api/pedidos/:id", async (req, res) => {
+  const access = await requireOrderAccess(req, res);
+  if (!access) {
+    return;
+  }
+  res.json(publicOrder(access.pedido));
+});
+
+app.post("/api/pedidos/:id/cancelamento", async (req, res) => {
+  const access = await requireOrderAccess(req, res);
+  if (!access) {
+    return;
+  }
+
+  const blockedStatuses = ["enviado", "entregue", "cancelado", "reembolsado"];
+  if (blockedStatuses.includes(access.pedido.status)) {
+    res.status(400).json({ error: "Este pedido nao pode ser cancelado nesta etapa. Solicite devolucao se aplicavel." });
+    return;
+  }
+
+  const updated = {
+    ...access.pedido,
+    status: "cancelamento_solicitado",
+    cancelamento: {
+      solicitadoEm: new Date().toISOString(),
+      motivo: String(req.body.motivo || "").trim(),
+      status: "solicitado",
+    },
+    historico: [
+      ...(access.pedido.historico || []),
+      { status: "cancelamento_solicitado", data: new Date().toISOString(), nota: "Cancelamento solicitado pelo cliente." },
+    ],
+    atualizadoEm: new Date().toISOString(),
+  };
+
+  await access.ref.set(updated);
+  res.json(publicOrder(updated));
+});
+
+app.post("/api/pedidos/:id/devolucao", async (req, res) => {
+  const access = await requireOrderAccess(req, res);
+  if (!access) {
+    return;
+  }
+
+  if (!["enviado", "entregue"].includes(access.pedido.status)) {
+    res.status(400).json({ error: "A devolucao fica disponivel depois do envio ou entrega." });
+    return;
+  }
+
+  const updated = {
+    ...access.pedido,
+    status: "devolucao_solicitada",
+    devolucao: {
+      solicitadoEm: new Date().toISOString(),
+      motivo: String(req.body.motivo || "").trim(),
+      status: "solicitada",
+    },
+    historico: [
+      ...(access.pedido.historico || []),
+      { status: "devolucao_solicitada", data: new Date().toISOString(), nota: "Devolucao solicitada pelo cliente." },
+    ],
+    atualizadoEm: new Date().toISOString(),
+  };
+
+  await access.ref.set(updated);
+  res.json(publicOrder(updated));
+});
+
+app.get("/api/admin/pedidos", requireAdmin, async (req, res) => {
+  const snapshot = await db.collection("pedidos").get();
+  const pedidos = snapshot.docs
+    .map((doc) => publicOrder(doc.data()))
+    .sort((a, b) => new Date(b.criadoEm) - new Date(a.criadoEm));
+  res.json(pedidos);
+});
+
+app.put("/api/admin/pedidos/:id", requireAdmin, async (req, res) => {
+  const ref = db.collection("pedidos").doc(req.params.id);
+  const doc = await ref.get();
+  if (!doc.exists) {
+    res.status(404).json({ error: "Pedido nao encontrado." });
+    return;
+  }
+
+  const current = doc.data();
+  const allowedStatuses = [
+    "aguardando_pagamento",
+    "pago",
+    "em_separacao",
+    "enviado",
+    "entregue",
+    "cancelamento_solicitado",
+    "cancelado",
+    "devolucao_solicitada",
+    "reembolsado",
+  ];
+  const status = allowedStatuses.includes(req.body.status) ? req.body.status : current.status;
+  const pagamentoStatus = ["pendente", "aprovado", "recusado", "estornado"].includes(req.body.pagamentoStatus)
+    ? req.body.pagamentoStatus
+    : current.pagamento?.status || "pendente";
+  const updated = {
+    ...current,
+    status,
+    rastreio: String(req.body.rastreio || current.rastreio || "").trim(),
+    pagamento: {
+      ...(current.pagamento || {}),
+      status: pagamentoStatus,
+      metodo: String(req.body.pagamentoMetodo || current.pagamento?.metodo || "pix").trim(),
+    },
+    historico: [
+      ...(current.historico || []),
+      { status, data: new Date().toISOString(), nota: String(req.body.nota || "Status atualizado pelo admin.").trim() },
+    ],
+    atualizadoEm: new Date().toISOString(),
+  };
+
+  await ref.set(updated);
+  res.json(publicOrder(updated));
 });
 
 app.get("/api/banners", async (req, res) => {

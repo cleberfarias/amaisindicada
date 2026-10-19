@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { FiBarChart2, FiBox, FiEdit3 } from "react-icons/fi";
+import { FiBarChart2, FiBox, FiEdit3, FiShoppingBag } from "react-icons/fi";
 import { theme } from "../../styles/theme";
 
 const Shell = styled.div`
@@ -37,11 +38,16 @@ const Tab = styled(NavLink)`
 `;
 
 function AdminShell() {
+  const { t } = useTranslation();
+
   return (
     <Shell>
-      <Tabs aria-label="Menu administrativo">
+      <Tabs aria-label={t("adminShell.menuAria")}>
         <Tab to="/admin/produtos">
-          <FiBox /> Produtos
+          <FiBox /> {t("adminShell.products")}
+        </Tab>
+        <Tab to="/admin/pedidos">
+          <FiShoppingBag /> {t("adminShell.orders")}
         </Tab>
         <Tab to="/admin/marketing">
           <FiBarChart2 /> Marketing

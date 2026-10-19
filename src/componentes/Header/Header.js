@@ -203,6 +203,12 @@ function Header() {
           <NavigationLink to={lp("/catalogo")} onClick={closeMenu}>
             {t("header.nav.catalogo")}
           </NavigationLink>
+          <NavigationLink to={lp("/loja")} onClick={closeMenu}>
+            {t("header.nav.loja")}
+          </NavigationLink>
+          <NavigationLink to={lp("/meus-pedidos")} onClick={closeMenu}>
+            {t("header.nav.pedidos")}
+          </NavigationLink>
           <NavigationLink to={lp("/exportacao")} onClick={closeMenu}>
             {t("header.nav.exportacao")}
           </NavigationLink>

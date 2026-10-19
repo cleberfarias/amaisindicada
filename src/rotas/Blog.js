@@ -168,12 +168,13 @@ function Blog() {
   const { t, i18n } = useTranslation();
   const lp = useLocalizedPath();
   const [posts, setPosts] = useState([]);
+  const lang = i18n.language;
   const locale = dateLocale[i18n.language] || dateLocale.pt;
   const fallbackAuthor = t("blog.fallbackAuthor");
 
   useEffect(() => {
-    listarPosts().then(setPosts);
-  }, []);
+    listarPosts(lang).then(setPosts);
+  }, [lang]);
 
   return (
     <Page>

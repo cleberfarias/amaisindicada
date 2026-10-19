@@ -6,7 +6,9 @@
     "perfil": "Leve, classica e versatil",
     "imagem": "/produtos/prata.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "ouro",
@@ -15,7 +17,9 @@
     "perfil": "Envelhecida, elegante e marcante",
     "imagem": "/produtos/ouro.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "amburana",
@@ -34,7 +38,9 @@
     "exibirCatalogo": true,
     "exibirExportacao": false,
     "ordem": 0,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "cafe",
@@ -43,7 +49,9 @@
     "perfil": "Intenso, aromatico e afetivo",
     "imagem": "/produtos/cafe.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "figo",
@@ -52,7 +60,9 @@
     "perfil": "Tradicional, doce e familiar",
     "imagem": "/produtos/figo.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "pistache",
@@ -61,7 +71,9 @@
     "perfil": "Cremoso, premium e presenteavel",
     "imagem": "/produtos/pistache.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "morango",
@@ -70,7 +82,9 @@
     "perfil": "Doce, frutado e delicado",
     "imagem": "/produtos/morango.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "limao",
@@ -79,7 +93,9 @@
     "perfil": "Citrico, fresco e equilibrado",
     "imagem": "/produtos/limao.webp",
     "destaque": true,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "canela",
@@ -88,7 +104,9 @@
     "perfil": "Especiado, aromatico e acolhedor",
     "imagem": "/produtos/canela.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "groselha",
@@ -97,7 +115,9 @@
     "perfil": "Frutado, doce e marcante",
     "imagem": "/produtos/groselha.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "banana",
@@ -106,7 +126,9 @@
     "perfil": "Brasileiro, doce e familiar",
     "imagem": "/produtos/banana.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "menta",
@@ -115,7 +137,9 @@
     "perfil": "Refrescante, leve e aromatico",
     "imagem": "/produtos/menta.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 40,
+    "exibirLoja": true
   },
   {
     "id": "cacau",
@@ -124,7 +148,9 @@
     "perfil": "Cremoso, intenso e sobremesa",
     "imagem": "/produtos/cacau.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "coco",
@@ -133,7 +159,9 @@
     "perfil": "Tropical, cremoso e suave",
     "imagem": "/produtos/coco.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "maracuja",
@@ -142,7 +170,9 @@
     "perfil": "Frutado, citrico e brasileiro",
     "imagem": "/produtos/marcauja.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "abacaxi",
@@ -151,7 +181,9 @@
     "perfil": "Tropical, doce e vibrante",
     "imagem": "/produtos/abacaxi.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   },
   {
     "id": "pacoca",
@@ -160,6 +192,8 @@
     "perfil": "Brasileiro, cremoso e afetivo",
     "imagem": "/produtos/pacoca.webp",
     "destaque": false,
-    "ativo": true
+    "ativo": true,
+    "preco": 50,
+    "exibirLoja": true
   }
 ]

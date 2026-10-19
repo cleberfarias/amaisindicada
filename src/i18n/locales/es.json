@@ -8,10 +8,12 @@
       "inicio": "Inicio",
       "historia": "Historia",
       "catalogo": "Catalogo",
+      "loja": "Tienda",
       "exportacao": "Exportacion",
       "blog": "Blog",
       "contato": "Contacto",
-      "admin": "Admin"
+      "admin": "Admin",
+      "pedidos": "Pedidos"
     }
   },
   "footer": {
@@ -55,10 +57,22 @@
       "whatsapp": "Solicitar atencion con esta sugerencia",
       "whatsappMessage": "Hola, tengo interes en {{sugestao}}. Quiero saber mas sobre el catalogo y la atencion.",
       "profiles": {
-        "presente": { "label": "Regalo sofisticado", "motivo": "Tiene una lectura premium, un aspecto llamativo y combina con ocasiones especiales." },
-        "tradicao": { "label": "Sabor tradicional", "motivo": "Lleva la memoria del primer licor de la familia y refuerza el origen de la marca." },
-        "classico": { "label": "Cachaca clasica", "motivo": "Buena puerta de entrada para quien busca una cachaca envejecida y elegante." },
-        "refrescante": { "label": "Mas ligero y fresco", "motivo": "Perfil citrico, facil de presentar en degustaciones y combinaciones." }
+        "presente": {
+          "label": "Regalo sofisticado",
+          "motivo": "Tiene una lectura premium, un aspecto llamativo y combina con ocasiones especiales."
+        },
+        "tradicao": {
+          "label": "Sabor tradicional",
+          "motivo": "Lleva la memoria del primer licor de la familia y refuerza el origen de la marca."
+        },
+        "classico": {
+          "label": "Cachaca clasica",
+          "motivo": "Buena puerta de entrada para quien busca una cachaca envejecida y elegante."
+        },
+        "refrescante": {
+          "label": "Mas ligero y fresco",
+          "motivo": "Perfil citrico, facil de presentar en degustaciones y combinaciones."
+        }
       }
     },
     "story": {
@@ -66,9 +80,18 @@
       "title": "Historia familiar con acabado de marca madura.",
       "text": "A Mais Indicada nacio en Celso Ramos, en una trayectoria ligada a la familia, la cana de azucar y los sabores que pasaron de vecino a vecino. La nueva experiencia del sitio conserva esa memoria, pero organiza la comunicacion para consumidores, comerciantes y socios.",
       "proof": {
-        "responsible": { "title": "Venta responsable", "text": "Comunicacion clara para mayores de 18 anos." },
-        "support": { "title": "Atencion directa", "text": "Contacto comercial por WhatsApp y correo electronico." },
-        "export": { "title": "Base para exportacion", "text": "Pagina B2B preparada para nuevos mercados." }
+        "responsible": {
+          "title": "Venta responsable",
+          "text": "Comunicacion clara para mayores de 18 anos."
+        },
+        "support": {
+          "title": "Atencion directa",
+          "text": "Contacto comercial por WhatsApp y correo electronico."
+        },
+        "export": {
+          "title": "Base para exportacion",
+          "text": "Pagina B2B preparada para nuevos mercados."
+        }
       }
     },
     "exportBand": {
@@ -90,9 +113,21 @@
       "lead": "A Mais Indicada nace en Celso Ramos, Santa Catarina, uniendo cachaca, licores, carino familiar y una reputacion construida de cliente en cliente."
     },
     "timeline": {
-      "item1": { "year": "2004", "title": "El inicio en Celso Ramos", "text": "En la comunidad de Nossa Senhora do Caravaggio, don Iziario dio inicio a la historia de la marca, en una region ligada a la cana de azucar y a la produccion artesanal." },
-      "item2": { "year": "Familia", "title": "Sabores creados en casa", "text": "Dona Marizete aporto la dulzura de los licores y ayudo a transformar la produccion en una linea de sabores. El primer licor fue el de higo." },
-      "item3": { "year": "Marca", "title": "La mas recomendada de la region", "text": "El nombre surgio de su propia reputacion: cuando alguien pedia una buena cachaca en la region, la recomendacion de los clientes llevaba hasta la familia." }
+      "item1": {
+        "year": "2004",
+        "title": "El inicio en Celso Ramos",
+        "text": "En la comunidad de Nossa Senhora do Caravaggio, don Iziario dio inicio a la historia de la marca, en una region ligada a la cana de azucar y a la produccion artesanal."
+      },
+      "item2": {
+        "year": "Familia",
+        "title": "Sabores creados en casa",
+        "text": "Dona Marizete aporto la dulzura de los licores y ayudo a transformar la produccion en una linea de sabores. El primer licor fue el de higo."
+      },
+      "item3": {
+        "year": "Marca",
+        "title": "La mas recomendada de la region",
+        "text": "El nombre surgio de su propia reputacion: cuando alguien pedia una buena cachaca en la region, la recomendacion de los clientes llevaba hasta la familia."
+      }
     },
     "process": {
       "eyebrow": "Proceso y cuidado",
@@ -105,10 +140,22 @@
       "text": "La linea de cachacas y licores gana una experiencia digital mas facil de explorar, con catalogo, recomendacion de sabores, contacto directo y una pagina dedicada a la exportacion."
     },
     "proof": {
-      "origin": { "title": "Origen en Santa Catarina", "text": "Celso Ramos como punto de partida de la narrativa de la marca." },
-      "family": { "title": "Produccion familiar", "text": "Historia humana y cercana como diferencial institucional." },
-      "since": { "title": "Desde 2004", "text": "Trayectoria en el tiempo para reforzar la confianza comercial." },
-      "responsible": { "title": "Venta responsable", "text": "Comunicacion dirigida solo a mayores de 18 anos." }
+      "origin": {
+        "title": "Origen en Santa Catarina",
+        "text": "Celso Ramos como punto de partida de la narrativa de la marca."
+      },
+      "family": {
+        "title": "Produccion familiar",
+        "text": "Historia humana y cercana como diferencial institucional."
+      },
+      "since": {
+        "title": "Desde 2004",
+        "text": "Trayectoria en el tiempo para reforzar la confianza comercial."
+      },
+      "responsible": {
+        "title": "Venta responsable",
+        "text": "Comunicacion dirigida solo a mayores de 18 anos."
+      }
     },
     "nextPhase": {
       "eyebrow": "Proxima fase",
@@ -149,6 +196,182 @@
     "whatsappButton": "Consultar este producto",
     "whatsappMessage": "Hola, tengo interes en el producto {{nome}}. Me gustaria recibir informacion comercial."
   },
+  "loja": {
+    "seo": {
+      "title": "Tienda Online | A Mais Indicada",
+      "description": "Compra cachaca y licores artesanales de A Mais Indicada con pedido y flete calculados en el sitio."
+    },
+    "hero": {
+      "eyebrow": "Tienda online",
+      "title": "Elige tus productos y finaliza en el sitio.",
+      "lead": "Arma el carrito, informa la direccion, calcula el flete por Correios y envia el pedido sin salir del sitio."
+    },
+    "assurance": {
+      "aria": "Informacion de seguridad de la tienda",
+      "protected": {
+        "title": "Compra protegida",
+        "text": "Pedido registrado con codigo de seguimiento e historial de estado."
+      },
+      "shipping": {
+        "title": "Flete calculado",
+        "text": "Valores y plazos devueltos por la integracion configurada con Correios."
+      },
+      "privacy": {
+        "title": "Datos tratados con cuidado",
+        "text": "Usamos tus datos solo para procesar y entregar el pedido."
+      }
+    },
+    "trust": {
+      "payment": "Pago registrado",
+      "delivery": "Entrega por Correios",
+      "tracking": "Sigue tu pedido",
+      "return": "Derecho de arrepentimiento"
+    },
+    "section": {
+      "eyebrow": "Vitrina",
+      "title": "Productos para compra online",
+      "available": "{{count}} producto(s) con precio habilitado para compra.",
+      "setup": "Agrega precios en el panel administrativo para habilitar la compra online."
+    },
+    "setup": {
+      "eyebrow": "Tienda en configuracion",
+      "title": "Productos registrados, pero aun sin precio de venta.",
+      "text": "Para una compra segura, la vitrina online solo habilita el carrito cuando el producto tiene precio registrado, peso/dimensiones para flete y exhibicion habilitada en la tienda. Esto evita pedidos con valor indefinido.",
+      "price": {
+        "title": "1. Registra el precio",
+        "text": "Usa el panel de productos para informar el valor de venta."
+      },
+      "package": {
+        "title": "2. Revisa peso y medidas",
+        "text": "Estos datos alimentan el calculo de flete de Correios."
+      },
+      "enable": {
+        "title": "3. Habilita la tienda",
+        "text": "Marca el producto para aparecer en la tienda online."
+      }
+    },
+    "addToCart": "Agregar",
+    "checkout": "Finalizar pedido",
+    "empty": "No hay productos disponibles en la tienda en este momento.",
+    "subtotalLabel": "Subtotal",
+    "totalLabel": "Total",
+    "totalOnRequest": "Calcula el flete",
+    "checkoutPanel": {
+      "title": "Checkout seguro",
+      "close": "Cerrar checkout"
+    },
+    "steps": {
+      "cart": "Carrito",
+      "delivery": "Entrega",
+      "shipping": "Flete",
+      "order": "Pedido"
+    },
+    "sections": {
+      "contact": "Datos de contacto",
+      "address": "Direccion de entrega",
+      "payment": "Pago"
+    },
+    "secureNote": "El pedido se guardara con un enlace privado de seguimiento. El pago queda pendiente hasta que la integracion del gateway confirme Pix, tarjeta o boleto.",
+    "cep": {
+      "lookup": "Buscando direccion por codigo postal...",
+      "filled": "Direccion completada por codigo postal.",
+      "notFound": "Codigo postal no encontrado. Completa la direccion manualmente.",
+      "error": "No fue posible buscar el codigo postal ahora. Completa la direccion manualmente."
+    },
+    "payment": {
+      "pixTitle": "Pix",
+      "pixDescription": "Confirmacion manual hasta conectar el gateway.",
+      "cardTitle": "Tarjeta",
+      "cardDescription": "Pedido registrado para cobro por enlace seguro.",
+      "boletoTitle": "Boleto",
+      "boletoDescription": "Emision despues de revisar el pedido."
+    },
+    "review": {
+      "title": "Revisa tu pedido",
+      "items": "{{count}} item(s)",
+      "delivery": "Entrega",
+      "addressMissing": "Completa la direccion",
+      "payment": "Pago"
+    },
+    "checkoutFields": {
+      "nome": "Nombre completo",
+      "email": "Correo electronico",
+      "telefone": "Telefono",
+      "cep": "Codigo postal",
+      "logradouro": "Direccion",
+      "numero": "Numero",
+      "complemento": "Complemento",
+      "bairro": "Barrio",
+      "cidade": "Ciudad",
+      "uf": "Estado"
+    },
+    "shipping": {
+      "label": "Flete",
+      "calculate": "Calcular flete",
+      "loading": "Calculando flete...",
+      "empty": "No se devolvio ninguna opcion de flete para este codigo postal.",
+      "deadline": "{{days}} dias habiles",
+      "noDeadline": "Plazo por confirmar"
+    },
+    "order": {
+      "success": "Pedido recibido. Numero: {{id}}"
+    },
+    "cart": {
+      "title": "Carrito",
+      "items": "items",
+      "empty": "Tu carrito esta vacio.",
+      "emptyHint": "Elige un producto con precio habilitado para liberar entrega, flete y cierre del pedido.",
+      "secureEmpty": "La tienda registra pedidos con seguimiento, estado y solicitud de cancelacion o devolucion cuando corresponda.",
+      "floating": "{{count}} item(s) - {{total}}",
+      "remove": "Eliminar item",
+      "decrease": "Disminuir cantidad",
+      "increase": "Aumentar cantidad"
+    }
+  },
+  "ordersList": {
+    "seoTitle": "Mis pedidos | A Mais Indicada",
+    "eyebrow": "Tienda online",
+    "title": "Mis pedidos",
+    "orderNumber": "Pedido #{{id}}",
+    "orderSummary": "{{status}} - {{count}} item(s)",
+    "empty": "No hay pedidos guardados en este navegador.",
+    "loading": "Cargando pedidos..."
+  },
+  "orderDetail": {
+    "seoTitle": "Detalle del pedido | A Mais Indicada",
+    "back": "Mis pedidos",
+    "eyebrow": "Seguimiento",
+    "titleFallback": "Pedido",
+    "orderNumber": "Pedido #{{id}}",
+    "status": "Estado: {{status}}",
+    "tracking": "Seguimiento: {{code}}",
+    "supportTitle": "Atencion del pedido",
+    "reasonPlaceholder": "Describe el motivo, si es necesario.",
+    "requestCancel": "Solicitar cancelacion",
+    "requestReturn": "Solicitar devolucion",
+    "noAction": "Este pedido no tiene ninguna accion disponible en este momento.",
+    "loading": "Cargando pedido...",
+    "cancelRegistered": "Solicitud de cancelacion registrada.",
+    "returnRegistered": "Solicitud de devolucion registrada."
+  },
+  "adminShell": {
+    "menuAria": "Menu administrativo",
+    "products": "Productos",
+    "orders": "Pedidos"
+  },
+  "adminOrders": {
+    "seoTitle": "Admin | Pedidos",
+    "eyebrow": "Administrativo",
+    "title": "Pedidos de la tienda online.",
+    "refresh": "Actualizar pedidos",
+    "updated": "Pedido actualizado.",
+    "status": "Estado",
+    "payment": "Pago",
+    "method": "Metodo",
+    "tracking": "Seguimiento",
+    "internalNote": "Nota interna/historial",
+    "save": "Guardar estado"
+  },
   "exportacao": {
     "seo": {
       "title": "Exportacion de Cachaca y Licor Artesanal | A Mais Indicada",
@@ -160,9 +383,18 @@
       "lead": "Una pagina creada para distribuidores, representantes, comerciantes y compradores que necesitan entender rapidamente el portafolio, el origen, los diferenciales y el contacto comercial."
     },
     "cards": {
-      "origin": { "title": "Origen artesanal", "text": "Marca familiar de Celso Ramos, Santa Catarina, con una narrativa ligada a la produccion local y a los sabores brasilenos." },
-      "portfolio": { "title": "Portafolio comercial", "text": "Lineas de cachacas, licores finos y licores cremosos para retail, regalos, degustaciones y reventa." },
-      "contact": { "title": "Contacto B2B", "text": "Atencion dirigida para entender pais, volumen, interes y necesidad de documentacion." }
+      "origin": {
+        "title": "Origen artesanal",
+        "text": "Marca familiar de Celso Ramos, Santa Catarina, con una narrativa ligada a la produccion local y a los sabores brasilenos."
+      },
+      "portfolio": {
+        "title": "Portafolio comercial",
+        "text": "Lineas de cachacas, licores finos y licores cremosos para retail, regalos, degustaciones y reventa."
+      },
+      "contact": {
+        "title": "Contacto B2B",
+        "text": "Atencion dirigida para entender pais, volumen, interes y necesidad de documentacion."
+      }
     },
     "validate": {
       "eyebrow": "Informacion por validar",

@@ -12,12 +12,16 @@ import FaleConosco from "./rotas/FaleConosco";
 import Catalogo from "./rotas/Catalogo";
 import Exportacao from "./rotas/Exportacao";
 import ProdutoDetalhe from "./rotas/ProdutoDetalhe";
+import Loja from "./rotas/Loja";
+import MeusPedidos from "./rotas/MeusPedidos";
+import PedidoDetalhe from "./rotas/PedidoDetalhe";
 import Blog from "./rotas/Blog";
 import PostDetalhe from "./rotas/PostDetalhe";
 import AdminHome from "./rotas/AdminHome";
 import AdminProdutos from "./rotas/AdminProdutos";
 import AdminMarketing from "./rotas/AdminMarketing";
 import AdminBlog from "./rotas/AdminBlog";
+import AdminPedidos from "./rotas/AdminPedidos";
 import { AdminAuthProvider } from "./contexts/AdminAuthContext";
 import { LocaleLayout } from "./contexts/LocaleContext";
 import { theme } from "./styles/theme";
@@ -153,6 +157,9 @@ const App = () => {
       <Route path="institucional" element={<Institucional />} />
       <Route path="catalogo" element={<Catalogo />} />
       <Route path="produto/:id" element={<ProdutoDetalhe />} />
+      <Route path="loja" element={<Loja />} />
+      <Route path="meus-pedidos" element={<MeusPedidos />} />
+      <Route path="pedido/:id" element={<PedidoDetalhe />} />
       <Route path="exportacao" element={<Exportacao />} />
       <Route path="blog" element={<Blog />} />
       <Route path="blog/:slug" element={<PostDetalhe />} />
@@ -178,12 +185,13 @@ const App = () => {
           <Route path="/admin/produtos" element={<AdminProdutos />} />
           <Route path="/admin/marketing" element={<AdminMarketing />} />
           <Route path="/admin/blog" element={<AdminBlog />} />
+          <Route path="/admin/pedidos" element={<AdminPedidos />} />
           <Route path="/cadastro" element={<Navigate to="/contato" replace />} />
           <Route path="/confirmarcadastro" element={<Navigate to="/contato" replace />} />
           <Route path="/login" element={<Navigate to="/contato" replace />} />
           <Route path="/confirmcadastrosenha" element={<Navigate to="/contato" replace />} />
-          <Route path="/carrinho" element={<Navigate to="/catalogo" replace />} />
-          <Route path="/fechamentocompra" element={<Navigate to="/contato" replace />} />
+          <Route path="/carrinho" element={<Navigate to="/loja" replace />} />
+          <Route path="/fechamentocompra" element={<Navigate to="/loja" replace />} />
         </Routes>
       </AdminAuthProvider>
     </BrowserRouter>

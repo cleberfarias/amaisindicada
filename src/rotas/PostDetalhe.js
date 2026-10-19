@@ -106,15 +106,16 @@ function PostDetalhe() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [loaded, setLoaded] = useState(false);
+  const lang = i18n.language;
   const locale = dateLocale[i18n.language] || dateLocale.pt;
 
   useEffect(() => {
     setLoaded(false);
-    buscarPost(slug).then((result) => {
+    buscarPost(slug, lang).then((result) => {
       setPost(result);
       setLoaded(true);
     });
-  }, [slug]);
+  }, [slug, lang]);
 
   if (loaded && !post) {
     return (

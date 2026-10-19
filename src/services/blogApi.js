@@ -1,12 +1,35 @@
 const apiBase = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 
-const normalizarImagem = (post) => ({
-  ...post,
-  imagemCapa:
-    post.imagemCapa && post.imagemCapa.startsWith("/")
-      ? `${process.env.PUBLIC_URL || ""}${post.imagemCapa}`
-      : post.imagemCapa,
-});
+const localizedFields = ["titulo", "resumo", "conteudoMarkdown"];
+
+const getLocalizedPost = (post, lang = "pt") => {
+  if (!post || lang === "pt") {
+    return post;
+  }
+
+  const translation = post.translations?.[lang] || {};
+  const localized = { ...post };
+
+  localizedFields.forEach((field) => {
+    if (translation[field]) {
+      localized[field] = translation[field];
+    }
+  });
+
+  return localized;
+};
+
+const normalizarPost = (post, lang) => {
+  const localized = getLocalizedPost(post, lang);
+
+  return {
+    ...localized,
+    imagemCapa:
+      localized.imagemCapa && localized.imagemCapa.startsWith("/")
+        ? `${process.env.PUBLIC_URL || ""}${localized.imagemCapa}`
+        : localized.imagemCapa,
+  };
+};
 
 const request = async (path, options = {}) => {
   const { token, headers, ...requestOptions } = options;
@@ -28,18 +51,18 @@ const request = async (path, options = {}) => {
   return data;
 };
 
-export const listarPosts = async () => {
+export const listarPosts = async (lang = "pt") => {
   try {
     const posts = await request("/posts");
-    return posts.map(normalizarImagem);
+    return posts.map((post) => normalizarPost(post, lang));
   } catch (error) {
     return [];
   }
 };
 
-export const buscarPost = async (id) => {
+export const buscarPost = async (id, lang = "pt") => {
   try {
-    return normalizarImagem(await request(`/posts/${id}`));
+    return normalizarPost(await request(`/posts/${id}`), lang);
   } catch (error) {
     return null;
   }
@@ -47,7 +70,7 @@ export const buscarPost = async (id) => {
 
 export const listarPostsAdmin = async (token) => {
   const posts = await request("/admin/posts", { token });
-  return posts.map(normalizarImagem);
+  return posts.map((post) => normalizarPost(post, "pt"));
 };
 
 export const criarPost = (post, token) =>

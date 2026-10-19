@@ -2,8 +2,16 @@ import { catalogoProdutos } from "../data/produtos";
 
 const apiBase = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 
+const getDefaultProductPrice = (produto) => {
+  const linha = String(produto.linha || "").toLowerCase();
+  const id = String(produto.id || "").toLowerCase();
+  const isSpecial = linha.includes("cremos") || ["ouro", "amburana"].includes(id);
+  return isSpecial ? 50 : 40;
+};
+
 const normalizarImagem = (produto) => ({
   ...produto,
+  preco: Number(produto.preco) > 0 ? Number(produto.preco) : getDefaultProductPrice(produto),
   imagem:
     produto.imagem && produto.imagem.startsWith("/")
       ? `${process.env.PUBLIC_URL || ""}${produto.imagem}`
@@ -12,6 +20,7 @@ const normalizarImagem = (produto) => ({
 
 const fallbackProducts = catalogoProdutos.map((produto, index) => ({
   ...produto,
+  preco: getDefaultProductPrice(produto),
   destaque: index < 8,
   ativo: true,
 }));
@@ -55,8 +64,11 @@ const request = async (path, options = {}) => {
 
 export const listarProdutos = async () => {
   try {
-    const produtos = await request("/produtos");
-    return produtos.map(normalizarImagem);
+    const produtos = request("/produtos");
+    const catalogoPorId = new Map(fallbackProducts.map((produto) => [produto.id, produto]));
+    const atuais = (await produtos).map((produto) => normalizarImagem({ ...catalogoPorId.get(produto.id), ...produto }));
+    const idsAtuais = new Set(atuais.map((produto) => produto.id));
+    return [...atuais, ...fallbackProducts.filter((produto) => !idsAtuais.has(produto.id))];
   } catch (error) {
     return fallbackProducts;
   }
@@ -64,7 +76,9 @@ export const listarProdutos = async () => {
 
 export const buscarProduto = async (id) => {
   try {
-    return normalizarImagem(await request(`/produtos/${id}`));
+    const remoto = await request(`/produtos/${id}`);
+    const base = fallbackProducts.find((produto) => produto.id === id);
+    return normalizarImagem({ ...base, ...remoto });
   } catch (error) {
     return fallbackProducts.find((produto) => produto.id === id) || null;
   }

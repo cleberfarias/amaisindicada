@@ -16,6 +16,10 @@ const emptyForm = {
   titulo: "",
   resumo: "",
   conteudoMarkdown: "",
+  translations: {
+    en: { titulo: "", resumo: "", conteudoMarkdown: "" },
+    es: { titulo: "", resumo: "", conteudoMarkdown: "" },
+  },
   imagemCapa: "",
   autor: "",
   tags: "",
@@ -142,6 +146,23 @@ const TextArea = styled.textarea`
 const ContentArea = styled(TextArea)`
   min-height: 220px;
   font-family: monospace;
+`;
+
+const TranslationBlock = styled.div`
+  display: grid;
+  gap: 14px;
+  grid-column: 1 / -1;
+  padding: 16px;
+  border: 1px solid ${theme.colors.line};
+  border-radius: 8px;
+  background: ${theme.colors.cream};
+`;
+
+const TranslationTitle = styled.h3`
+  margin: 0;
+  font-family: ${theme.fonts.heading};
+  font-size: 1.25rem;
+  line-height: 1;
 `;
 
 const CheckRow = styled.label`
@@ -280,6 +301,19 @@ function AdminBlog() {
     setForm((current) => ({ ...current, [field]: value }));
   };
 
+  const updateTranslation = (lang, field, value) => {
+    setForm((current) => ({
+      ...current,
+      translations: {
+        ...current.translations,
+        [lang]: {
+          ...current.translations?.[lang],
+          [field]: value,
+        },
+      },
+    }));
+  };
+
   const resetForm = () => {
     setForm(emptyForm);
     setEditingId("");
@@ -312,6 +346,10 @@ function AdminBlog() {
     setForm({
       ...emptyForm,
       ...post,
+      translations: {
+        ...emptyForm.translations,
+        ...(post.translations || {}),
+      },
       imagemCapa: (post.imagemCapa || "").replace(process.env.PUBLIC_URL || "", ""),
       tags: Array.isArray(post.tags) ? post.tags.join(", ") : post.tags || "",
       status: post.status || "rascunho",
@@ -398,6 +436,58 @@ function AdminBlog() {
                       placeholder="Titulos com #, negrito com **texto**, links com [texto](url)."
                     />
                   </FullField>
+
+                  <TranslationBlock>
+                    <TranslationTitle>Traducao em ingles</TranslationTitle>
+                    <FullField>
+                      Titulo em ingles
+                      <Input
+                        value={form.translations?.en?.titulo || ""}
+                        onChange={(event) => updateTranslation("en", "titulo", event.target.value)}
+                      />
+                    </FullField>
+                    <FullField>
+                      Resumo em ingles
+                      <TextArea
+                        value={form.translations?.en?.resumo || ""}
+                        onChange={(event) => updateTranslation("en", "resumo", event.target.value)}
+                      />
+                    </FullField>
+                    <FullField>
+                      Conteudo em ingles (Markdown)
+                      <ContentArea
+                        value={form.translations?.en?.conteudoMarkdown || ""}
+                        onChange={(event) => updateTranslation("en", "conteudoMarkdown", event.target.value)}
+                        placeholder="Use Markdown como na versao em portugues."
+                      />
+                    </FullField>
+                  </TranslationBlock>
+
+                  <TranslationBlock>
+                    <TranslationTitle>Traducao em espanhol</TranslationTitle>
+                    <FullField>
+                      Titulo em espanhol
+                      <Input
+                        value={form.translations?.es?.titulo || ""}
+                        onChange={(event) => updateTranslation("es", "titulo", event.target.value)}
+                      />
+                    </FullField>
+                    <FullField>
+                      Resumo em espanhol
+                      <TextArea
+                        value={form.translations?.es?.resumo || ""}
+                        onChange={(event) => updateTranslation("es", "resumo", event.target.value)}
+                      />
+                    </FullField>
+                    <FullField>
+                      Conteudo em espanhol (Markdown)
+                      <ContentArea
+                        value={form.translations?.es?.conteudoMarkdown || ""}
+                        onChange={(event) => updateTranslation("es", "conteudoMarkdown", event.target.value)}
+                        placeholder="Use Markdown como na versao em portugues."
+                      />
+                    </FullField>
+                  </TranslationBlock>
 
                   <FullField>
                     Imagem de capa

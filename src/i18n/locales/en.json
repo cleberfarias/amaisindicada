@@ -8,10 +8,12 @@
       "inicio": "Home",
       "historia": "Our Story",
       "catalogo": "Catalog",
+      "loja": "Shop",
       "exportacao": "Export",
       "blog": "Blog",
       "contato": "Contact",
-      "admin": "Admin"
+      "admin": "Admin",
+      "pedidos": "Orders"
     }
   },
   "footer": {
@@ -55,10 +57,22 @@
       "whatsapp": "Request assistance with this suggestion",
       "whatsappMessage": "Hello, I'm interested in {{sugestao}}. I'd like to know more about the catalog and service.",
       "profiles": {
-        "presente": { "label": "Sophisticated gift", "motivo": "Has a premium feel and a striking look, perfect for special occasions." },
-        "tradicao": { "label": "Traditional flavor", "motivo": "Carries the memory of the family's first liqueur and reinforces the brand's origin." },
-        "classico": { "label": "Classic cachaca", "motivo": "A great entry point for those looking for an aged, elegant cachaca." },
-        "refrescante": { "label": "Lighter and fresher", "motivo": "Citrus profile, easy to serve in tastings and pairings." }
+        "presente": {
+          "label": "Sophisticated gift",
+          "motivo": "Has a premium feel and a striking look, perfect for special occasions."
+        },
+        "tradicao": {
+          "label": "Traditional flavor",
+          "motivo": "Carries the memory of the family's first liqueur and reinforces the brand's origin."
+        },
+        "classico": {
+          "label": "Classic cachaca",
+          "motivo": "A great entry point for those looking for an aged, elegant cachaca."
+        },
+        "refrescante": {
+          "label": "Lighter and fresher",
+          "motivo": "Citrus profile, easy to serve in tastings and pairings."
+        }
       }
     },
     "story": {
@@ -66,9 +80,18 @@
       "title": "A family history with the finish of a mature brand.",
       "text": "A Mais Indicada was born in Celso Ramos, in a story tied to family, sugarcane, and flavors passed from neighbor to neighbor. The new website experience preserves that memory while organizing communication for consumers, retailers and partners.",
       "proof": {
-        "responsible": { "title": "Responsible sales", "text": "Clear communication for people 18 and older." },
-        "support": { "title": "Direct support", "text": "Business contact via WhatsApp and email." },
-        "export": { "title": "Ready for export", "text": "A B2B page prepared for new markets." }
+        "responsible": {
+          "title": "Responsible sales",
+          "text": "Clear communication for people 18 and older."
+        },
+        "support": {
+          "title": "Direct support",
+          "text": "Business contact via WhatsApp and email."
+        },
+        "export": {
+          "title": "Ready for export",
+          "text": "A B2B page prepared for new markets."
+        }
       }
     },
     "exportBand": {
@@ -90,9 +113,21 @@
       "lead": "A Mais Indicada was born in Celso Ramos, Santa Catarina, bringing together cachaca, liqueurs, family affection and a reputation built one customer at a time."
     },
     "timeline": {
-      "item1": { "year": "2004", "title": "The beginning in Celso Ramos", "text": "In the community of Nossa Senhora do Caravaggio, Mr. Iziario started the brand's story, in a region tied to sugarcane and artisanal production." },
-      "item2": { "year": "Family", "title": "Flavors created at home", "text": "Dona Marizete brought the sweetness of the liqueurs and helped turn the production into a line of flavors. The first liqueur was fig." },
-      "item3": { "year": "Brand", "title": "The most recommended in the region", "text": "The name came from its own reputation: whenever someone asked for good cachaca in the region, customers' recommendations led straight to the family." }
+      "item1": {
+        "year": "2004",
+        "title": "The beginning in Celso Ramos",
+        "text": "In the community of Nossa Senhora do Caravaggio, Mr. Iziario started the brand's story, in a region tied to sugarcane and artisanal production."
+      },
+      "item2": {
+        "year": "Family",
+        "title": "Flavors created at home",
+        "text": "Dona Marizete brought the sweetness of the liqueurs and helped turn the production into a line of flavors. The first liqueur was fig."
+      },
+      "item3": {
+        "year": "Brand",
+        "title": "The most recommended in the region",
+        "text": "The name came from its own reputation: whenever someone asked for good cachaca in the region, customers' recommendations led straight to the family."
+      }
     },
     "process": {
       "eyebrow": "Process and care",
@@ -105,10 +140,22 @@
       "text": "The cachaca and liqueur line now has a more scannable digital experience, with a catalog, flavor recommendations, direct contact and a dedicated export page."
     },
     "proof": {
-      "origin": { "title": "Origin in Santa Catarina", "text": "Celso Ramos as the starting point of the brand's narrative." },
-      "family": { "title": "Family production", "text": "A human, close story as an institutional differentiator." },
-      "since": { "title": "Since 2004", "text": "Years of history to reinforce business trust." },
-      "responsible": { "title": "Responsible sales", "text": "Communication aimed only at people 18 and older." }
+      "origin": {
+        "title": "Origin in Santa Catarina",
+        "text": "Celso Ramos as the starting point of the brand's narrative."
+      },
+      "family": {
+        "title": "Family production",
+        "text": "A human, close story as an institutional differentiator."
+      },
+      "since": {
+        "title": "Since 2004",
+        "text": "Years of history to reinforce business trust."
+      },
+      "responsible": {
+        "title": "Responsible sales",
+        "text": "Communication aimed only at people 18 and older."
+      }
     },
     "nextPhase": {
       "eyebrow": "Next phase",
@@ -149,6 +196,182 @@
     "whatsappButton": "Ask about this product",
     "whatsappMessage": "Hello, I'm interested in the product {{nome}}. I'd like to receive business information."
   },
+  "loja": {
+    "seo": {
+      "title": "Online Shop | A Mais Indicada",
+      "description": "Buy handcrafted cachaca and liqueurs from A Mais Indicada with checkout and shipping calculated on the site."
+    },
+    "hero": {
+      "eyebrow": "Online shop",
+      "title": "Choose your products and finish on the site.",
+      "lead": "Build your cart, enter the delivery address, calculate Correios shipping and submit the order without leaving the site."
+    },
+    "assurance": {
+      "aria": "Shop security information",
+      "protected": {
+        "title": "Protected purchase",
+        "text": "Order registered with a tracking code and status history."
+      },
+      "shipping": {
+        "title": "Calculated shipping",
+        "text": "Rates and deadlines come from the configured Correios integration."
+      },
+      "privacy": {
+        "title": "Careful data handling",
+        "text": "We use your data only to process and deliver the order."
+      }
+    },
+    "trust": {
+      "payment": "Registered payment",
+      "delivery": "Correios delivery",
+      "tracking": "Track your order",
+      "return": "Withdrawal right"
+    },
+    "section": {
+      "eyebrow": "Showcase",
+      "title": "Products available for online purchase",
+      "available": "{{count}} product(s) with pricing enabled for purchase.",
+      "setup": "Add prices in the admin panel to enable online purchase."
+    },
+    "setup": {
+      "eyebrow": "Shop setup",
+      "title": "Products are registered but still do not have sale prices.",
+      "text": "For a safe purchase, the online showcase only enables the cart when the product has a registered price, weight/dimensions for shipping and shop visibility enabled. This avoids orders with undefined values.",
+      "price": {
+        "title": "1. Add the price",
+        "text": "Use the product panel to enter the sale value."
+      },
+      "package": {
+        "title": "2. Review weight and dimensions",
+        "text": "These details feed the Correios shipping calculation."
+      },
+      "enable": {
+        "title": "3. Enable the shop",
+        "text": "Mark the product to appear in the online shop."
+      }
+    },
+    "addToCart": "Add",
+    "checkout": "Place order",
+    "empty": "No products are available in the shop right now.",
+    "subtotalLabel": "Subtotal",
+    "totalLabel": "Total",
+    "totalOnRequest": "Calculate shipping",
+    "checkoutPanel": {
+      "title": "Secure checkout",
+      "close": "Close checkout"
+    },
+    "steps": {
+      "cart": "Cart",
+      "delivery": "Delivery",
+      "shipping": "Shipping",
+      "order": "Order"
+    },
+    "sections": {
+      "contact": "Contact details",
+      "address": "Delivery address",
+      "payment": "Payment"
+    },
+    "secureNote": "The order will be saved with a private tracking link. Payment remains pending until the gateway integration confirms Pix, card or boleto.",
+    "cep": {
+      "lookup": "Looking up address by postal code...",
+      "filled": "Address filled from postal code.",
+      "notFound": "Postal code not found. Fill in the address manually.",
+      "error": "We could not look up the postal code right now. Fill in the address manually."
+    },
+    "payment": {
+      "pixTitle": "Pix",
+      "pixDescription": "Manual confirmation until the gateway is connected.",
+      "cardTitle": "Card",
+      "cardDescription": "Order registered for secure payment link billing.",
+      "boletoTitle": "Boleto",
+      "boletoDescription": "Issued after order review."
+    },
+    "review": {
+      "title": "Review your order",
+      "items": "{{count}} item(s)",
+      "delivery": "Delivery",
+      "addressMissing": "Fill in the address",
+      "payment": "Payment"
+    },
+    "checkoutFields": {
+      "nome": "Full name",
+      "email": "Email",
+      "telefone": "Phone",
+      "cep": "Postal code",
+      "logradouro": "Address",
+      "numero": "Number",
+      "complemento": "Complement",
+      "bairro": "District",
+      "cidade": "City",
+      "uf": "State"
+    },
+    "shipping": {
+      "label": "Shipping",
+      "calculate": "Calculate shipping",
+      "loading": "Calculating shipping...",
+      "empty": "No shipping option was returned for this postal code.",
+      "deadline": "{{days}} business days",
+      "noDeadline": "Deadline to confirm"
+    },
+    "order": {
+      "success": "Order received. Number: {{id}}"
+    },
+    "cart": {
+      "title": "Cart",
+      "items": "items",
+      "empty": "Your cart is empty.",
+      "emptyHint": "Choose a product with pricing enabled to unlock delivery, shipping and checkout.",
+      "secureEmpty": "The shop records orders with tracking, status and cancellation or return requests when applicable.",
+      "floating": "{{count}} item(s) - {{total}}",
+      "remove": "Remove item",
+      "decrease": "Decrease quantity",
+      "increase": "Increase quantity"
+    }
+  },
+  "ordersList": {
+    "seoTitle": "My orders | A Mais Indicada",
+    "eyebrow": "Online shop",
+    "title": "My orders",
+    "orderNumber": "Order #{{id}}",
+    "orderSummary": "{{status}} - {{count}} item(s)",
+    "empty": "No order saved in this browser.",
+    "loading": "Loading orders..."
+  },
+  "orderDetail": {
+    "seoTitle": "Order details | A Mais Indicada",
+    "back": "My orders",
+    "eyebrow": "Tracking",
+    "titleFallback": "Order",
+    "orderNumber": "Order #{{id}}",
+    "status": "Status: {{status}}",
+    "tracking": "Tracking: {{code}}",
+    "supportTitle": "Order support",
+    "reasonPlaceholder": "Describe the reason, if needed.",
+    "requestCancel": "Request cancellation",
+    "requestReturn": "Request return",
+    "noAction": "This order has no available action right now.",
+    "loading": "Loading order...",
+    "cancelRegistered": "Cancellation request registered.",
+    "returnRegistered": "Return request registered."
+  },
+  "adminShell": {
+    "menuAria": "Admin menu",
+    "products": "Products",
+    "orders": "Orders"
+  },
+  "adminOrders": {
+    "seoTitle": "Admin | Orders",
+    "eyebrow": "Admin",
+    "title": "Online shop orders.",
+    "refresh": "Refresh orders",
+    "updated": "Order updated.",
+    "status": "Status",
+    "payment": "Payment",
+    "method": "Method",
+    "tracking": "Tracking",
+    "internalNote": "Internal note/history",
+    "save": "Save status"
+  },
   "exportacao": {
     "seo": {
       "title": "Cachaca and Liqueur Export | A Mais Indicada",
@@ -160,9 +383,18 @@
       "lead": "A page created for distributors, representatives, retailers and buyers who need to quickly understand our portfolio, origin, differentiators and business contact."
     },
     "cards": {
-      "origin": { "title": "Artisanal origin", "text": "A family brand from Celso Ramos, Santa Catarina, with a narrative tied to local production and Brazilian flavors." },
-      "portfolio": { "title": "Business portfolio", "text": "Cachaca, fine liqueur and creamy liqueur lines for retail, gifts, tastings and resale." },
-      "contact": { "title": "B2B contact", "text": "Dedicated service to understand country, volume, interest and documentation needs." }
+      "origin": {
+        "title": "Artisanal origin",
+        "text": "A family brand from Celso Ramos, Santa Catarina, with a narrative tied to local production and Brazilian flavors."
+      },
+      "portfolio": {
+        "title": "Business portfolio",
+        "text": "Cachaca, fine liqueur and creamy liqueur lines for retail, gifts, tastings and resale."
+      },
+      "contact": {
+        "title": "B2B contact",
+        "text": "Dedicated service to understand country, volume, interest and documentation needs."
+      }
     },
     "validate": {
       "eyebrow": "Information to validate",

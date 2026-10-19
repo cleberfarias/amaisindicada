@@ -28,12 +28,19 @@ const emptyForm = {
   teorAlcoolico: "",
   ingredientes: "",
   embalagem: "",
+  preco: "",
+  estoque: "",
+  pesoGramas: 1200,
+  comprimentoCm: 20,
+  larguraCm: 20,
+  alturaCm: 20,
   status: "publicado",
   ordem: 0,
   destaque: false,
   exibirHome: false,
   exibirCatalogo: true,
   exibirExportacao: false,
+  exibirLoja: true,
   ativo: true,
 };
 
@@ -396,6 +403,7 @@ function AdminProdutos() {
       exibirHome: Boolean(produto.exibirHome || produto.destaque),
       exibirCatalogo: produto.exibirCatalogo !== false,
       exibirExportacao: Boolean(produto.exibirExportacao),
+      exibirLoja: produto.exibirLoja !== false,
       ativo: produto.ativo !== false,
     });
     setStatus("");
@@ -530,6 +538,71 @@ function AdminProdutos() {
                   </Field>
 
                   <Field>
+                    Preco loja
+                    <Input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={form.preco}
+                      onChange={(event) => updateForm("preco", event.target.value)}
+                      placeholder="ex: 49.90"
+                    />
+                  </Field>
+
+                  <Field>
+                    Estoque / disponibilidade
+                    <Input
+                      value={form.estoque}
+                      onChange={(event) => updateForm("estoque", event.target.value)}
+                      placeholder="ex: Disponivel"
+                    />
+                  </Field>
+
+                  <Field>
+                    Peso (gramas)
+                    <Input
+                      type="number"
+                      min="1"
+                      value={form.pesoGramas}
+                      onChange={(event) => updateForm("pesoGramas", event.target.value)}
+                      placeholder="ex: 1200"
+                    />
+                  </Field>
+
+                  <Field>
+                    Comprimento (cm)
+                    <Input
+                      type="number"
+                      min="1"
+                      value={form.comprimentoCm}
+                      onChange={(event) => updateForm("comprimentoCm", event.target.value)}
+                      placeholder="ex: 20"
+                    />
+                  </Field>
+
+                  <Field>
+                    Largura (cm)
+                    <Input
+                      type="number"
+                      min="1"
+                      value={form.larguraCm}
+                      onChange={(event) => updateForm("larguraCm", event.target.value)}
+                      placeholder="ex: 20"
+                    />
+                  </Field>
+
+                  <Field>
+                    Altura (cm)
+                    <Input
+                      type="number"
+                      min="1"
+                      value={form.alturaCm}
+                      onChange={(event) => updateForm("alturaCm", event.target.value)}
+                      placeholder="ex: 20"
+                    />
+                  </Field>
+
+                  <Field>
                     Ordem
                     <Input
                       type="number"
@@ -602,6 +675,14 @@ function AdminProdutos() {
                       onChange={(event) => updateForm("exibirExportacao", event.target.checked)}
                     />
                     Usar em exportacao/B2B
+                  </CheckRow>
+                  <CheckRow>
+                    <input
+                      type="checkbox"
+                      checked={form.exibirLoja}
+                      onChange={(event) => updateForm("exibirLoja", event.target.checked)}
+                    />
+                    Exibir na loja online
                   </CheckRow>
                   <CheckRow>
                     <input
